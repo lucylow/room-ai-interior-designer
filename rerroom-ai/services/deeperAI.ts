@@ -1,0 +1,16 @@
+export interface DesignIntent { roomType: string; style: string; priorities: string[]; mustKeep: string[]; constraints: string[]; userRequest?: string; }
+export interface AIDesignResponse { summary: string; rationale: string[]; preservedObjects: string[]; changes: Array<{ action: string; target?: string; value: string }>; warnings: string[]; }
+export interface RoomNode { id: string; type: string; label: string; confidence: number; }
+export interface RoomEdge { from: string; to: string; relation: string; weight: number; }
+export interface RoomGraph { nodes: RoomNode[]; edges: RoomEdge[]; }
+export interface ObjectIdentity { id: string; label: string; preserve: boolean; assetIds: string[]; }
+export interface ArchitectureLock { walls: boolean; windows: boolean; doors: boolean; floor: boolean; ceiling: boolean; }
+export const ARCHITECTURE_LOCK: ArchitectureLock = { walls: true, windows: true, doors: true, floor: true, ceiling: true };
+export type SpatialConstraint = { type: "fixed-object" | "min-clearance" | "keep-opening-clear"; id: string; value?: number };
+export interface CandidateLayout { objects: Array<{ id: string; x: number; y: number; rotation: number }>; }
+export function buildRoomGraph(nodes: RoomNode[]): RoomGraph { const edges: RoomEdge[] = []; for (let i = 0; i < nodes.length; i += 1) for (let j = i + 1; j < nodes.length; j += 1) edges.push({ from: nodes[i].id, to: nodes[j].id, relation: "related", weight: Math.min(nodes[i].confidence, nodes[j].confidence) }); return { nodes, edges }; }
+export class ObjectMemory { private readonly memory = new Map<string, ObjectIdentity>(); upsert(object: ObjectIdentity) { this.memory.set(object.id, { ...object, assetIds: [...object.assetIds] }); } get(id: string) { return this.memory.get(id); } preserved() { return [...this.memory.values()].filter((object) => object.preserve); } }
+export class BasicLayoutSolver { solve(candidate: CandidateLayout, rules: SpatialConstraint[]) { const violations = rules.filter((rule) => rule.type === "fixed-object" && !candidate.objects.some((object) => object.id === rule.id)); return { valid: violations.length === 0, violations }; } }
+export interface Critique { score: number; passed: boolean; issues: string[]; trace: string[]; }
+export function critiqueDesign(response: AIDesignResponse, intent: DesignIntent, lock: ArchitectureLock = ARCHITECTURE_LOCK): Critique { const issues: string[] = []; const trace = [`intent:${intent.roomType}`, `style:${intent.style}`, `changes:${response.changes.length}`]; if (response.summary.trim().length < 12) issues.push("SUMMARY_TOO_SHORT"); if (intent.mustKeep.some((item) => !response.preservedObjects.includes(item))) issues.push("MUST_KEEP_NOT_PRESERVED"); if (lock.walls && response.changes.some((change) => change.target === "walls")) issues.push("ARCHITECTURE_LOCK_VIOLATION"); const score = Math.max(0, 1 - issues.length * 0.25); return { score, passed: issues.length === 0, issues, trace }; }
+export function buildReasoningContext(intent: DesignIntent, graph: RoomGraph, preservedObjects: string[]) { return { intent, graphSummary: `${graph.nodes.length} objects, ${graph.edges.length} relationships`, preservedObjects: [...preservedObjects], architecture: ARCHITECTURE_LOCK, traceId: `reasoning-${intent.roomType}-${graph.nodes.length}` }; }

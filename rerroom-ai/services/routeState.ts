@@ -1,0 +1,4 @@
+export interface CreateHandoff { roomId: string; historyId?: string; historyLabel?: string; }
+function first(value: string | string[] | undefined) { return Array.isArray(value) ? value[0] : value; }
+export function parseCreateHandoff(params: { roomId?: string | string[]; historyId?: string | string[]; historyLabel?: string | string[] }): CreateHandoff { const roomId = first(params.roomId)?.trim(); const historyId = first(params.historyId)?.trim(); const historyLabel = first(params.historyLabel)?.trim(); return { roomId: roomId && /^[a-zA-Z0-9_-]{1,80}$/.test(roomId) ? roomId : "living-room-refresh", historyId: historyId && /^[a-zA-Z0-9_-]{1,80}$/.test(historyId) ? historyId : undefined, historyLabel: historyLabel && historyLabel.length <= 120 ? historyLabel : undefined }; }
+export function isSameRoom(handoff: CreateHandoff, roomId: string) { return handoff.roomId === roomId; }

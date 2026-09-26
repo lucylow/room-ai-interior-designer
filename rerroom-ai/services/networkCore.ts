@@ -1,0 +1,3 @@
+export type Connectivity = "online" | "offline" | "unknown";
+export function toConnectivity(state: { isConnected?: boolean | null; isInternetReachable?: boolean | null }): Connectivity { if (state.isInternetReachable === true) return "online"; if (state.isInternetReachable === false || state.isConnected === false) return "offline"; return "unknown"; }
+export function connectivityCopy(connectivity: Connectivity) { if (connectivity === "offline") return { label: "Offline", message: "Saved rooms remain available on this device." }; if (connectivity === "online") return { label: "Online", message: "Ready to refresh saved room data." }; return { label: "Checking connection", message: "We’ll retry safely if the connection changes." }; }

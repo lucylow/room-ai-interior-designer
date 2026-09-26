@@ -1,0 +1,14 @@
+import { Ionicons } from "@expo/vector-icons";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+
+const actions = [
+  { id: "warmer", label: "Make it warmer", icon: "sunny-outline" as const },
+  { id: "sofa", label: "Keep my sofa", icon: "heart-outline" as const },
+  { id: "cheaper", label: "Make it cheaper", icon: "pricetag-outline" as const },
+  { id: "brighter", label: "Make it brighter", icon: "bulb-outline" as const },
+];
+
+export function RefinementToolbar({ selected, onSelect, onUndo, onRedo, canUndo, canRedo }: { selected?: string; onSelect: (id: string) => void; onUndo?: () => void; onRedo?: () => void; canUndo?: boolean; canRedo?: boolean }) {
+  return <View style={styles.root}><View style={styles.history}><Pressable accessibilityRole="button" accessibilityLabel="Undo last refinement" accessibilityState={{ disabled: !canUndo }} disabled={!canUndo} onPress={onUndo} style={({ pressed }) => [styles.iconAction, !canUndo && styles.disabled, pressed && styles.pressed]}><Ionicons name="arrow-undo" size={16} color={canUndo ? "#B9654A" : "#BDB5AC"} /></Pressable><Pressable accessibilityRole="button" accessibilityLabel="Redo refinement" accessibilityState={{ disabled: !canRedo }} disabled={!canRedo} onPress={onRedo} style={({ pressed }) => [styles.iconAction, !canRedo && styles.disabled, pressed && styles.pressed]}><Ionicons name="arrow-redo" size={16} color={canRedo ? "#B9654A" : "#BDB5AC"} /></Pressable><Text style={styles.historyLabel}>Edit history</Text></View>{actions.map((action) => <Pressable key={action.id} accessibilityRole="button" accessibilityLabel={action.label} accessibilityState={{ selected: selected === action.id }} onPress={() => onSelect(action.id)} style={({ pressed }) => [styles.action, selected === action.id && styles.selected, pressed && styles.pressed]}><Ionicons name={action.icon} size={17} color={selected === action.id ? "#B9654A" : "#746D66"} /><Text style={[styles.label, selected === action.id && styles.selectedLabel]}>{action.label}</Text></Pressable>)}</View>;
+}
+const styles = StyleSheet.create({ root: { flexDirection: "row", flexWrap: "wrap", gap: 8 }, history: { width: "100%", flexDirection: "row", alignItems: "center", gap: 7, marginBottom: 2 }, historyLabel: { color: "#746D66", fontSize: 12, fontWeight: "700" }, iconAction: { width: 34, height: 34, borderRadius: 11, borderWidth: 1, borderColor: "#E5DED6", backgroundColor: "#FFFDF9", alignItems: "center", justifyContent: "center" }, disabled: { opacity: 0.65 }, action: { minHeight: 42, borderRadius: 14, borderWidth: 1, borderColor: "#E5DED6", backgroundColor: "#FFFDF9", paddingHorizontal: 12, flexDirection: "row", alignItems: "center", gap: 6 }, selected: { borderColor: "#B9654A", backgroundColor: "#F5E5DC" }, label: { color: "#746D66", fontSize: 12, fontWeight: "700" }, selectedLabel: { color: "#B9654A" }, pressed: { opacity: 0.7, transform: [{ scale: 0.98 }] } });

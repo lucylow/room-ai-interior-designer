@@ -1,0 +1,20 @@
+export interface DesignIntent { roomType: string; goal: string; style: string; budget?: number; preserve: string[]; avoid: string[]; }
+export function mergeIntent(base: DesignIntent, update: Partial<DesignIntent>): DesignIntent { return { ...base, ...update, preserve: [...new Set([...(base.preserve ?? []), ...(update.preserve ?? [])])], avoid: [...new Set([...(base.avoid ?? []), ...(update.avoid ?? [])])] }; }
+export function classifyStyle(scores: Record<string, number>) { return Object.entries(scores).sort((a, b) => b[1] - a[1])[0]?.[0] ?? "modern"; }
+export function trimPrompt(text: string, max = 12000) { return text.length <= max ? text : `${text.slice(0, max - 3)}...`; }
+export function localEditPrompt(target: string, change: string) { return `Change only ${target}: ${change}. Protect all other objects and architecture.`; }
+export function evidenceSummary(objects: string[], openingCount: number) { return `${objects.length} major objects detected; ${openingCount} openings identified.`; }
+export function normalizeVoice(text: string) { return text.toLowerCase().replace(/[!?]+/g, "").trim(); }
+export function changeScope(text: string): "local" | "global" | "mixed" { if (/only|just|single/i.test(text)) return "local"; if (/everything|whole room/i.test(text)) return "global"; return "mixed"; }
+
+export type DatasetModality = "image" | "video" | "audio" | "text" | "depth" | "mask" | "3d";
+export type AssetStatus = "pending" | "validated" | "rejected" | "quarantined" | "ready";
+export interface DatasetAsset { id: string; datasetId: string; modality: DatasetModality; uri: string; mimeType: string; width?: number; height?: number; durationMs?: number; byteSize: number; checksum: string; status: AssetStatus; metadata: Record<string, unknown>; createdAt: string; }
+export const DATA_CONFIG = { maxAssetBytes: 25 * 1024 * 1024, maxVideoDurationMs: 60_000, maxImageDimension: 4096, maxBatchSize: 100 } as const;
+export function normalizeMime(mime: string) { const aliases: Record<string, string> = { "image/jpg": "image/jpeg", "application/x-jpeg": "image/jpeg", "video/quicktime": "video/mov" }; return aliases[mime.toLowerCase()] ?? mime.toLowerCase(); }
+export function sanitizeFilename(name: string) { return name.replace(/[^a-zA-Z0-9._-]/g, "_").replace(/_+/g, "_").slice(0, 180); }
+export function validateAsset(asset: Pick<DatasetAsset, "byteSize" | "mimeType" | "width" | "height">) { const errors: string[] = []; if (asset.byteSize <= 0) errors.push("EMPTY_FILE"); if (!/^image\//.test(normalizeMime(asset.mimeType)) && !/^video\//.test(normalizeMime(asset.mimeType))) errors.push("UNSUPPORTED_MEDIA"); if ((asset.width ?? 1) < 256 || (asset.height ?? 1) < 256) errors.push("LOW_RESOLUTION"); if (asset.byteSize > DATA_CONFIG.maxAssetBytes) errors.push("FILE_TOO_LARGE"); if ((asset.width ?? 0) > DATA_CONFIG.maxImageDimension || (asset.height ?? 0) > DATA_CONFIG.maxImageDimension) errors.push("DIMENSION_TOO_LARGE"); return errors; }
+export function privacyMetadata(metadata: Record<string, unknown>) { const next = { ...metadata }; delete next.location; delete next.gps; delete next.latitude; delete next.longitude; return { ...next, locationStripped: true }; }
+export function sampleTimes(durationMs: number, everyMs = 1500) { const output: number[] = []; for (let time = 0; time < durationMs; time += everyMs) output.push(time); return output; }
+export function canTransition(from: "queued" | "running" | "complete" | "failed", to: "queued" | "running" | "complete" | "failed") { const transitions: Record<string, string[]> = { queued: ["running"], running: ["complete", "failed"], failed: ["queued"] }; return transitions[from]?.includes(to) ?? false; }
+export async function mapPool<T, R>(items: T[], worker: (item: T) => Promise<R>, concurrency = 4) { const output: R[] = new Array(items.length); let cursor = 0; async function runner() { while (true) { const index = cursor++; if (index >= items.length) return; output[index] = await worker(items[index]); } } await Promise.all(Array.from({ length: Math.min(Math.max(1, concurrency), items.length) }, () => runner())); return output; }

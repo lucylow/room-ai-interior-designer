@@ -10,6 +10,12 @@ Instead of treating interior design as a static image-generation problem, RE:ROO
 
 The application combines multimodal AI, computer vision, AR, room measurement, spatial reasoning, product discovery, construction planning, contractor quote workflows, and mobile-first UX inside one experience.
 
+![](https://github.com/lucylow/room-ai-interior-designer/blob/main/Screenshot_26-9-2026_153729_www.figma.com.jpeg?raw=true)
+![](https://github.com/lucylow/room-ai-interior-designer/blob/main/Screenshot_26-9-2026_153744_www.figma.com.jpeg?raw=true)
+![](https://github.com/lucylow/room-ai-interior-designer/blob/main/Screenshot_26-9-2026_153757_www.figma.com.jpeg?raw=true)
+![](https://github.com/lucylow/room-ai-interior-designer/blob/main/Screenshot_26-9-2026_153811_www.figma.com.jpeg?raw=true)
+![](https://github.com/lucylow/room-ai-interior-designer/blob/main/Screenshot_26-9-2026_153824_www.figma.com.jpeg?raw=true)
+
 ---
 
 # Table of Contents

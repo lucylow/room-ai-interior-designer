@@ -1,0 +1,123 @@
+import type { StylePreset } from "../types/models";
+export const mockStyles: StylePreset[] = [
+  {
+    id: "style-01",
+    name: "Warm Minimalism",
+    description: "Soft layers, quiet contrast, warm wood.",
+    image: {
+      uri: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+      alt: "Warm Minimalism",
+    },
+    primaryColor: "#D3C0A9",
+    secondaryColor: "#F6F1E8",
+    traits: ["Quiet", "Textured", "Airy"],
+  },
+  {
+    id: "style-02",
+    name: "Scandinavian",
+    description: "Light oak, simple forms, tactile comfort.",
+    image: {
+      uri: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
+      alt: "Scandinavian",
+    },
+    primaryColor: "#E5DDD2",
+    secondaryColor: "#F3F0EA",
+    traits: ["Light", "Functional", "Hygge"],
+  },
+  {
+    id: "style-03",
+    name: "Japandi",
+    description: "Calm geometry, low profiles, crafted detail.",
+    image: {
+      uri: "https://images.unsplash.com/photo-1615874694520-474822394e73?auto=format&fit=crop&w=1200&q=80",
+      alt: "Japandi",
+    },
+    primaryColor: "#C9BDAE",
+    secondaryColor: "#F7F3EC",
+    traits: ["Balanced", "Natural", "Zen"],
+  },
+  {
+    id: "style-04",
+    name: "Organic Modern",
+    description: "Stone, sculptural forms, soft curves.",
+    image: {
+      uri: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+      alt: "Organic Modern",
+    },
+    primaryColor: "#B39A82",
+    secondaryColor: "#EBE4DA",
+    traits: ["Sculptural", "Earthy", "Refined"],
+  },
+  {
+    id: "style-05",
+    name: "Contemporary",
+    description: "Clean silhouettes and considered contrast.",
+    image: {
+      uri: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
+      alt: "Contemporary",
+    },
+    primaryColor: "#8E857A",
+    secondaryColor: "#F1EEE9",
+    traits: ["Crisp", "Layered", "Modern"],
+  },
+  {
+    id: "style-06",
+    name: "Mid-Century",
+    description: "Warm woods, tapered legs, graphic accents.",
+    image: {
+      uri: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      alt: "Mid-Century",
+    },
+    primaryColor: "#9D846A",
+    secondaryColor: "#EDE3D7",
+    traits: ["Retro", "Warm", "Graphic"],
+  },
+  {
+    id: "style-07",
+    name: "Coastal",
+    description: "Washed woods, linen, relaxed neutrals.",
+    image: {
+      uri: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=900&q=80",
+      alt: "Coastal",
+    },
+    primaryColor: "#D8C7AF",
+    secondaryColor: "#F5EFE7",
+    traits: ["Breezy", "Relaxed", "Natural"],
+  },
+  {
+    id: "style-08",
+    name: "Industrial",
+    description: "Metal, leather, masonry-inspired textures.",
+    image: {
+      uri: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80",
+      alt: "Industrial",
+    },
+    primaryColor: "#5E5B56",
+    secondaryColor: "#E2DED6",
+    traits: ["Raw", "Urban", "Graphic"],
+  },
+  {
+    id: "style-09",
+    name: "Wabi-Sabi",
+    description: "Patina, irregularity, quiet craftsmanship.",
+    image: {
+      uri: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80",
+      alt: "Wabi-Sabi",
+    },
+    primaryColor: "#9A8B78",
+    secondaryColor: "#E9E1D6",
+    traits: ["Quiet", "Textural", "Honest"],
+  },
+  {
+    id: "style-10",
+    name: "Art Deco",
+    description: "Polished stone, brass and geometric rhythm.",
+    image: {
+      uri: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=900&q=80",
+      alt: "Art Deco",
+    },
+    primaryColor: "#8E7256",
+    secondaryColor: "#EFE6DC",
+    traits: ["Glam", "Geometric", "Bold"],
+  },
+];

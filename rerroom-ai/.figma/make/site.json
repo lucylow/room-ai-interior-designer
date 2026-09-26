@@ -1,0 +1,10 @@
+{
+  "description": "Transform your space with an AI-powered interior design app that offers augmented reality scanning, 3D room editing, and seamless shopping for personalized decor solutions.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

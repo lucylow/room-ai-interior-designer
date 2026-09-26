@@ -1,0 +1,16 @@
+{
+  "name": "RE:ROOM AI Premium Mobile UI/UX Upgrade",
+  "type": "react-native-typescript",
+  "screens": 9,
+  "products": 80,
+  "rooms": 12,
+  "recommendations": 32,
+  "measurements": 60,
+  "arPlanes": 18,
+  "tasks": 24,
+  "projects": 12,
+  "notifications": 30,
+  "palettes": 36,
+  "activity": 48,
+  "arObjects": 48
+}

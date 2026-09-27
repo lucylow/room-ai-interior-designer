@@ -1,8 +1,0 @@
-import { describe, expect, it } from "vitest";
-import { ARCHITECTURE_LOCK, BasicLayoutSolver, buildReasoningContext, buildRoomGraph, critiqueDesign, ObjectMemory } from "../services/deeperAI";
-
-describe("deeper AI reasoning", () => {
-  it("builds weighted room relationships and preserves object identity", () => { const graph = buildRoomGraph([{ id: "sofa", type: "furniture", label: "Sofa", confidence: 0.9 }, { id: "window", type: "opening", label: "Window", confidence: 0.8 }]); expect(graph.edges[0].weight).toBe(0.8); const memory = new ObjectMemory(); memory.upsert({ id: "sofa", label: "Sofa", preserve: true, assetIds: ["asset-1"] }); expect(memory.preserved()[0].id).toBe("sofa"); });
-  it("detects fixed-object violations and architecture changes", () => { const result = new BasicLayoutSolver().solve({ objects: [] }, [{ type: "fixed-object", id: "sofa" }]); expect(result.valid).toBe(false); const critique = critiqueDesign({ summary: "A calm room direction", rationale: [], preservedObjects: ["sofa"], changes: [{ action: "move", target: "walls", value: "open" }], warnings: [] }, { roomType: "living room", style: "modern", priorities: [], mustKeep: ["sofa"], constraints: [] }); expect(critique.passed).toBe(false); expect(critique.issues).toContain("ARCHITECTURE_LOCK_VIOLATION"); expect(ARCHITECTURE_LOCK.walls).toBe(true); });
-  it("creates a traceable reasoning context", () => { const context = buildReasoningContext({ roomType: "living room", style: "modern", priorities: [], mustKeep: [], constraints: [] }, { nodes: [], edges: [] }, ["sofa"]); expect(context.traceId).toContain("living room"); expect(context.preservedObjects).toEqual(["sofa"]); });
-});

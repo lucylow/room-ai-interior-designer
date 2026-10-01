@@ -1,6 +1,6 @@
 # RE:ROOM AI - Interior Designer
 
-## AI-Powered Interior Design, Augmented Reality, Spatial Intelligence, Shopping, and Construction Planning
+## AI-Powered Interior Design, Augmented Reality, Spatial Intelligence, Shopping, and Construction Planning 
 
 RE:ROOM AI is a React Native / Expo mobile application designed to turn a user's real physical space into an interactive AI design environment.
 

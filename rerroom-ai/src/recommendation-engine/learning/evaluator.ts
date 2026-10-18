@@ -1,0 +1,3 @@
+import type {Recommendation,Feedback} from '../core/types';import {mean} from '../core/math';
+export interface EvalReport {precisionAtK:number;meanAcceptedScore:number;coverage:number;feedbackSample:number;}
+export const evaluateTopK=(rs:Recommendation[],fb:Feedback[],k=5):EvalReport=>{const top=rs.slice(0,k),map=new Map(fb.map(f=>[f.recommendationId,f.action]));const accepted=top.filter(r=>{const a=map.get(r.id);return a==='accepted'||a==='edited';});return {precisionAtK:top.length?accepted.length/top.length:.5,meanAcceptedScore:accepted.length?mean(accepted.map(r=>r.score)):0,coverage:rs.length?top.length/rs.length:0,feedbackSample:fb.length};};

@@ -1,0 +1,8 @@
+{
+  "comment": "No runtime dependency is mandatory for this pack. Keep the existing React 19 / TypeScript toolchain.",
+  "scriptsToAdd": {
+    "security:typecheck": "tsc -p tsconfig.security.json --noEmit",
+    "security:test": "vitest run src/tests",
+    "security:check": "npm run security:typecheck && npm run security:test"
+  }
+}

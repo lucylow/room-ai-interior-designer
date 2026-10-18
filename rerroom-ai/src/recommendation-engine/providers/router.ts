@@ -1,0 +1,2 @@
+import type {RecommendationRequest,RecommendationSet} from '../core/types';import type {RecommendationProvider} from './types';
+export class RecommendationProviderRouter {constructor(private local:RecommendationProvider,private remote?:RecommendationProvider){}async generate(request:RecommendationRequest):Promise<RecommendationSet>{if(this.remote&&request.userPrompt){try{return await this.remote.generate(request);}catch{}}return this.local.generate(request);}}

@@ -1,0 +1,17 @@
+{
+  "integrated_from": "RE_ROOM_AI_CREATIVE_DESIGN_100PLUS_PAGES",
+  "generative_design_typescript_files": 563,
+  "cad_bim_typescript_files_in_source_bundle": 638,
+  "cad_bim_new_modules_added": 279,
+  "creative_demo_files_added": 5,
+  "entrypoints": [
+    "src/generative-design/index.ts",
+    "src/cad-bim/index.ts",
+    "src/room-remodel/index.ts"
+  ],
+  "validation_commands": [
+    "pnpm run generative-design:typecheck",
+    "pnpm run cad-bim:typecheck"
+  ],
+  "source_query_preserved": "src/cad-bim/model/model-query.ts"
+}

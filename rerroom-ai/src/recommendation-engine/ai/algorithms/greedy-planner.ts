@@ -1,0 +1,2 @@
+import type {Recommendation} from '../../core/types';
+export const greedyPlan=(rows:Recommendation[],budget:number,limit=6)=>{let remaining=budget;const out:Recommendation[]=[];for(const r of rows.slice().sort((a,b)=>b.expectedImpact/(1+(b.estimatedCost??0))-a.expectedImpact/(1+(a.estimatedCost??0)))){const cost=r.estimatedCost??0;if(cost<=remaining||cost===0){out.push(r);remaining-=cost;}if(out.length>=limit)break;}return {rows:out,remaining};};

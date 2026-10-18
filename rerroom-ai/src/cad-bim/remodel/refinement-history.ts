@@ -1,0 +1,3 @@
+import { DesignOverlay, OverlayPatch } from '../core/types';
+export interface RefinementRevision { id:string; overlayId:string; parentId?:string; prompt:string; patchIds:string[]; createdAt:string; }
+export class RefinementHistory { private revisions:RefinementRevision[]=[]; add(overlay:DesignOverlay,patches:OverlayPatch[]){this.revisions.push({id:`rev_${this.revisions.length+1}`,overlayId:overlay.id,parentId:overlay.parentOverlayId,prompt:overlay.intent.prompt,patchIds:patches.map(p=>p.id),createdAt:overlay.createdAt});} lineage(id:string){const out:RefinementRevision[]=[];let cur=this.revisions.find(r=>r.overlayId===id);while(cur){out.unshift(cur);cur=this.revisions.find(r=>r.overlayId===cur!.parentId);}return out;} }

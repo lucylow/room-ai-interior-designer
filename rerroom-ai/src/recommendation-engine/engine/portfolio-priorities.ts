@@ -1,0 +1,2 @@
+import type {Recommendation,UserPreferences} from '../core/types';
+export const portfolioPriorities=(rows:Recommendation[],prefs:UserPreferences)=>rows.map(r=>{const preference=prefs.priorities.includes(r.category)?.2:0;const safety=r.category==='safety'?.15:0;const cost=(r.estimatedCost??0)/(prefs.budgetMax??Math.max(1,(r.estimatedCost??0)*2));return {...r,score:Math.max(0,Math.min(1,r.score+preference+safety-Math.min(.25,cost*.12)))}}).sort((a,b)=>b.score-a.score);

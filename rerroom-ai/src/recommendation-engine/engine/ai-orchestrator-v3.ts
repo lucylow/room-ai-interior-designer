@@ -1,0 +1,3 @@
+import type {RecommendationRequest,Policy,RecommendationSet} from '../core/types';
+import {runPipeline} from './pipeline';
+export const orchestrateAI=async(request:RecommendationRequest,policy:Policy):Promise<RecommendationSet>=>{const first=await runPipeline(request,policy);const recommendations=first.recommendations.slice().sort((a,b)=>b.score-a.score);const warnings=[...first.warnings];if(!recommendations.length)warnings.push('No recommendation passed the current policy gates.');if(first.metrics.agentConfidence<.5)warnings.push('Agent confidence is below the preferred threshold.');return {...first,recommendations,warnings,engineVersion:'ai-reco-3.0'};};

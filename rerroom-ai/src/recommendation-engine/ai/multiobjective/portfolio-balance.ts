@@ -1,0 +1,3 @@
+import type {Recommendation} from '../../core/types';
+export const portfolioBalance=(rows:Recommendation[])=>{const groups:Record<string,number>={};for(const r of rows)groups[r.category]=(groups[r.category]??0)+1;const total=Math.max(1,rows.length);return Object.entries(groups).map(([category,count])=>({category,count,share:count/total})).sort((a,b)=>b.share-a.share);};
+export const rebalancePortfolio=(rows:Recommendation[],maxShare=.35)=>{const counts=portfolioBalance(rows);const over=new Set(counts.filter(x=>x.share>maxShare).map(x=>x.category));return rows.filter((r,index)=>!over.has(r.category)||index%2===0);};

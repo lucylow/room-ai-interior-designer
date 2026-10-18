@@ -1,0 +1,2 @@
+import { AestheticIntent } from '../../core/types';
+export const BasementRemodelScenario={room:'basement',goal:'Create a finished-space concept around existing columns and stairs.',intent:({preserveFeatures=[] as string[]}:{preserveFeatures?:string[]}={}):AestheticIntent=>({prompt:'Create a finished-space concept around existing columns and stairs.',style:'contemporary',palette:['warm white','oak'],materials:['oak','stone'],preserveFeatures:preserveFeatures||[],constraints:['Preserve authoritative CAD/BIM dimensions','Keep source openings unchanged'],clientPreferences:{}})};

@@ -1,0 +1,57 @@
+.visualization-experience {
+  min-height: 100%;
+  background: #f3f4f7;
+  color: #17181b;
+  overflow: auto;
+}
+
+.visualization-experience-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e3e8;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.visualization-experience-header button,
+.visualization-room-picker select {
+  min-height: 36px;
+  padding: 6px 9px;
+  border: 1px solid #d8dae1;
+  border-radius: 9px;
+  background: #fff;
+  color: #17181b;
+}
+
+.visualization-experience-title {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+  min-width: 90px;
+  font-size: 13px;
+}
+
+.visualization-experience-title span {
+  color: #6d7280;
+  font-size: 10px;
+}
+
+.visualization-room-picker select {
+  max-width: 130px;
+  font-size: 11px;
+}
+
+@media (max-width: 390px) {
+  .visualization-experience-header {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .visualization-experience-title span {
+    display: none;
+  }
+}

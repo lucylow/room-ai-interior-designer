@@ -1,0 +1,132 @@
+{
+  "catalogCount": 21,
+  "rooms": [
+    {
+      "id": "demo-living-modern",
+      "name": "Modern Maple Loft",
+      "style": "modern",
+      "palette": "modern-neutral",
+      "budget": 1500,
+      "selected": [
+        {
+          "name": "BILLY bookcase, oak effect",
+          "price": 90
+        },
+        {
+          "name": "LACK side table",
+          "price": 11.99
+        },
+        {
+          "name": "FRÖTORP coffee table, glass",
+          "price": 169
+        },
+        {
+          "name": "STOCKHOLM 2025 armchair",
+          "price": 349
+        }
+      ],
+      "merchandise": 619.99,
+      "hardCapRemaining": 799.4113000000001,
+      "extendedCandidates": 6,
+      "checkout": false
+    },
+    {
+      "id": "demo-living-scandi",
+      "name": "Scandinavian Family Living",
+      "style": "scandinavian",
+      "palette": "scandi-light",
+      "budget": 1000,
+      "selected": [
+        {
+          "name": "KALLAX insert with 2 drawers, white",
+          "price": 30
+        },
+        {
+          "name": "BILLY bookcase, white, 40x28x202 cm",
+          "price": 70
+        },
+        {
+          "name": "POÄNG footstool",
+          "price": 129
+        },
+        {
+          "name": "LACK side table",
+          "price": 11.99
+        }
+      ],
+      "merchandise": 240.99,
+      "hardCapRemaining": 727.6813,
+      "extendedCandidates": 8,
+      "checkout": false
+    },
+    {
+      "id": "demo-bedroom-oak",
+      "name": "Oak Bedroom",
+      "style": "scandinavian",
+      "palette": "warm-neutral",
+      "budget": 1200,
+      "selected": [
+        {
+          "name": "POÄNG footstool",
+          "price": 129
+        },
+        {
+          "name": "POÄNG armchair",
+          "price": 159
+        },
+        {
+          "name": "GULLABERG bed frame, white/Luröy, Queen",
+          "price": 399
+        }
+      ],
+      "merchandise": 687,
+      "hardCapRemaining": 423.69000000000005,
+      "extendedCandidates": 16,
+      "checkout": false
+    }
+  ],
+  "qa": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "Catalog has items",
+        "passed": true,
+        "message": "21 records loaded."
+      },
+      {
+        "name": "Prices grounded",
+        "passed": true,
+        "message": "All records contain positive snapshot prices."
+      },
+      {
+        "name": "Dimensions grounded",
+        "passed": true,
+        "message": "All records have 3D dimensions."
+      },
+      {
+        "name": "Retail links present",
+        "passed": true,
+        "message": "All demo records have retailer/category links."
+      },
+      {
+        "name": "Styles present",
+        "passed": true,
+        "message": "All records include style metadata."
+      },
+      {
+        "name": "No fake live inventory",
+        "passed": true,
+        "message": "No record claims unsupported inventory state."
+      }
+    ]
+  },
+  "v3": {
+    "selected": [
+      "BILLY bookcase, white, 40x28x202 cm",
+      "BILLY bookcase, oak effect",
+      "POÄNG armchair",
+      "LACK side table"
+    ],
+    "subtotal": 330.99
+  }
+}

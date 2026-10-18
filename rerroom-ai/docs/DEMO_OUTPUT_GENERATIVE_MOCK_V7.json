@@ -1,0 +1,882 @@
+{
+  "qa": {
+    "collections": {
+      "styles": 20,
+      "palettes": 48,
+      "layoutAdvice": 432,
+      "concepts": 576,
+      "refinements": 160,
+      "furnitureAesthetics": 240,
+      "userProfiles": 96,
+      "scenarios": 120,
+      "prompts": 150,
+      "moodboards": 100,
+      "gallery": 72,
+      "filters": 12
+    },
+    "duplicateIds": [],
+    "invalidReferences": [],
+    "status": "pass"
+  },
+  "scandinavian": {
+    "concepts": [
+      {
+        "id": "concept_living_room_scandinavian_4",
+        "room": "living_room",
+        "style": "scandinavian",
+        "palette": "sunlit_04",
+        "title": "Scandinavian Living Room Concept 4",
+        "story": "A scandinavian direction for a living room with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "scandinavian living room, sunlit_04 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_living_room_scandinavian_1",
+          "layout_living_room_scandinavian_2",
+          "layout_living_room_scandinavian_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "welcoming",
+        "intensity": 0.78,
+        "generatedSeed": 10037,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      },
+      {
+        "id": "concept_living_room_scandinavian_1",
+        "room": "living_room",
+        "style": "scandinavian",
+        "palette": "earth_01",
+        "title": "Scandinavian Living Room Concept 1",
+        "story": "A scandinavian direction for a living room with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "scandinavian living room, earth_01 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_living_room_scandinavian_1",
+          "layout_living_room_scandinavian_2",
+          "layout_living_room_scandinavian_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "grounded",
+        "intensity": 0.54,
+        "generatedSeed": 10034,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      },
+      {
+        "id": "concept_living_room_scandinavian_2",
+        "room": "living_room",
+        "style": "scandinavian",
+        "palette": "coastal_02",
+        "title": "Scandinavian Living Room Concept 2",
+        "story": "A scandinavian direction for a living room with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "scandinavian living room, coastal_02 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_living_room_scandinavian_1",
+          "layout_living_room_scandinavian_2",
+          "layout_living_room_scandinavian_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "focused",
+        "intensity": 0.62,
+        "generatedSeed": 10035,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      },
+      {
+        "id": "concept_living_room_scandinavian_3",
+        "room": "living_room",
+        "style": "scandinavian",
+        "palette": "moody_03",
+        "title": "Scandinavian Living Room Concept 3",
+        "story": "A scandinavian direction for a living room with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "scandinavian living room, moody_03 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_living_room_scandinavian_1",
+          "layout_living_room_scandinavian_2",
+          "layout_living_room_scandinavian_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "layered",
+        "intensity": 0.7,
+        "generatedSeed": 10036,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      }
+    ],
+    "styles": [
+      {
+        "id": "modern",
+        "name": "Modern"
+      },
+      {
+        "id": "minimalist",
+        "name": "Minimalist"
+      },
+      {
+        "id": "scandinavian",
+        "name": "Scandinavian"
+      },
+      {
+        "id": "industrial",
+        "name": "Industrial"
+      },
+      {
+        "id": "japandi",
+        "name": "Japandi"
+      },
+      {
+        "id": "mid_century",
+        "name": "Mid-century"
+      },
+      {
+        "id": "organic_modern",
+        "name": "Organic Modern"
+      },
+      {
+        "id": "bohemian",
+        "name": "Bohemian"
+      },
+      {
+        "id": "contemporary",
+        "name": "Contemporary"
+      },
+      {
+        "id": "warm_minimal",
+        "name": "Warm Minimal"
+      },
+      {
+        "id": "quiet_luxury",
+        "name": "Quiet Luxury"
+      },
+      {
+        "id": "coastal_modern",
+        "name": "Coastal Modern"
+      },
+      {
+        "id": "modern_farmhouse",
+        "name": "Modern Farmhouse"
+      },
+      {
+        "id": "classic_transitional",
+        "name": "Classic Transitional"
+      },
+      {
+        "id": "art_deco",
+        "name": "Art Deco"
+      },
+      {
+        "id": "new_nordic",
+        "name": "New Nordic"
+      },
+      {
+        "id": "soft_industrial",
+        "name": "Soft Industrial"
+      },
+      {
+        "id": "desert_modern",
+        "name": "Desert Modern"
+      },
+      {
+        "id": "moody_modern",
+        "name": "Moody Modern"
+      },
+      {
+        "id": "eclectic_modern",
+        "name": "Eclectic Modern"
+      }
+    ],
+    "palettes": [
+      {
+        "id": "neutral_01",
+        "name": "Quiet 1"
+      },
+      {
+        "id": "neutral_04",
+        "name": "Quiet 4"
+      },
+      {
+        "id": "nordic_03",
+        "name": "Nordic 3"
+      },
+      {
+        "id": "earth_02",
+        "name": "Earth 2"
+      },
+      {
+        "id": "coastal_01",
+        "name": "Coastal 1"
+      },
+      {
+        "id": "coastal_04",
+        "name": "Coastal 4"
+      },
+      {
+        "id": "moody_03",
+        "name": "Moody 3"
+      },
+      {
+        "id": "sunlit_02",
+        "name": "Sunlit 2"
+      },
+      {
+        "id": "clay_01",
+        "name": "Clay 1"
+      },
+      {
+        "id": "clay_04",
+        "name": "Clay 4"
+      },
+      {
+        "id": "forest_03",
+        "name": "Forest 3"
+      },
+      {
+        "id": "blue_02",
+        "name": "Blue 2"
+      },
+      {
+        "id": "rose_01",
+        "name": "Rose 1"
+      },
+      {
+        "id": "rose_04",
+        "name": "Rose 4"
+      },
+      {
+        "id": "ink_03",
+        "name": "Ink 3"
+      },
+      {
+        "id": "brass_02",
+        "name": "Brass 2"
+      }
+    ],
+    "advice": [
+      "Build the conversation zone around one readable anchor before adding secondary pieces.",
+      "Keep the reserve a readable circulation lane around the sofa; use scale changes instead of extra objects to create interest.",
+      "Use repeated material or color notes to make the room feel intentional without overfilling it."
+    ],
+    "refinements": [
+      "Make it brighter",
+      "Make it brighter",
+      "Make it brighter",
+      "Make it brighter",
+      "Make it brighter",
+      "Make it brighter",
+      "Make it brighter",
+      "Make it brighter",
+      "Make it brighter",
+      "Make it brighter"
+    ],
+    "confidence": 0.9,
+    "demo": true
+  },
+  "minimalist": {
+    "concepts": [
+      {
+        "id": "concept_bedroom_minimalist_1",
+        "room": "bedroom",
+        "style": "minimalist",
+        "palette": "earth_01",
+        "title": "Minimalist Bedroom Concept 1",
+        "story": "A minimalist direction for a bedroom with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "minimalist bedroom, earth_01 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_bedroom_minimalist_1",
+          "layout_bedroom_minimalist_2",
+          "layout_bedroom_minimalist_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "grounded",
+        "intensity": 0.54,
+        "generatedSeed": 10228,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      },
+      {
+        "id": "concept_bedroom_minimalist_2",
+        "room": "bedroom",
+        "style": "minimalist",
+        "palette": "coastal_02",
+        "title": "Minimalist Bedroom Concept 2",
+        "story": "A minimalist direction for a bedroom with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "minimalist bedroom, coastal_02 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_bedroom_minimalist_1",
+          "layout_bedroom_minimalist_2",
+          "layout_bedroom_minimalist_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "focused",
+        "intensity": 0.62,
+        "generatedSeed": 10229,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      },
+      {
+        "id": "concept_bedroom_minimalist_3",
+        "room": "bedroom",
+        "style": "minimalist",
+        "palette": "moody_03",
+        "title": "Minimalist Bedroom Concept 3",
+        "story": "A minimalist direction for a bedroom with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "minimalist bedroom, moody_03 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_bedroom_minimalist_1",
+          "layout_bedroom_minimalist_2",
+          "layout_bedroom_minimalist_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "layered",
+        "intensity": 0.7,
+        "generatedSeed": 10230,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      },
+      {
+        "id": "concept_bedroom_minimalist_4",
+        "room": "bedroom",
+        "style": "minimalist",
+        "palette": "sunlit_04",
+        "title": "Minimalist Bedroom Concept 4",
+        "story": "A minimalist direction for a bedroom with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "minimalist bedroom, sunlit_04 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_bedroom_minimalist_1",
+          "layout_bedroom_minimalist_2",
+          "layout_bedroom_minimalist_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "welcoming",
+        "intensity": 0.78,
+        "generatedSeed": 10231,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      }
+    ],
+    "styles": [
+      {
+        "id": "modern",
+        "name": "Modern"
+      },
+      {
+        "id": "minimalist",
+        "name": "Minimalist"
+      },
+      {
+        "id": "scandinavian",
+        "name": "Scandinavian"
+      },
+      {
+        "id": "industrial",
+        "name": "Industrial"
+      },
+      {
+        "id": "japandi",
+        "name": "Japandi"
+      },
+      {
+        "id": "mid_century",
+        "name": "Mid-century"
+      },
+      {
+        "id": "organic_modern",
+        "name": "Organic Modern"
+      },
+      {
+        "id": "bohemian",
+        "name": "Bohemian"
+      },
+      {
+        "id": "contemporary",
+        "name": "Contemporary"
+      },
+      {
+        "id": "warm_minimal",
+        "name": "Warm Minimal"
+      },
+      {
+        "id": "quiet_luxury",
+        "name": "Quiet Luxury"
+      },
+      {
+        "id": "coastal_modern",
+        "name": "Coastal Modern"
+      },
+      {
+        "id": "modern_farmhouse",
+        "name": "Modern Farmhouse"
+      },
+      {
+        "id": "classic_transitional",
+        "name": "Classic Transitional"
+      },
+      {
+        "id": "art_deco",
+        "name": "Art Deco"
+      },
+      {
+        "id": "new_nordic",
+        "name": "New Nordic"
+      },
+      {
+        "id": "soft_industrial",
+        "name": "Soft Industrial"
+      },
+      {
+        "id": "desert_modern",
+        "name": "Desert Modern"
+      },
+      {
+        "id": "moody_modern",
+        "name": "Moody Modern"
+      },
+      {
+        "id": "eclectic_modern",
+        "name": "Eclectic Modern"
+      }
+    ],
+    "palettes": [
+      {
+        "id": "neutral_02",
+        "name": "Quiet 2"
+      },
+      {
+        "id": "nordic_01",
+        "name": "Nordic 1"
+      },
+      {
+        "id": "nordic_04",
+        "name": "Nordic 4"
+      },
+      {
+        "id": "earth_03",
+        "name": "Earth 3"
+      },
+      {
+        "id": "coastal_02",
+        "name": "Coastal 2"
+      },
+      {
+        "id": "moody_01",
+        "name": "Moody 1"
+      },
+      {
+        "id": "moody_04",
+        "name": "Moody 4"
+      },
+      {
+        "id": "sunlit_03",
+        "name": "Sunlit 3"
+      },
+      {
+        "id": "clay_02",
+        "name": "Clay 2"
+      },
+      {
+        "id": "forest_01",
+        "name": "Forest 1"
+      },
+      {
+        "id": "forest_04",
+        "name": "Forest 4"
+      },
+      {
+        "id": "blue_03",
+        "name": "Blue 3"
+      },
+      {
+        "id": "rose_02",
+        "name": "Rose 2"
+      },
+      {
+        "id": "ink_01",
+        "name": "Ink 1"
+      },
+      {
+        "id": "ink_04",
+        "name": "Ink 4"
+      },
+      {
+        "id": "brass_03",
+        "name": "Brass 3"
+      }
+    ],
+    "advice": [
+      "Build the sleep zone around one readable anchor before adding secondary pieces.",
+      "Keep the protect comfortable clearance on both sides; use scale changes instead of extra objects to create interest.",
+      "Use repeated material or color notes to make the room feel intentional without overfilling it."
+    ],
+    "refinements": [
+      "Use less furniture",
+      "Use less furniture",
+      "Use less furniture",
+      "Use less furniture",
+      "Use less furniture",
+      "Use less furniture",
+      "Use less furniture",
+      "Use less furniture",
+      "Use less furniture",
+      "Use less furniture"
+    ],
+    "confidence": 0.9,
+    "demo": true
+  },
+  "industrial": {
+    "concepts": [
+      {
+        "id": "concept_home_office_industrial_1",
+        "room": "home_office",
+        "style": "industrial",
+        "palette": "forest_01",
+        "title": "Industrial Home Office Concept 1",
+        "story": "A industrial direction for a home office with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "industrial home office, forest_01 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_home_office_industrial_1",
+          "layout_home_office_industrial_2",
+          "layout_home_office_industrial_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "airy",
+        "intensity": 0.38,
+        "generatedSeed": 10895,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      },
+      {
+        "id": "concept_home_office_industrial_2",
+        "room": "home_office",
+        "style": "industrial",
+        "palette": "blue_02",
+        "title": "Industrial Home Office Concept 2",
+        "story": "A industrial direction for a home office with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "industrial home office, blue_02 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_home_office_industrial_1",
+          "layout_home_office_industrial_2",
+          "layout_home_office_industrial_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "grounded",
+        "intensity": 0.46,
+        "generatedSeed": 10896,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      },
+      {
+        "id": "concept_home_office_industrial_3",
+        "room": "home_office",
+        "style": "industrial",
+        "palette": "rose_03",
+        "title": "Industrial Home Office Concept 3",
+        "story": "A industrial direction for a home office with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "industrial home office, rose_03 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_home_office_industrial_1",
+          "layout_home_office_industrial_2",
+          "layout_home_office_industrial_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "focused",
+        "intensity": 0.54,
+        "generatedSeed": 10897,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      },
+      {
+        "id": "concept_home_office_industrial_4",
+        "room": "home_office",
+        "style": "industrial",
+        "palette": "ink_04",
+        "title": "Industrial Home Office Concept 4",
+        "story": "A industrial direction for a home office with a preserved architectural shell, a clear focal hierarchy, and a carefully repeated material story.",
+        "prompt": "industrial home office, ink_04 palette, preserve walls windows doors and ceiling proportions, realistic furniture scale, clear circulation, layered lighting, tactile materials, editorial architectural photography",
+        "layoutAdviceIds": [
+          "layout_home_office_industrial_1",
+          "layout_home_office_industrial_2",
+          "layout_home_office_industrial_3"
+        ],
+        "furnitureRoles": [
+          "primary anchor",
+          "secondary seating",
+          "storage",
+          "lighting"
+        ],
+        "mood": "layered",
+        "intensity": 0.62,
+        "generatedSeed": 10898,
+        "variants": [
+          "lighter version",
+          "warmer version",
+          "higher contrast",
+          "budget-aware version"
+        ]
+      }
+    ],
+    "styles": [
+      {
+        "id": "modern",
+        "name": "Modern"
+      },
+      {
+        "id": "minimalist",
+        "name": "Minimalist"
+      },
+      {
+        "id": "scandinavian",
+        "name": "Scandinavian"
+      },
+      {
+        "id": "industrial",
+        "name": "Industrial"
+      },
+      {
+        "id": "japandi",
+        "name": "Japandi"
+      },
+      {
+        "id": "mid_century",
+        "name": "Mid-century"
+      },
+      {
+        "id": "organic_modern",
+        "name": "Organic Modern"
+      },
+      {
+        "id": "bohemian",
+        "name": "Bohemian"
+      },
+      {
+        "id": "contemporary",
+        "name": "Contemporary"
+      },
+      {
+        "id": "warm_minimal",
+        "name": "Warm Minimal"
+      },
+      {
+        "id": "quiet_luxury",
+        "name": "Quiet Luxury"
+      },
+      {
+        "id": "coastal_modern",
+        "name": "Coastal Modern"
+      },
+      {
+        "id": "modern_farmhouse",
+        "name": "Modern Farmhouse"
+      },
+      {
+        "id": "classic_transitional",
+        "name": "Classic Transitional"
+      },
+      {
+        "id": "art_deco",
+        "name": "Art Deco"
+      },
+      {
+        "id": "new_nordic",
+        "name": "New Nordic"
+      },
+      {
+        "id": "soft_industrial",
+        "name": "Soft Industrial"
+      },
+      {
+        "id": "desert_modern",
+        "name": "Desert Modern"
+      },
+      {
+        "id": "moody_modern",
+        "name": "Moody Modern"
+      },
+      {
+        "id": "eclectic_modern",
+        "name": "Eclectic Modern"
+      }
+    ],
+    "palettes": [
+      {
+        "id": "neutral_02",
+        "name": "Quiet 2"
+      },
+      {
+        "id": "nordic_01",
+        "name": "Nordic 1"
+      },
+      {
+        "id": "nordic_04",
+        "name": "Nordic 4"
+      },
+      {
+        "id": "earth_03",
+        "name": "Earth 3"
+      },
+      {
+        "id": "coastal_02",
+        "name": "Coastal 2"
+      },
+      {
+        "id": "moody_01",
+        "name": "Moody 1"
+      },
+      {
+        "id": "moody_04",
+        "name": "Moody 4"
+      },
+      {
+        "id": "sunlit_03",
+        "name": "Sunlit 3"
+      },
+      {
+        "id": "clay_02",
+        "name": "Clay 2"
+      },
+      {
+        "id": "forest_01",
+        "name": "Forest 1"
+      },
+      {
+        "id": "forest_04",
+        "name": "Forest 4"
+      },
+      {
+        "id": "blue_03",
+        "name": "Blue 3"
+      },
+      {
+        "id": "rose_02",
+        "name": "Rose 2"
+      },
+      {
+        "id": "ink_01",
+        "name": "Ink 1"
+      },
+      {
+        "id": "ink_04",
+        "name": "Ink 4"
+      },
+      {
+        "id": "brass_03",
+        "name": "Brass 3"
+      }
+    ],
+    "advice": [
+      "Build the focus zone around one readable anchor before adding secondary pieces.",
+      "Keep the keep cable paths visually contained; use scale changes instead of extra objects to create interest.",
+      "Use repeated material or color notes to make the room feel intentional without overfilling it."
+    ],
+    "refinements": [
+      "Make it more minimalist",
+      "Make it more modern",
+      "Make it more Scandinavian",
+      "Make it more industrial",
+      "Make it more minimalist",
+      "Make it more modern",
+      "Make it more Scandinavian",
+      "Make it more industrial",
+      "Make it more minimalist",
+      "Make it more modern"
+    ],
+    "confidence": 0.9,
+    "demo": true
+  }
+}

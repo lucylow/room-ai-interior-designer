@@ -1,0 +1,2 @@
+import type {AIState} from './store';
+export const selectRecommendations=(s:AIState)=>s.result?.recommendations??[];export const selectInsights=(s:AIState)=>s.result?.insights??[];export const selectSelected=(s:AIState)=>selectRecommendations(s).find(r=>r.id===s.selectedId);export const selectTopCategories=(s:AIState)=>{const map=new Map<string,number>();for(const r of selectRecommendations(s))map.set(r.category,(map.get(r.category)??0)+1);return [...map.entries()].sort((a,b)=>b[1]-a[1]);};

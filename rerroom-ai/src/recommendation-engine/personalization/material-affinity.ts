@@ -1,0 +1,2 @@
+import type {UserPreferences,RoomContext} from '../core/types';
+export const materialAffinity=(room:RoomContext,prefs:UserPreferences)=>{const observed=room.objects.flatMap(o=>o.material?[o.material]:[]);const out:Record<string,number>={};for(const m of observed)out[m]=(out[m]??0)+.18;for(const m of prefs.materials)out[m]=(out[m]??0)+.42;return Object.entries(out).sort((a,b)=>b[1]-a[1]).map(([material,score])=>({material,score:Math.min(1,score)}));};

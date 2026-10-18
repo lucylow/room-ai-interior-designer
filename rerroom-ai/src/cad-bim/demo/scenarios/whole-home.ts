@@ -1,0 +1,2 @@
+import { AestheticIntent } from '../../core/types';
+export const WholeHomeScenario={room:'whole-home',goal:'Maintain material palette consistency across linked rooms.',intent:({preserveFeatures=[] as string[]}:{preserveFeatures?:string[]}={}):AestheticIntent=>({prompt:'Maintain material palette consistency across linked rooms.',style:'contemporary',palette:['warm white','oak'],materials:['oak','stone'],preserveFeatures:preserveFeatures||[],constraints:['Preserve authoritative CAD/BIM dimensions','Keep source openings unchanged'],clientPreferences:{}})};

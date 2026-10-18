@@ -1,0 +1,3 @@
+import type {Recommendation} from '../core/types';
+export interface RiskBudget{score:number;reversible:number;financial:number;spatial:number;reasons:string[];}
+export const riskBudget=(r:Recommendation):RiskBudget=>{const financial=Math.min(1,(r.estimatedCost??0)/5000);const reversible=r.actions.some(a=>['move-object','rotate-object','create-task'].includes(a.type))?.82:r.actions.length?0.55:.95;const spatial=r.category==='layout'||r.category==='spatial'?.35:.18;const score=Math.min(1,financial*.4+spatial*.35+(1-reversible)*.25);return {score,reversible,financial,spatial,reasons:[financial>.5?'Meaningful financial exposure.':'Low modeled financial exposure.',spatial>.3?'Spatial change should be previewed.':'Limited spatial disruption.']};};

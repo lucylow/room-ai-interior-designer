@@ -1,0 +1,2 @@
+import type {Recommendation} from '../../core/types';
+export const tradeoffText=(r:Recommendation)=>{const cost=r.estimatedCost??0;const effort={tiny:'very small',easy:'small',moderate:'moderate',large:'large',major:'major'}[r.effort];const impact=`${(r.expectedImpact*100).toFixed(0)}% modeled impact`;const spending=cost?`about ${cost} ${r.currency??''}`:'no direct catalog cost';return `This option has ${impact}, requires ${effort} effort, and carries ${spending} before onsite or delivery variance.`;};

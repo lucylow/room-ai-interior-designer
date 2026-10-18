@@ -1,0 +1,3 @@
+import {GenerativeOrchestrator} from '../generation/generative-orchestrator';
+import {MOCK_ROOM,mockIntent} from '../mock/data';
+export const runGenerativeSmoke=async()=>{const result=await new GenerativeOrchestrator().run({intent:mockIntent,room:MOCK_ROOM,candidateCount:10,now:1700000300000});if(result.concepts.length<4)throw new Error('Expected at least four creative concepts');if(!result.insights.length)throw new Error('Expected creative insights');return {concepts:result.concepts.length,insights:result.insights.length,top:result.concepts[0]?.title,metrics:result.metrics,warnings:result.warnings};};

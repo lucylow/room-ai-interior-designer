@@ -1,0 +1,2 @@
+import type {Insight} from '../../core/types';
+export const priorityShift=(before:Insight[],after:Insight[])=>{const score=(rows:Insight[],category:string)=>rows.filter(i=>i.category===category).reduce((s,i)=>s+i.confidence,0);const cats=[...new Set([...before.map(i=>i.category),...after.map(i=>i.category)])];return cats.map(category=>({category,delta:score(after,category)-score(before,category)})).sort((a,b)=>Math.abs(b.delta)-Math.abs(a.delta));};

@@ -1,0 +1,67 @@
+{
+  "demo": "RE:ROOM Buyable Shopping Studio",
+  "snapshotProducts": 14,
+  "result": {
+    "projectedSpend": 1596.99,
+    "remainingBudget": 903.01,
+    "selectedProducts": 4,
+    "styleCoverage": 1,
+    "buyableCoverage": 1,
+    "slots": [
+      {
+        "slotId": "sofa",
+        "primary": "KIVIK Sofa with chaise lounge",
+        "alternatives": []
+      },
+      {
+        "slotId": "chair",
+        "primary": "POÄNG Armchair",
+        "alternatives": []
+      },
+      {
+        "slotId": "table",
+        "primary": "POÄNG Armchair",
+        "alternatives": []
+      },
+      {
+        "slotId": "storage",
+        "primary": "KALLAX Shelf unit 77 cm",
+        "alternatives": [
+          "BILLY Bookcase",
+          "STORKLINTA 3-drawer chest",
+          "KALLAX Shelf unit 147 cm"
+        ]
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "name": "Lean demo",
+      "style": "minimalist",
+      "budget": 750,
+      "projectedSpend": 228.98,
+      "remaining": 521.02,
+      "budgetPass": true,
+      "selected": 3
+    },
+    {
+      "name": "Scandinavian target",
+      "style": "scandinavian",
+      "budget": 1500,
+      "projectedSpend": 1477.99,
+      "remaining": 22.01,
+      "budgetPass": true,
+      "selected": 3
+    },
+    {
+      "name": "Industrial branch",
+      "style": "industrial",
+      "budget": 1800,
+      "projectedSpend": 1707.98,
+      "remaining": 92.02,
+      "budgetPass": true,
+      "selected": 4
+    }
+  ],
+  "note": "Retail data is a checked snapshot/demo layer; production price, inventory, taxes, delivery, images and checkout must come from an authorized live retailer integration."
+}

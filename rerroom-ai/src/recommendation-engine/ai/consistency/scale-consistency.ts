@@ -1,0 +1,2 @@
+import type {Recommendation,RoomContext} from '../../core/types';
+export const scaleConsistency=(room:RoomContext,recs:Recommendation[])=>{const area=room.measurements.widthM*room.measurements.depthM;const footprint=room.objects.reduce((s,o)=>s+o.size.width*o.size.depth,0);const ratio=footprint/Math.max(.1,area);const score=Math.max(0,Math.min(1,1-Math.abs(ratio-.35)*1.6));return recs.map(r=>({recommendationId:r.id,score,footprintRatio:ratio}));};

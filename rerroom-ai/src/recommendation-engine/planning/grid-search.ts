@@ -1,0 +1,4 @@
+import type {RoomContext,Scenario} from '../core/types';import {simulate} from '../engine/simulation';
+export interface GridCandidate {objectId:string;x:number;z:number;score:number;valid:boolean;}
+export const evaluateGrid=(room:RoomContext,objectId:string,radius=.4,steps=4):GridCandidate[]=>{const out:GridCandidate[]=[];for(let ix=-steps;ix<=steps;ix++)for(let iz=-steps;iz<=steps;iz++){const x=radius*ix/steps,z=radius*iz/steps;const s:Scenario={id:`grid-${objectId}-${ix}-${iz}`,name:'grid candidate',description:'',deltas:[{objectId,moveX:x,moveZ:z}],expectedOutcome:'improved layout'};const r=simulate(room,s);out.push({objectId,x,z,score:r.circulation-r.overlap,valid:r.valid});}return out.sort((a,b)=>b.score-a.score);};
+export const bestGrid=(room:RoomContext,objectId:string)=>evaluateGrid(room,objectId)[0];

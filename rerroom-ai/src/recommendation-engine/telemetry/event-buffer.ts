@@ -1,0 +1,2 @@
+import type {AIEvent} from './event-types';
+export class EventBuffer{private rows:AIEvent[]=[];constructor(private readonly max=200){}push(event:AIEvent){this.rows.push(event);if(this.rows.length>this.max)this.rows=this.rows.slice(-this.max);}drain(limit=this.rows.length){const out=this.rows.slice(0,limit);this.rows=this.rows.slice(limit);return out;}peek(){return [...this.rows];}size(){return this.rows.length;}}

@@ -1,0 +1,3 @@
+import type {Recommendation,BudgetProfile} from '../core/types';
+export interface Allocation{id:string;amount:number;share:number;reason:string;}
+export const allocateBudget=(rows:Recommendation[],budget:BudgetProfile):Allocation[]=>{const candidates=rows.filter(r=>(r.estimatedCost??0)>0).sort((a,b)=>b.expectedImpact-a.expectedImpact);let remaining=budget.hardCap??budget.total;const out:Allocation[]=[];for(const r of candidates){const amount=Math.min(remaining,r.estimatedCost??0);if(amount<=0)continue;out.push({id:r.id,amount,share:budget.total?amount/budget.total:0,reason:`Funds ${r.title} based on expected impact.`});remaining-=amount;}return out;};

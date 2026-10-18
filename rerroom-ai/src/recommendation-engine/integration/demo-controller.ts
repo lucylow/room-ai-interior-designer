@@ -1,0 +1,3 @@
+import type {RecommendationSet} from '../core/types';
+export interface DemoState {step:number;label:string;locked:boolean;autoAdvanceMs:number;}
+export class DemoController{private state:DemoState={step:0,label:'Room overview',locked:false,autoAdvanceMs:2600};private results:RecommendationSet|null=null;setResults(r:RecommendationSet){this.results=r;}next(){if(this.state.locked)return this.state;this.state={...this.state,step:this.state.step+1,label:`Demo scene ${this.state.step+1}`};return this.state;}previous(){this.state={...this.state,step:Math.max(0,this.state.step-1),label:`Demo scene ${Math.max(0,this.state.step-1)}`};return this.state;}setLocked(locked:boolean){this.state={...this.state,locked};}snapshot(){return {state:{...this.state},result:this.results};}}

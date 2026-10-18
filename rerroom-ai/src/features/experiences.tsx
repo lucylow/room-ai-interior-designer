@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   mockARScene,
   mockPlanes,
@@ -9,6 +9,7 @@ import {
   mockStyles,
 } from "@/premium/data";
 import type { ARMode, FurnitureProduct } from "@/premium/types/models";
+import { generateProtectedConcept } from "@/ai/app-controller";
 import {
   constructionProgress,
   formatMoney,
@@ -30,7 +31,7 @@ import {
   StatusPill,
 } from "@/components/ui";
 
-export type SecondaryScreen = "design" | "studio" | "saved" | "profile" | "construction" | null;
+export type SecondaryScreen = "design" | "studio" | "saved" | "profile" | "privacy" | "construction" | "visualization" | "recommendations" | null;
 
 interface ExperienceProps {
   onNavigate: (tab: "home" | "explore" | "ar" | "shop" | "projects") => void;
@@ -468,6 +469,7 @@ export function ARScannerExperience({ onSecondary, notify }: ExperienceProps) {
 }
 
 export function DesignStudioExperience({ onNavigate, onSecondary, notify }: ExperienceProps) {
+  const requestRef = useRef<AbortController | null>(null);
   const [selectedRoomId, setSelectedRoomId] = useState(mockRooms[0].id);
   const [selectedStyle, setSelectedStyle] = useState(mockStyles[0].id);
   const [brief, setBrief] = useState(
@@ -477,12 +479,44 @@ export function DesignStudioExperience({ onNavigate, onSecondary, notify }: Expe
   const selectedRoom = mockRooms.find((room) => room.id === selectedRoomId) ?? mockRooms[0];
   const style = mockStyles.find((item) => item.id === selectedStyle) ?? mockStyles[0];
 
-  const generate = () => {
+  useEffect(() => () => requestRef.current?.abort(), []);
+  useEffect(() => {
+    if (!requestRef.current) return;
+    requestRef.current.abort();
+    requestRef.current = null;
+    setState((current) => current === "generating" ? "idle" : current);
+  }, [selectedRoomId, selectedStyle, brief]);
+
+  const generate = async () => {
+    requestRef.current?.abort();
+    const request = new AbortController();
+    requestRef.current = request;
     setState("generating");
-    window.setTimeout(() => {
+    try {
+      await generateProtectedConcept({
+        room: {
+          id: selectedRoom.id,
+          name: selectedRoom.name,
+          type: selectedRoom.type,
+          dimensions: {
+            widthM: selectedRoom.dimensions.widthM,
+            lengthM: selectedRoom.dimensions.lengthM,
+            ceilingM: selectedRoom.dimensions.ceilingM,
+          },
+        },
+        style: style.name,
+        prompt: brief,
+      }, request.signal);
+      if (request.signal.aborted) return;
       setState("ready");
-      notify("Your AI room concept is ready");
-    }, 650);
+      notify("Local demo concept ready. No room image was uploaded.");
+    } catch {
+      if (request.signal.aborted) return;
+      setState("idle");
+      notify("Concept not generated. Enable AI processing in Privacy Center and review your prompt.");
+    } finally {
+      if (requestRef.current === request) requestRef.current = null;
+    }
   };
 
   return (
@@ -552,7 +586,7 @@ export function DesignStudioExperience({ onNavigate, onSecondary, notify }: Expe
         </span>
         <div>
           <strong>Spatial data included</strong>
-          <p>Room boundary, 60 measurements, light estimate, clearance rules, and your saved items.</p>
+          <p>Only room dimensions, a simplified layout, style, and your brief enter the consent-checked local demo.</p>
         </div>
         <StatusPill tone="success">
           <Icon name="check" size={12} /> Ready
@@ -584,6 +618,11 @@ export function DesignStudioExperience({ onNavigate, onSecondary, notify }: Expe
         </Button>
         <Button className="button-dark" onClick={generate} disabled={state === "generating"}>
           {state === "generating" ? "Designing..." : "Generate concept"} <Icon name="spark" size={16} />
+        </Button>
+      </div>
+      <div className="design-actions" style={{ marginTop: 10 }}>
+        <Button className="button-secondary" onClick={() => onSecondary("recommendations")}>
+          <Icon name="spark" size={16} /> Explore room recommendations &amp; insights
         </Button>
       </div>
     </div>
@@ -619,6 +658,7 @@ export function StudioExperience({ onSecondary, onSelectProduct, notify }: Exper
             <strong>Warm Minimalist Living Room</strong>
           </div>
           <div className="studio-actions">
+            <IconButton icon="plan" label="Open 2D and 3D visualization workspace" onClick={() => onSecondary("visualization")} />
             <IconButton icon="save" label="Save scene" onClick={() => notify("3D layout saved offline")} />
             <IconButton icon="share" label="Share scene" onClick={() => notify("Share link copied")} />
           </div>
@@ -1190,6 +1230,13 @@ export function ProfileExperience({
       </section>
       <SectionHeading title="Workspace" />
       <div className="settings-card">
+        <Button onClick={() => onSecondary("privacy")}>
+          <Icon name="lock" size={19} />
+          <span>
+            Privacy & security<small>Consent, retention, and AI data controls</small>
+          </span>
+          <Icon name="chevron" size={17} />
+        </Button>
         <Button onClick={() => onSecondary("saved")}>
           <Icon name="bookmark" size={19} />
           <span>

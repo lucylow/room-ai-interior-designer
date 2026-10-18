@@ -1,0 +1,16 @@
+{
+  "name": "RE:ROOM AI Generative Technical V8",
+  "snapshotDate": "2026-10-02",
+  "sourceDirectory": "src/generative-technical-v8",
+  "typescriptFiles": 131,
+  "typescriptLines": 46348,
+  "approxPagesAt55Lines": 842.69,
+  "styles": 24,
+  "palettes": 12,
+  "mockScenarioRecords": 960,
+  "mode": "deterministic-demo-first",
+  "typecheck": "passed",
+  "demo": "passed",
+  "geometryInvariant": true,
+  "syntheticData": true
+}

@@ -1,0 +1,5 @@
+import type {RecommendationSet,Feedback} from '../core/types';
+export interface AIState {status:'idle'|'loading'|'ready'|'error';result?:RecommendationSet;error?:string;selectedId?:string;history:RecommendationSet[];feedback:Feedback[];}
+export type AIAction={type:'start'}|{type:'success';result:RecommendationSet}|{type:'failure';error:string}|{type:'select';id?:string}|{type:'feedback';feedback:Feedback}|{type:'clear'};
+export const initialAIState:AIState={status:'idle',history:[],feedback:[]};
+export const aiReducer=(state:AIState,action:AIAction):AIState=>{switch(action.type){case'start':return {...state,status:'loading',error:undefined};case'success':return {...state,status:'ready',result:action.result,error:undefined,history:[action.result,...state.history].slice(0,20)};case'failure':return {...state,status:'error',error:action.error};case'select':return {...state,selectedId:action.id};case'feedback':return {...state,feedback:[action.feedback,...state.feedback].slice(0,200)};case'clear':return initialAIState;}};

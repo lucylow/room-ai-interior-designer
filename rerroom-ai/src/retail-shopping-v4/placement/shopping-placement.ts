@@ -1,0 +1,4 @@
+import { RetailProduct, FurnitureSlot, ScenePatch, RoomEnvelope } from '../domain/commerce-types';
+export function placementBox(p:RetailProduct,slot:FurnitureSlot){return {x:slot.bbox.x,y:slot.bbox.y,width:p.dimensions.width/100,height:p.dimensions.depth/100,rotationDeg:slot.bbox.rotationDeg};}
+export function makeShoppingPatch(p:RetailProduct,slot:FurnitureSlot):ScenePatch{return{id:'patch-'+slot.id+'-'+p.id,action:'replace',slotId:slot.id,productId:p.id,bbox:placementBox(p,slot),reversible:true,source:'shopping-ai'};}
+export function validatePlacement(p:RetailProduct,slot:FurnitureSlot,room:RoomEnvelope){const box=placementBox(p,slot);const within=box.x>=0&&box.y>=0&&(box.x+box.width)<=room.width&&(box.y+box.height)<=room.depth;return{ok:within,reason:within?'Placement is inside room bounds.':'Placement extends outside room bounds.'};}

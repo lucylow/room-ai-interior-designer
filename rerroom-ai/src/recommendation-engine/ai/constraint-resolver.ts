@@ -1,0 +1,3 @@
+import type {Recommendation,RoomContext} from '../core/types';
+export interface ConstraintDecision{recommendationId:string;valid:boolean;violations:string[];}
+export const resolveConstraints=(room:RoomContext,rows:Recommendation[]):ConstraintDecision[]=>rows.map(r=>{const violations:string[]=[];if(room.measurements.confidence<.35)violations.push('Weak room dimensions.');if(r.category==='layout'&&room.objects.length<1)violations.push('No objects available for layout editing.');if(r.estimatedCost&&r.estimatedCost>20000)violations.push('Large budget exposure requires explicit review.');return {recommendationId:r.id,valid:violations.length===0,violations};});

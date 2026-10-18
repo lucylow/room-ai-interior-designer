@@ -1,0 +1,2 @@
+import type {Recommendation} from '../../core/types';
+export const riskSummary=(rows:Recommendation[])=>{const financial=rows.filter(r=>(r.estimatedCost??0)>1000).length;const construction=rows.filter(r=>r.category==='construction').length;const lowConfidence=rows.filter(r=>r.confidence<.5).length;return {financial,construction,lowConfidence,riskLevel:financial+construction+lowConfidence>6?'high':financial+construction+lowConfidence>2?'medium':'low'};};

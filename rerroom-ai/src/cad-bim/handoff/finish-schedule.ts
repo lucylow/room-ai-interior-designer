@@ -1,0 +1,3 @@
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
+export interface FinishRow { room:string; sourceFeatureId:string; finish:string; color?:string; notes:string; }
+export function buildFinishSchedule(model:AuthoritativeModel,overlay:DesignOverlay):FinishRow[]{return overlay.elements.filter(e=>e.kind==='material'||e.kind==='finish'||e.kind==='color').map(e=>{const f=model.features.find(x=>x.id===e.anchor?.sourceFeatureId);return {room:f?.name||'Unlabeled space',sourceFeatureId:e.anchor?.sourceFeatureId||'',finish:e.appearance.material||'As specified',color:e.appearance.color,notes:e.reasoning};});}

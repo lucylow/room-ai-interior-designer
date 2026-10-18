@@ -1,0 +1,1 @@
+export const geometry_lockPrompt={kind:'constraint',text:'Never hallucinate structural openings or room dimensions. Keep the existing camera perspective, wall envelope, door/window locations and measured proportions when geometry preservation is enabled.'};

@@ -1,0 +1,5 @@
+import type {RoomContext,Scenario} from '../core/types';
+import {simulate} from '../engine/simulation';
+export interface LocalSearchOptions {iterations:number;step:number;targetId:string;}
+export interface LocalSearchResult {scenario:Scenario;score:number;iterations:number;notes:string[];}
+export const localSearch=(room:RoomContext,base:Scenario,options:LocalSearchOptions):LocalSearchResult=>{let best=simulate(room,base);let bestScenario=base;for(let i=0;i<options.iterations;i++){const dx=((i%3)-1)*options.step;const candidate:Scenario={...base,id:`${base.id}-ls-${i}`,deltas:[...base.deltas,{objectId:options.targetId,moveX:dx}],expectedOutcome:'Improve local circulation'};const next=simulate(room,candidate);const score=next.circulation+(next.valid?.15:0)-next.overlap;if(score>best.circulation+(best.valid?.15:0)-best.overlap){best=next;bestScenario=candidate;}}return {scenario:bestScenario,score:best.circulation+(best.valid?.15:0)-best.overlap,iterations:options.iterations,notes:best.notes};};

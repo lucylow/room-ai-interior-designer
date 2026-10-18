@@ -1,0 +1,3 @@
+import type {CatalogItem} from '../core/types';import {scoreProduct,ProductFit} from './fit-score';import type {RoomContext,UserPreferences} from '../core/types';
+export interface AlternativeGroup {primary:CatalogItem;alternatives:CatalogItem[];fits:ProductFit[];}
+export const alternativesFor=(primary:CatalogItem,items:CatalogItem[],room:RoomContext,prefs:UserPreferences):AlternativeGroup=>{const candidates=items.filter(x=>x.id!==primary.id&&x.category===primary.category).map(item=>({item,fit:scoreProduct(item,room,prefs)})).sort((a,b)=>b.fit.overall-a.fit.overall);return {primary,alternatives:candidates.slice(0,5).map(x=>x.item),fits:candidates.slice(0,5).map(x=>x.fit)};};

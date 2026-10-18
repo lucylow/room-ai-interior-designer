@@ -1,0 +1,4 @@
+import type {RoomContext,RoomObject} from '../core/types';
+export interface RouteScore {distance:number;turns:number;clearance:number;score:number;notes:string[];}
+const center=(o:RoomObject)=>({x:o.position.x,z:o.position.z});
+export const routeScore=(room:RoomContext,path:string[]):RouteScore=>{const byId=new Map(room.objects.map(o=>[o.id,o]));let distance=0,turns=0,clearance=1;for(let i=1;i<path.length;i++){const a=byId.get(path[i-1]),b=byId.get(path[i]);if(!a||!b)continue;const ca=center(a),cb=center(b);distance+=Math.hypot(ca.x-cb.x,ca.z-cb.z);clearance=Math.min(clearance,Math.max(.15,room.circulationScore));if(i>1)turns++;}const score=Math.max(0,1-distance/Math.max(1,room.measurements.widthM+room.measurements.depthM)-turns*.04)*clearance;return {distance,turns,clearance,score,notes:score<.5?['Route is constrained.']:['Route appears practical.']};};

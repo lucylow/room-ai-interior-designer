@@ -1,0 +1,3 @@
+import type {Recommendation,Feedback} from '../core/types';import {mean} from '../core/math';
+export interface OfflineResult {acceptRate:number;scoreLift:number;coverage:number;sample:number;}
+export const evaluateFeedback=(rs:Recommendation[],fb:Feedback[]):OfflineResult=>{const map=new Map(fb.map(x=>[x.recommendationId,x.action]));const judged=rs.filter(r=>map.has(r.id));const accepted=judged.filter(r=>{const a=map.get(r.id);return a==='accepted'||a==='edited';}).length;const scoreLift=judged.length?mean(judged.map(r=>r.score))-.5:0;return {acceptRate:judged.length?accepted/judged.length:.5,scoreLift,coverage:rs.length?judged.length/rs.length:0,sample:judged.length};};

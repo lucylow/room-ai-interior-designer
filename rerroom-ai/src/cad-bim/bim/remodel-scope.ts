@@ -1,0 +1,3 @@
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
+export interface RemodelScopeLine { code:string; category:string; description:string; sourceFeatureId?:string; planningQuantity?:number; basis:'source-model'|'ai-overlay'|'designer'; }
+export function buildRemodelScope(model:AuthoritativeModel,overlay:DesignOverlay):RemodelScopeLine[]{const lines:RemodelScopeLine[]=[];for(const e of overlay.elements){lines.push({code:`AI-${e.kind.toUpperCase()}`,category:e.kind,description:e.reasoning,sourceFeatureId:e.anchor?.sourceFeatureId,planningQuantity:1,basis:e.source==='designer'?'designer':'ai-overlay'});}return lines;}

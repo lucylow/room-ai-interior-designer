@@ -1,0 +1,2 @@
+import type {Recommendation,Feedback} from '../../core/types';
+export const feedbackRerank=(rows:Recommendation[],feedback:Feedback[])=>rows.map(r=>{const events=feedback.filter(f=>f.recommendationId===r.id);const accepted=events.filter(f=>f.action==='accepted'||f.action==='saved').length;const rejected=events.filter(f=>f.action==='rejected').length;const edit=events.filter(f=>f.action==='edited').length;return {...r,score:Math.max(0,Math.min(1,r.score+(accepted*.035)-(rejected*.04)+(edit*.015)))};}).sort((a,b)=>b.score-a.score);

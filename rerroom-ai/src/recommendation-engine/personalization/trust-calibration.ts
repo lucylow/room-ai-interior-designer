@@ -1,0 +1,2 @@
+import type {Recommendation,Feedback} from '../core/types';
+export const trustCalibration=(rows:Recommendation[],feedback:Feedback[])=>rows.map(r=>{const fs=feedback.filter(f=>f.recommendationId===r.id);const accepted=fs.filter(f=>f.action==='accepted'||f.action==='saved').length;const rejected=fs.filter(f=>f.action==='rejected').length;const trust=Math.max(0,Math.min(1,.45+r.confidence*.4+(accepted-rejected)*.03));return {id:r.id,trust,label:trust>.75?'high':trust>.5?'medium':'low'};});

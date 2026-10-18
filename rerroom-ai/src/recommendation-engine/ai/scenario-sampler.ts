@@ -1,0 +1,2 @@
+import type {RoomContext,Scenario} from '../core/types';
+export const sampleScenarios=(room:RoomContext,targets:string[],count=12):Scenario[]=>{const out:Scenario[]=[];for(let i=0;i<count;i++){const target=targets[i%Math.max(1,targets.length)];const dx=((i%5)-2)*.12;const dz=((Math.floor(i/5)%5)-2)*.12;out.push({id:`sample-${room.roomId}-${i}`,name:`AI scenario ${i+1}`,description:'Deterministic exploration candidate',deltas:[{objectId:target,moveX:dx,moveZ:dz}],expectedOutcome:'Compare spatial metrics before applying.'});}return out;};

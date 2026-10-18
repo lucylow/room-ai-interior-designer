@@ -1,0 +1,7 @@
+/** RE:ROOM AI Retail Shopping Studio V5 — final commerce module. */
+import type { RetailProduct, RoomType, StyleName } from '../../retail-shopping-v4/domain/commerce-types';
+function money(v:number){return new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(Math.max(0,v));}
+function id(prefix:string,s:string){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return `${prefix}-${(h>>>0).toString(16)}`;}
+
+export interface RoomKitComparisonV2 { leftIds:string[]; rightIds:string[]; leftTotal:number; rightTotal:number; delta:number; styleOverlap:number; notes:string[]; }
+export function compareRoomKitsV2(left:RetailProduct[],right:RetailProduct[],style:StyleName):RoomKitComparisonV2{const leftTotal=left.reduce((s,p)=>s+p.price.amount,0);const rightTotal=right.reduce((s,p)=>s+p.price.amount,0);const leftTags=new Set(left.flatMap(p=>p.styles));const rightTags=new Set(right.flatMap(p=>p.styles));const shared=[...leftTags].filter(s=>rightTags.has(s)).length;const union=new Set([...leftTags,...rightTags]).size;return{leftIds:left.map(p=>p.id),rightIds:right.map(p=>p.id),leftTotal,rightTotal,delta:rightTotal-leftTotal,styleOverlap:union?shared/union:1,notes:[`${money(leftTotal)} vs ${money(rightTotal)} merchandise snapshots.`,`${Math.round((union?shared/union:1)*100)}% style-tag overlap.`,style&&right.some(p=>p.styles.includes(style))?`Both sides can support ${style} cues.`:`The selected style is not present on both sides.`]};}

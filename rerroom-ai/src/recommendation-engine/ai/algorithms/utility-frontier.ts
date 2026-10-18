@@ -1,0 +1,3 @@
+import type {Recommendation} from '../../core/types';
+export interface UtilityPoint{id:string;utility:number;cost:number;impact:number;effort:number;}
+export const utilityFrontier=(rows:Recommendation[]):UtilityPoint[]=>{const points=rows.map(r=>({id:r.id,utility:r.score*.45+r.expectedImpact*.35+r.confidence*.2,cost:r.estimatedCost??0,impact:r.expectedImpact,effort:({tiny:1,easy:2,moderate:3,large:5,major:8} as Record<string,number>)[r.effort]}));return points.filter(a=>!points.some(b=>a.id!==b.id&&b.utility>=a.utility&&b.cost<=a.cost&&b.effort<=a.effort&&(b.utility>a.utility||b.cost<a.cost||b.effort<a.effort)));};

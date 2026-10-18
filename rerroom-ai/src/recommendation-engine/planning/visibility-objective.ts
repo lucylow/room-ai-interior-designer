@@ -1,0 +1,2 @@
+import type {RoomContext,RoomObject} from '../core/types';
+export const visibilityScore=(room:RoomContext,targetId:string)=>{const target=room.objects.find(o=>o.id===targetId);if(!target)return 0;const area=room.measurements.widthM*room.measurements.depthM;const occupied=room.objects.reduce((s,o)=>s+o.size.width*o.size.depth*.5,0);const occlusion=Math.min(.9,occupied/Math.max(1,area*2));return Math.max(0,Math.min(1,.75-occlusion*.6+(room.naturalLightScore*.15)));};

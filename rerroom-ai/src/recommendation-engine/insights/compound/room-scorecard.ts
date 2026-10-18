@@ -1,0 +1,3 @@
+import type {RoomContext} from '../../core/types';
+export interface ScorecardItem{key:string;label:string;score:number;priority:number;}
+export const roomScorecard=(room:RoomContext):ScorecardItem[]=>[['layout','Layout',room.circulationScore],['storage','Storage',room.storageScore],['comfort','Comfort',room.comfortScore],['style','Style',Math.max(...Object.values(room.styleSignals),0)],['light','Lighting',room.naturalLightScore],['safety','Safety',room.safetyScore],['accessibility','Accessibility',room.accessibilityScore],['workflow','Workflow',room.workflowScore]].map(([key,label,score])=>({key:String(key),label:String(label),score:Number(score),priority:1-Number(score)})).sort((a,b)=>b.priority-a.priority);

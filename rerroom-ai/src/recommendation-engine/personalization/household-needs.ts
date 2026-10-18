@@ -1,0 +1,2 @@
+import type {UserPreferences,RoomContext} from '../core/types';
+export const inferHouseholdNeeds=(room:RoomContext,prefs:UserPreferences)=>{const needs=new Set(prefs.householdNeeds);if(room.roomType==='office')needs.add('focused-work');if(room.roomType==='nursery')needs.add('easy-clean');if(room.accessibilityScore<.6)needs.add('clear-paths');if(room.storageScore<.5)needs.add('storage');return [...needs];};

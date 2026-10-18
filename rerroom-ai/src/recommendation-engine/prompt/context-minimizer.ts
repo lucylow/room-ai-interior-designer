@@ -1,0 +1,3 @@
+import type {RecommendationRequest} from '../core/types';
+export interface MinimisedContext {roomType:string;dimensions:{width:number;depth:number;ceiling:number};objectTypes:string[];styles:string[];priorities:string[];prompt?:string;}
+export const minimise=(r:RecommendationRequest):MinimisedContext=>({roomType:r.room.roomType,dimensions:{width:r.room.measurements.widthM,depth:r.room.measurements.depthM,ceiling:r.room.measurements.ceilingM},objectTypes:r.room.objects.map(o=>o.type).slice(0,40),styles:r.preferences.preferredStyles.slice(0,8),priorities:r.preferences.priorities.slice(0,8),prompt:r.userPrompt?.slice(0,500)});

@@ -1,0 +1,3 @@
+import type {Recommendation} from '../core/types';
+export interface StabilityReport{mean:number;spread:number;stable:boolean;reason:string;}
+export const recommendationStability=(rows:Recommendation[]):StabilityReport=>{if(rows.length<2)return {mean:rows[0]?.score??0,spread:0,stable:true,reason:'Not enough candidates to estimate spread.'};const mean=rows.reduce((s,r)=>s+r.score,0)/rows.length;const spread=rows.reduce((s,r)=>s+Math.abs(r.score-mean),0)/rows.length;return {mean,spread,stable:spread<.18,reason:spread<.18?'Ranking is relatively stable.':'Scores are dispersed; show stronger evidence and comparisons.'};};

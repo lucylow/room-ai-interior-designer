@@ -1,0 +1,24 @@
+{
+  "artifact": "RE_ROOM_AI_RECOMMENDATIONS_INSIGHTS_100PLUS",
+  "generated": "2026-10-01",
+  "sourceFiles": 442,
+  "typescriptLines": 5705,
+  "approxPagesAt55LinesPerPage": 103.7,
+  "typecheck": "PASS",
+  "demo": "PASS",
+  "demoRecommendations": 10,
+  "demoInsights": 16,
+  "demoDataScore": 0.9685,
+  "demoDecisionConfidence": 0.895,
+  "demoWarnings": [],
+  "entrypoints": [
+    "src/index.ts",
+    "src/engine/pipeline.ts",
+    "src/demo/runner.ts"
+  ],
+  "integrationTargets": [
+    "RE:ROOM AI RoomModel",
+    "previous 2D/3D visualization layer",
+    "previous security/privacy layer"
+  ]
+}

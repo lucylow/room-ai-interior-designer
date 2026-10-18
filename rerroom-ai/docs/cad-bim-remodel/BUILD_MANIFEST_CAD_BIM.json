@@ -1,0 +1,13 @@
+{
+  "purpose": "CAD/BIM-grounded non-destructive remodeling workflow",
+  "new_typescript_files": 359,
+  "new_typescript_lines": 5508,
+  "approx_pages_at_55_lines": 100.1,
+  "entrypoint": "src/cad-bim/index.ts",
+  "source_of_truth": "authoritative CAD/BIM model",
+  "ai_behavior": "anchored non-destructive overlays with iterative refinement",
+  "handoff": "approved overlay + source revision + dimensional provenance",
+  "validated": true,
+  "validation_command": "tsc -p tsconfig.cad-bim.json --pretty false",
+  "demo": "runDemo(): approved=true, ready=true, handoff=true"
+}

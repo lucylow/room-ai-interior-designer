@@ -1,0 +1,16 @@
+import type {RoomContext,UserPreferences,Recommendation,Insight,Category} from '../core/types';
+import type {SignalBundle} from '../engine/context';
+import {makeEvidence} from '../core/evidence';
+import {clamp} from '../core/math';
+import * as rule from '../rules/safety';
+export interface AgentResult {agentId:string;recommendations:Recommendation[];insights:Insight[];signals:SignalBundle[];notes:string[];confidence:number;}
+const id='safety-agent';
+const category:Category='safety';
+export const run=async(room:RoomContext,prefs:UserPreferences):Promise<AgentResult>=>{
+ const recommendations=rule.generateRecommendations(room,prefs);const insight=rule.generateInsight(room);
+ const primaryMetric=Number(room['safetyScore']);
+ const signal:SignalBundle={name:'safetyScore',value:primaryMetric,confidence:room.measurements.confidence,category,evidence:[makeEvidence('model','safety agent',primaryMetric.toFixed(2),room.measurements.confidence,id)]};
+ const confidence=clamp(.55+room.measurements.confidence*.35);
+ const adjusted=recommendations.map((r,i)=>({...r,score:clamp(r.score*(.94+i*.015)*(confidence/.85))}));
+ return {agentId:id,recommendations:adjusted,insights:[insight],signals:[signal],notes:['Independent specialist signal; combine with other agents before applying actions.'],confidence};
+};

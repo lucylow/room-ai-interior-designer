@@ -1,0 +1,5 @@
+import type {RoomContext,Recommendation} from '../core/types';
+import {clamp,round} from '../core/math';
+export interface DataQuality{score:number;confidence:number;missing:string[];warnings:string[];}
+export const assessDataQuality=(room:RoomContext):DataQuality=>{const missing:string[]=[];const warnings:string[]=[];if(room.measurements.widthM<=0||room.measurements.depthM<=0)missing.push('valid room dimensions');if(room.measurements.confidence<.55)warnings.push('Measurements have low confidence.');if(!room.objects.length)warnings.push('No room objects were detected.');if(!room.inferredFunctions.length)warnings.push('No room functions were inferred.');const completeness=clamp(1-(missing.length*.3+warnings.length*.08),0,1);const score=clamp(completeness*.65+room.measurements.confidence*.35,0,1);return {score,confidence:.88,missing,warnings};};
+export const gateOnDataQuality=(room:RoomContext,rows:Recommendation[]):Recommendation[]=>{const q=assessDataQuality(room);return rows.map(r=>({...r,confidence:round(r.confidence*q.score,3),score:round(r.score*(.55+.45*q.score),3)}));};

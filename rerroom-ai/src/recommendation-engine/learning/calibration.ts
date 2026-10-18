@@ -1,0 +1,4 @@
+import {clamp} from '../core/math';
+export interface CalibrationBin {lower:number;upper:number;predicted:number;actual:number;count:number;}
+export const reliability=(predicted:number[],actual:number[],bins=10):CalibrationBin[]=>Array.from({length:bins},(_,i)=>{const lo=i/bins,hi=(i+1)/bins;const rows=predicted.map((p,j)=>({p,y:actual[j]})).filter(r=>r.p>=lo&&r.p<=(i===bins-1?1:hi));const predictedMean=rows.length?rows.reduce((s,r)=>s+r.p,0)/rows.length:0;const actualMean=rows.length?rows.reduce((s,r)=>s+r.y,0)/rows.length:0;return {lower:lo,upper:hi,predicted:clamp(predictedMean),actual:clamp(actualMean),count:rows.length};});
+export const expectedCalibrationError=(bins:CalibrationBin[]):number=>{const n=bins.reduce((s,b)=>s+b.count,0);return n?bins.reduce((s,b)=>s+Math.abs(b.predicted-b.actual)*b.count,0)/n:0;};

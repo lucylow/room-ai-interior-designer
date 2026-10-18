@@ -1,0 +1,3 @@
+import type {Recommendation} from '../core/types';
+export interface CameraHint{mode:'top'|'perspective'|'focus';targetId?:string;reason:string;}
+export const cameraHintFor=(r:Recommendation):CameraHint=>{const target=r.actions.find(a=>a.targetId)?.targetId;if(r.category==='layout'||r.category==='spatial')return {mode:'top',reason:'Layout change is easiest to compare from above.'};if(target)return {mode:'focus',targetId:target,reason:'Targeted object change benefits from an object-focused view.'};return {mode:'perspective',reason:'Room-level recommendation benefits from a contextual 3D view.'};};

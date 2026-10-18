@@ -1,0 +1,14 @@
+export const clamp=(v:number,min=0,max=1)=>Math.max(min,Math.min(max,v));
+export const lerp=(a:number,b:number,t:number)=>a+(b-a)*clamp(t);
+export const avg=(xs:number[])=>xs.length?xs.reduce((a,b)=>a+b,0)/xs.length:0;
+export const sum=(xs:number[])=>xs.reduce((a,b)=>a+b,0);
+export const norm=(v:number,min:number,max:number)=>max<=min?0:clamp((v-min)/(max-min));
+export const cosine=(a:number[],b:number[])=>{let d=0,aa=0,bb=0;for(let i=0;i<Math.min(a.length,b.length);i++){d+=a[i]*b[i];aa+=a[i]*a[i];bb+=b[i]*b[i]}return aa&&bb?d/Math.sqrt(aa*bb):0;};
+export const hashString=(input:string)=>{let h=2166136261;for(const ch of input){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}return (h>>>0).toString(16).padStart(8,'0');};
+export const seeded=(seed:number)=>{let s=seed>>>0;return ()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296;};};
+export const titleCase=(s:string)=>s.split(/[-_ ]+/).map(x=>x.charAt(0).toUpperCase()+x.slice(1)).join(' ');
+export const unique=(xs:string[])=>Array.from(new Set(xs));
+export const containsAny=(text:string,terms:string[])=>{const t=text.toLowerCase();return terms.some(x=>t.includes(x.toLowerCase()));};
+export const weightedMean=(rows:Array<{value:number;weight:number}>)=>{const w=rows.reduce((a,r)=>a+r.weight,0);return w?rows.reduce((a,r)=>a+r.value*r.weight,0)/w:0;};
+export const variance=(xs:number[])=>{const m=avg(xs);return avg(xs.map(x=>(x-m)**2));};
+export const stableSort=<T>(rows:T[],score:(x:T)=>number)=>rows.slice().sort((a,b)=>score(b)-score(a));

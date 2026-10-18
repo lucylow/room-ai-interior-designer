@@ -1,0 +1,19 @@
+{
+  "package": "RE:ROOM AI — Buyable Retail Shopping Studio V4",
+  "generated": "2026-10-01",
+  "typescript_files": 71,
+  "typescript_lines": 7578,
+  "approx_pages_at_55_lines": 137.78,
+  "new_substantive_modules": 53,
+  "typecheck": "passed",
+  "demo": "passed",
+  "retailer_snapshot": "IKEA Canada",
+  "snapshot_is_live_inventory": false,
+  "source_root": "src/retail-shopping-v4",
+  "entrypoints": [
+    "src/retail-shopping-v4/index.ts",
+    "src/retail-shopping-v4/commerce-studio.ts",
+    "src/retail-shopping-v4/demo/runner.ts"
+  ],
+  "demo_budget_behavior": "hard cap; skips unaffordable slots rather than selecting over-budget products"
+}

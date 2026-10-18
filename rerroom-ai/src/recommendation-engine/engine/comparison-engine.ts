@@ -1,0 +1,4 @@
+import type {Recommendation} from '../core/types';import {clamp} from '../core/math';
+export interface Comparison {left:string;right:string;scoreDelta:number;impactDelta:number;confidenceDelta:number;costDelta:number;summary:string;}
+export const compare=(a:Recommendation,b:Recommendation):Comparison=>{const scoreDelta=a.score-b.score,impactDelta=a.expectedImpact-b.expectedImpact,confidenceDelta=a.confidence-b.confidence,costDelta=(a.estimatedCost??0)-(b.estimatedCost??0);const summary=scoreDelta>.05?`${a.title} has the stronger composite fit.`:scoreDelta<-.05?`${b.title} has the stronger composite fit.`:'The two ideas are close in composite fit.';return {left:a.id,right:b.id,scoreDelta,impactDelta,confidenceDelta,costDelta,summary};};
+export const comparisonDistance=(c:Comparison)=>clamp(Math.abs(c.scoreDelta)+Math.abs(c.impactDelta)+Math.abs(c.confidenceDelta));

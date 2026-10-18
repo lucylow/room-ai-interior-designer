@@ -1,0 +1,3 @@
+import type {Recommendation,Insight} from '../../core/types';
+export interface NextAction{label:string;reason:string;score:number;recommendationId?:string;}
+export const nextBestActions=(rows:Recommendation[],insights:Insight[]):NextAction[]=>{const actions:NextAction[]=[];for(const r of rows.slice(0,8))actions.push({label:r.title,reason:r.rationale,score:r.expectedImpact*.55+r.confidence*.25+r.score*.2,recommendationId:r.id});for(const i of insights.slice(0,4))if(i.recommendedNextStep)actions.push({label:i.recommendedNextStep,reason:i.summary,score:i.confidence*.6+(i.metric??.5)*.4});return actions.sort((a,b)=>b.score-a.score).slice(0,8);};

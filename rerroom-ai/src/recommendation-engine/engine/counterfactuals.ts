@@ -1,0 +1,4 @@
+import type {RoomContext,Recommendation,Scenario} from '../core/types';import {simulate} from './simulation';import {clamp} from '../core/math';
+export interface Counterfactual {recommendationId:string;baseline:number;counterfactual:number;lift:number;valid:boolean;scenario:Scenario;}
+export const compareRecommendation=(room:RoomContext,r:Recommendation):Counterfactual=>{const baseline=room.circulationScore;const scenario:Scenario={id:`cf-${r.id}`,name:r.title,description:r.summary,deltas:r.actions.filter(a=>a.targetId).map(a=>({objectId:a.targetId,moveX:Number(a.payload.x??0),moveZ:Number(a.payload.z??0),rotate:Number(a.payload.rotation??0)})),expectedOutcome:r.summary};const result=simulate(room,scenario);return {recommendationId:r.id,baseline,counterfactual:result.circulation,lift:result.circulation-baseline,valid:result.valid,scenario};};
+export const counterfactualConfidence=(lift:number)=>clamp(.5+Math.abs(lift)*2);

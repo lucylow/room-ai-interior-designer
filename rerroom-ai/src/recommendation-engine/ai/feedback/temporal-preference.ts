@@ -1,0 +1,3 @@
+import type {Feedback} from '../../core/types';
+export const temporalPreference=(rows:Feedback[],now=Date.now())=>{const halfLife=21*86400000;return rows.map(f=>{const age=Math.max(0,now-f.createdAt);const decay=Math.pow(.5,age/halfLife);const signed=f.action==='accepted'||f.action==='saved'||f.action==='edited'?1:f.action==='rejected'?-1:0;return {feedback:f,weight:decay,signed:signed*decay};});};
+export const aggregateTemporalPreference=(rows:Feedback[],now=Date.now())=>{const weighted=temporalPreference(rows,now);const total=weighted.reduce((s,r)=>s+r.weight,0)||1;return weighted.reduce((s,r)=>s+r.signed,0)/total;};

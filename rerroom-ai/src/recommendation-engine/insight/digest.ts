@@ -1,0 +1,3 @@
+import type {Insight,Recommendation} from '../core/types';import {joinNatural} from '../core/text';
+export interface Digest {headline:string;summary:string;topInsights:string[];topRecommendations:string[];}
+export const buildDigest=(insights:Insight[],recs:Recommendation[]):Digest=>{const topI=insights.slice(0,4),topR=recs.slice(0,4);const headline=topI.length?topI[0].title:'Room looks balanced';const summary=topI.length?`The main themes are ${joinNatural(topI.map(i=>i.title.toLowerCase()))}.`:'No major priority signal was detected.';return {headline,summary,topInsights:topI.map(i=>i.id),topRecommendations:topR.map(r=>r.id)};};

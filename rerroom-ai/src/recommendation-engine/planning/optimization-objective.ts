@@ -1,0 +1,4 @@
+import type {RoomContext} from '../core/types';import {clamp,mean} from '../core/math';
+export interface ObjectiveVector {circulation:number;light:number;storage:number;balance:number;comfort:number;accessibility:number;safety:number;overall:number;}
+export const objective=(room:RoomContext):ObjectiveVector=>{const values=[room.circulationScore,room.naturalLightScore,room.storageScore,room.visualBalanceScore,room.comfortScore,room.accessibilityScore,room.safetyScore];return {circulation:values[0],light:values[1],storage:values[2],balance:values[3],comfort:values[4],accessibility:values[5],safety:values[6],overall:clamp(mean(values))};};
+export const weightedObjective=(o:ObjectiveVector,w:Partial<Record<keyof ObjectiveVector,number>>={})=>clamp(o.circulation*(w.circulation??.2)+o.light*(w.light??.15)+o.storage*(w.storage??.15)+o.balance*(w.balance??.12)+o.comfort*(w.comfort??.14)+o.accessibility*(w.accessibility??.12)+o.safety*(w.safety??.12));

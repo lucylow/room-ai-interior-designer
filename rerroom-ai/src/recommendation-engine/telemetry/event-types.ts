@@ -1,0 +1,3 @@
+export type AIEventName='recommendation_generated'|'recommendation_viewed'|'recommendation_accepted'|'recommendation_rejected'|'recommendation_edited'|'insight_viewed'|'insight_acted'|'scenario_created'|'visualization_opened'|'shopping_clicked'|'privacy_blocked';
+export interface AIEvent {id:string;name:AIEventName;sessionId:string;timestamp:number;properties:Record<string,string|number|boolean>;privacySafe:true;}
+export const makeEvent=(name:AIEventName,sessionId:string,properties:Record<string,string|number|boolean>):AIEvent=>({id:`evt-${sessionId}-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,name,sessionId,timestamp:Date.now(),properties,privacySafe:true});

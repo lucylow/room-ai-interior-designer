@@ -1,0 +1,3 @@
+import type {RoomContext,RoomObject} from '../core/types';
+export interface ZoneScore {zone:string;density:number;cohesion:number;score:number;}
+export const zoneScore=(room:RoomContext,zoneTag:string):ZoneScore=>{const members=room.objects.filter(o=>o.attributes?.zone===zoneTag);const density=Math.min(1,members.length/6);const center=members.reduce((s,o)=>s+Math.hypot(o.position.x,o.position.z),0)/Math.max(1,members.length);const cohesion=members.length?Math.max(0,1-center/Math.max(room.measurements.widthM,room.measurements.depthM)):0;return {zone:zoneTag,density,cohesion,score:density*.55+cohesion*.45};};

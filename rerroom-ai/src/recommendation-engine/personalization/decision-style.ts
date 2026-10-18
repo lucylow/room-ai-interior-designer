@@ -1,0 +1,2 @@
+import type {UserPreferences,Recommendation} from '../core/types';
+export const decisionStyle=(prefs:UserPreferences,rows:Recommendation[])=>{const complexity=rows.reduce((s,r)=>s+(({tiny:1,easy:2,moderate:3,large:4,major:5} as Record<string,number>)[r.effort]),0)/Math.max(1,rows.length);const budgetSensitive=prefs.budgetMax!==undefined;return {complexityPreference:5-Math.min(4,complexity),budgetSensitive,likesFastWins:prefs.renovationHorizon==='now'};};

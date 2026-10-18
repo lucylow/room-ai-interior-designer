@@ -1,0 +1,3 @@
+import { AuthoritativeModel } from '../core/types';
+export interface RoomTopology { roomId:string; connectedRoomIds:string[]; boundaryFeatureIds:string[]; openings:string[]; }
+export function buildRoomTopology(model:AuthoritativeModel):RoomTopology[]{const rooms=model.features.filter(f=>f.kind==='room');const openings=model.features.filter(f=>['door','opening'].includes(f.kind)&&f.center);return rooms.map(r=>{const near=openings.filter(o=>Math.hypot(o.center!.x-(r.center?.x||0),o.center!.y-(r.center?.y||0))<Math.max(r.size?.width||4,r.size?.depth||4));return {roomId:r.id,connectedRoomIds:rooms.filter(x=>x.id!==r.id&&Math.hypot((x.center?.x||0)-(r.center?.x||0),(x.center?.y||0)-(r.center?.y||0))<8).map(x=>x.id),boundaryFeatureIds:[r.id],openings:near.map(o=>o.id)};});}

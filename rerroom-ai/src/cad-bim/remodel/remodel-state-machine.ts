@@ -1,0 +1,3 @@
+import { RemodelStatus } from '../core/types';
+const NEXT:Record<RemodelStatus,RemodelStatus[]>={draft:['imported'],imported:['analyzed'],analyzed:['concepting'],concepting:['iterating','client-review'],iterating:['iterating','client-review'],['client-review']:['iterating','approved'],approved:['handoff-ready'],['handoff-ready']:['issued'],issued:[]};
+export class RemodelStateMachine { can(from:RemodelStatus,to:RemodelStatus){return NEXT[from].includes(to);} transition(from:RemodelStatus,to:RemodelStatus){if(!this.can(from,to))throw new Error(`Invalid remodel transition ${from} -> ${to}`);return to;} }

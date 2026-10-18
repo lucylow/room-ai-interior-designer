@@ -1,0 +1,7 @@
+/** RE:ROOM AI Retail Shopping Studio V5 — final commerce module. */
+import type { RetailProduct, RoomType, StyleName } from '../../retail-shopping-v4/domain/commerce-types';
+function money(v:number){return new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(Math.max(0,v));}
+function id(prefix:string,s:string){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return `${prefix}-${(h>>>0).toString(16)}`;}
+
+export interface RetailEmptyStateV2 { title:string; message:string; actions:string[]; }
+export function emptyStateV2(kind:'no-results'|'over-budget'|'no-fit'|'no-saved'|'offline'):RetailEmptyStateV2{switch(kind){case'no-results':return{title:'No matching furniture',message:'Try widening style, size or budget filters.',actions:['Clear size filter','Try a nearby style','Increase budget']};case'over-budget':return{title:'Budget exceeded',message:'Use cheaper alternatives before adding more items.',actions:['Find cheaper','Open budget ladder','Remove optional items']};case'no-fit':return{title:'Nothing fits this slot',message:'Try a compact product or adjust the furniture slot.',actions:['Find smaller','Try another category','Review circulation']};case'no-saved':return{title:'No saved room sets',message:'Save a promising furniture combination for later.',actions:['Browse recommendations','Create room set']};default:return{title:'Retail data is offline',message:'Demo snapshots remain available; live retailer verification is unavailable.',actions:['Use demo snapshot','Retry live catalog later']};}}

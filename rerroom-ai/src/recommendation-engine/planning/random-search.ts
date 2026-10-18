@@ -1,0 +1,4 @@
+import type {RoomContext,Scenario} from '../core/types';
+import {simulate} from '../engine/simulation';
+export interface RandomSearchOptions {iterations:number;range:number;targetId:string;seed:number;}
+export const randomSearch=(room:RoomContext,base:Scenario,o:RandomSearchOptions)=>{let seed=o.seed>>>0,best={scenario:base,result:simulate(room,base),score:-Infinity};const next=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};for(let i=0;i<o.iterations;i++){const candidate:Scenario={...base,id:`${base.id}-rnd-${i}`,deltas:[...base.deltas,{objectId:o.targetId,moveX:(next()-.5)*o.range,moveZ:(next()-.5)*o.range}],expectedOutcome:'Explore alternate object position'};const result=simulate(room,candidate);const score=result.circulation+(result.valid?15:0)-result.overlap;if(score>best.score)best={scenario:candidate,result,score};}return best;};

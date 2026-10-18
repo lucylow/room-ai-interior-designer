@@ -1,0 +1,4 @@
+import type {Recommendation,RoomContext} from '../../core/types';
+export interface ConsistencyResult{score:number;violations:string[];support:string[];}
+export const styleConsistency=(room:RoomContext,recs:Recommendation[]):ConsistencyResult=>{const styles=Object.entries(room.styleSignals).filter(([,v])=>v>.55).map(([k])=>k);const violations:string[]=[];const support:string[]=[];for(const r of recs){const hits=r.tags.filter(t=>styles.includes(t)).length;if(hits) support.push(`${r.id}:${hits}`);if(styles.length&&hits===0&&r.category==='style')violations.push(r.id);}const score=recs.length?Math.max(0,1-violations.length/recs.length*.6):1;return {score,violations,support};};
+export const enforceStyleConsistency=(room:RoomContext,recs:Recommendation[])=>{const c=styleConsistency(room,recs);return recs.map(r=>c.violations.includes(r.id)?{...r,score:r.score*.88,tags:[...r.tags,'style-review']}:r);};

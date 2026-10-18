@@ -1,0 +1,3 @@
+import type {RoomContext,Recommendation,Insight} from '../../core/types';
+export interface AIDigest{title:string;summary:string;topRecommendation?:string;topInsight?:string;metrics:Record<string,number>;}
+export const buildAIDigest=(room:RoomContext,recs:Recommendation[],insights:Insight[]):AIDigest=>{const topRec=recs[0],topInsight=insights[0];return {title:`AI design digest for ${room.name}`,summary:`${recs.length} recommendations and ${insights.length} insights were generated from the current room evidence.`,topRecommendation:topRec?.title,topInsight:topInsight?.title,metrics:{recommendations:recs.length,insights:insights.length,measurementConfidence:room.measurements.confidence,leadingScore:topRec?.score??0}};};

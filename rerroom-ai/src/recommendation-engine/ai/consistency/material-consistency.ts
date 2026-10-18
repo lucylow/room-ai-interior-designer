@@ -1,0 +1,2 @@
+import type {Recommendation,RoomContext} from '../../core/types';
+export const materialConsistency=(room:RoomContext,recs:Recommendation[])=>{const materials=new Set(room.objects.map(o=>o.material).filter((m):m is string=>Boolean(m)).map(m=>m.toLowerCase()));return recs.map(r=>{const overlap=r.tags.filter(t=>materials.has(t.toLowerCase())).length;return {recommendationId:r.id,score:Math.min(1,.68+overlap*.12),overlap};});};

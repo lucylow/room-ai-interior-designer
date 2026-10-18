@@ -1,0 +1,2 @@
+import type {CatalogItem,RoomContext,UserPreferences} from '../core/types';
+export const styleMatch=(item:CatalogItem,room:RoomContext,prefs:UserPreferences)=>{const tags=new Set([...(item.styleTags??[])]);const roomStyles=Object.entries(room.styleSignals).filter(([,v])=>v>.5).map(([k])=>k);const preferred=prefs.preferredStyles;const positive=[...new Set([...roomStyles,...preferred])].filter(s=>tags.has(s)).length;const avoided=prefs.avoidedStyles.filter(s=>tags.has(s)).length;return Math.max(0,Math.min(1,.35+positive*.18-avoided*.3));};

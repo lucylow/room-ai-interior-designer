@@ -1,0 +1,2 @@
+import type {Recommendation} from '../../core/types';
+export const alternativeText=(r:Recommendation,alts:Recommendation[])=>alts.filter(a=>a.id!==r.id).sort((a,b)=>Math.abs(a.expectedImpact-r.expectedImpact)-Math.abs(b.expectedImpact-r.expectedImpact)).slice(0,3).map(a=>({id:a.id,title:a.title,difference:`Impact ${(a.expectedImpact*100).toFixed(0)}% vs ${(r.expectedImpact*100).toFixed(0)}%`,reason:a.effort!==r.effort?`Different effort: ${a.effort}`:'Similar effort with different evidence.'}));

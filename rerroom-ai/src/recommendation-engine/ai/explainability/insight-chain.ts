@@ -1,0 +1,3 @@
+import type {Insight,Recommendation} from '../../core/types';
+export interface InsightChain{insightId:string;linkedRecommendationIds:string[];strength:number;reason:string;}
+export const insightChain=(insights:Insight[],recs:Recommendation[]):InsightChain[]=>insights.map(i=>{const related=recs.filter(r=>r.category===i.category||r.tags.some(t=>i.title.toLowerCase().includes(t))).slice(0,5);const strength=related.length?related.reduce((s,r)=>s+r.confidence*r.expectedImpact,0)/related.length:0;return {insightId:i.id,linkedRecommendationIds:related.map(r=>r.id),strength,reason:related.length?`${related.length} recommendation(s) share the insight category or signals.`:'No direct recommendation link was found.'};});

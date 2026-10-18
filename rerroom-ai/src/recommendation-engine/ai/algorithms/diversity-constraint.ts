@@ -1,0 +1,3 @@
+import type {Recommendation} from '../../core/types';
+export interface DiversityOptions{maxPerTag:number;maxPerCategory:number;limit:number;}
+export const applyDiversity=(rows:Recommendation[],o:DiversityOptions):Recommendation[]=>{const tags:Record<string,number>={},cats:Record<string,number>={};const out:Recommendation[]=[];for(const r of rows.slice().sort((a,b)=>b.score-a.score)){const catCount=cats[r.category]??0;if(catCount>=o.maxPerCategory)continue;const popular=r.tags.some(t=>(tags[t]??0)>=o.maxPerTag);if(popular)continue;out.push(r);cats[r.category]=catCount+1;for(const t of r.tags)tags[t]=(tags[t]??0)+1;if(out.length>=o.limit)break;}return out;};

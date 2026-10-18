@@ -1,0 +1,4 @@
+import type {Recommendation,Policy} from '../core/types';
+export interface PolicyDecision{allow:boolean;reason:string[];scoreMultiplier:number;}
+export const decidePolicy=(row:Recommendation,policy:Policy):PolicyDecision=>{const reason:string[]=[];if(row.confidence<policy.minConfidence)reason.push('low confidence');if(row.score<policy.minScore)reason.push('low score');if(policy.requireEvidence&&!row.evidence.length)reason.push('no evidence');if(row.actions.length>policy.maxActions)reason.push('too many actions');if(row.category==='shopping'&&!policy.allowShopping)reason.push('shopping disabled');return {allow:reason.length===0,reason,scoreMultiplier:reason.length?Math.max(.25,1-reason.length*.15):1};};
+export const enforcePolicy=(rows:Recommendation[],policy:Policy)=>rows.map(r=>{const d=decidePolicy(r,policy);return {...r,score:Math.max(0,Math.min(1,r.score*d.scoreMultiplier)),tags:d.allow?r.tags:[...r.tags,'policy-reviewed']};});

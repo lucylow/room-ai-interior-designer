@@ -1,0 +1,3 @@
+import type {RecommendationRequest} from '../core/types';
+export interface AIRequestEnvelope {requestId:string;mode:'local'|'remote';roomId:string;purpose:'recommendations'|'insights'|'comparison';allowShopping:boolean;allowConstruction:boolean;redactedPrompt?:string;}
+export const makeEnvelope=(r:RecommendationRequest,mode:'local'|'remote'='local'):AIRequestEnvelope=>({requestId:`ai-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,mode,roomId:r.room.roomId,purpose:'recommendations',allowShopping:r.preferences.shoppingEnabled,allowConstruction:false,redactedPrompt:r.userPrompt?.slice(0,1000)});

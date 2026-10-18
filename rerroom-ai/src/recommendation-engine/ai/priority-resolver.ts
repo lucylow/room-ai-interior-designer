@@ -1,0 +1,3 @@
+import type {Recommendation,UserPreferences} from '../core/types';
+export interface ResolvedPriority{category:Recommendation['category'];weight:number;reasons:string[];}
+export const resolvePriorities=(rows:Recommendation[],prefs:UserPreferences):ResolvedPriority[]=>{const categories=[...new Set(rows.map(r=>r.category))];return categories.map(category=>{const reasons:string[]=[];let weight=prefs.priorities.includes(category)?.8:.3;if(prefs.dislikes.some(d=>rows.find(r=>r.category===category)?.tags.includes(d))) {weight-=.25;reasons.push('Conflicts with a recorded dislike.');}if(category==='safety') {weight+=.35;reasons.push('Safety receives a protective priority.');}return {category,weight:Math.max(0,Math.min(1,weight)),reasons};}).sort((a,b)=>b.weight-a.weight);};

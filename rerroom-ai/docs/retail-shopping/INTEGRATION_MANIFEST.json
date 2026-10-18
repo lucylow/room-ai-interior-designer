@@ -1,0 +1,13 @@
+{
+  "package": "RE:ROOM AI Retail Shopping V4",
+  "source_files": 71,
+  "source_root": "src/retail-shopping-v4",
+  "public_entrypoints": [
+    "src/retail-shopping-v4/index.ts",
+    "src/room-remodel/index.ts"
+  ],
+  "snapshot_captured_at": "2026-10-01T00:00:00.000Z",
+  "snapshot_fresh_until": "2026-10-02T00:00:00.000Z",
+  "live_inventory_claim": false,
+  "typecheck": "pnpm run retail-shopping:typecheck"
+}

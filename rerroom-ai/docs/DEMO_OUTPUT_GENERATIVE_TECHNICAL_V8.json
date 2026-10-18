@@ -1,0 +1,23 @@
+[
+  {
+    "roomType": "living-room",
+    "generated": 8,
+    "top": "scandinavian / p03 / living-room",
+    "refined": "scandinavian / p03 / living-room · make it warmer",
+    "warnings": []
+  },
+  {
+    "roomType": "bedroom",
+    "generated": 8,
+    "top": "minimalist / p02 / bedroom",
+    "refined": "minimalist / p02 / bedroom · make it warmer",
+    "warnings": []
+  },
+  {
+    "roomType": "home-office",
+    "generated": 8,
+    "top": "japandi / p05 / home-office",
+    "refined": "japandi / p05 / home-office · make it warmer",
+    "warnings": []
+  }
+]

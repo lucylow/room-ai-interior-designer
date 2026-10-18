@@ -1,0 +1,2 @@
+import type {AIEvent} from './event-types';
+export const rankingMonitor=(events:AIEvent[])=>{const generated=events.filter(e=>e.name==='recommendation_generated');const viewed=events.filter(e=>e.name==='recommendation_viewed');const accepted=events.filter(e=>e.name==='recommendation_accepted');return {generated:generated.length,viewed:viewed.length,accepted:accepted.length,dropAfterGeneration:generated.length?1-viewed.length/generated.length:0,dropAfterView:viewed.length?1-accepted.length/viewed.length:0};};

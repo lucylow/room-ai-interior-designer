@@ -1,0 +1,3 @@
+import {clamp,safeDiv} from '../core/math';
+export const hashEmbedding=(text:string,dim=24):number[]=>{const out=Array(dim).fill(0);for(const raw of text.toLowerCase().split(/\s+/)){let h=2166136261;for(let i=0;i<raw.length;i++){h^=raw.charCodeAt(i);h=Math.imul(h,16777619);}out[(h>>>0)%dim]+=1;}const norm=Math.sqrt(out.reduce((s,x)=>s+x*x,0));return out.map(x=>safeDiv(x,norm,0));};
+export const cosine=(a:number[],b:number[]):number=>{const n=Math.min(a.length,b.length);let dot=0,aa=0,bb=0;for(let i=0;i<n;i++){dot+=a[i]*b[i];aa+=a[i]**2;bb+=b[i]**2;}return clamp(safeDiv(dot,Math.sqrt(aa*bb),0),-1,1);};

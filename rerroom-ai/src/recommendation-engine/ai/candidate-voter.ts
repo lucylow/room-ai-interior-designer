@@ -1,0 +1,2 @@
+import type {Recommendation} from '../core/types';
+export const voteCandidates=(rows:Recommendation[])=>{const grouped=new Map<string,Recommendation[]>();for(const r of rows){const key=r.category;(grouped.get(key)??grouped.set(key,[]).get(key)!).push(r);}return [...grouped.entries()].map(([category,items])=>({category,winner:items.slice().sort((a,b)=>(b.score+b.expectedImpact+b.confidence)-(a.score+a.expectedImpact+a.confidence))[0],support:items.length}));};

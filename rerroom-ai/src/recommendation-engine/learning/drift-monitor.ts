@@ -1,0 +1,3 @@
+import type {FeatureVector} from '../core/types';import {mean,std,clamp} from '../core/math';
+export interface DriftAlert {feature:string;baseline:number;current:number;distance:number;status:'ok'|'watch'|'alert';}
+export const monitor=(feature:string,baseline:FeatureVector[],current:FeatureVector[]):DriftAlert=>{const b=baseline.flatMap(v=>v.values.filter(x=>x.name===feature).map(x=>x.value)),c=current.flatMap(v=>v.values.filter(x=>x.name===feature).map(x=>x.value));const bm=mean(b),cm=mean(c),scale=Math.max(std(b),.03),distance=clamp(Math.abs(cm-bm)/4);return {feature,baseline:bm,current:cm,distance,status:distance>.75?'alert':distance>.45?'watch':'ok'};};

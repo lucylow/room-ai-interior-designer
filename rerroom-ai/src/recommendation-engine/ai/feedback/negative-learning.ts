@@ -1,0 +1,4 @@
+import type {Feedback,Recommendation,UserPreferences} from '../../core/types';
+export interface NegativePattern{token:string;count:number;strength:number;}
+export const learnNegativePatterns=(rows:Feedback[],recs:Recommendation[]):NegativePattern[]=>{const map:Record<string,number>={};for(const f of rows.filter(x=>x.action==='rejected')){const r=recs.find(x=>x.id===f.recommendationId);for(const t of r?.tags??[])map[t]=(map[t]??0)+1;}const max=Math.max(...Object.values(map),1);return Object.entries(map).map(([token,count])=>({token,count,strength:count/max})).sort((a,b)=>b.strength-a.strength);};
+export const applyNegativePatterns=(recs:Recommendation[],patterns:NegativePattern[])=>recs.map(r=>{const penalty=patterns.filter(p=>r.tags.includes(p.token)).reduce((s,p)=>s+p.strength*.05,0);return {...r,score:Math.max(0,r.score-penalty)};});

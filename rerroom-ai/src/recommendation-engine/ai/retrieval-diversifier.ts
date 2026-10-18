@@ -1,0 +1,2 @@
+import type {Recommendation} from '../core/types';
+export const diversifyRecommendations=(rows:Recommendation[],limit=12,maxPerCategory=3):Recommendation[]=>{const counts:Record<string,number>={};const selected:Recommendation[]=[];for(const row of [...rows].sort((a,b)=>b.score-a.score)){const count=counts[row.category]??0;if(count>=maxPerCategory)continue;selected.push(row);counts[row.category]=count+1;if(selected.length>=limit)break;}return selected;};

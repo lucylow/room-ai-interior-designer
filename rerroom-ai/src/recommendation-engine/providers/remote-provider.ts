@@ -1,0 +1,3 @@
+import type {RecommendationRequest,RecommendationSet} from '../core/types';import type {RecommendationProvider} from './types';
+export interface RemoteTransport {post(path:string,payload:unknown,signal?:AbortSignal):Promise<unknown>;}
+export class RemoteRecommendationProvider implements RecommendationProvider {readonly id='remote-adapter';readonly version='1.0.0';constructor(private transport:RemoteTransport){}async generate(request:RecommendationRequest):Promise<RecommendationSet>{const data=await this.transport.post('/ai/recommendations',request);if(!data||typeof data!=='object')throw new Error('Invalid AI provider response');return data as RecommendationSet;}async healthy(){return true;}}

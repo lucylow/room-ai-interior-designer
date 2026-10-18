@@ -1,0 +1,3 @@
+import type {Recommendation,Feedback} from '../core/types';
+export interface DecisionLogEntry {recommendationId:string;title:string;decision:'accepted'|'rejected'|'pending';timestamp:number;reason?:string;}
+export const createDecisionLog=(rows:Recommendation[],feedback:Feedback[]):DecisionLogEntry[]=>rows.map(r=>{const events=feedback.filter(f=>f.recommendationId===r.id).sort((a,b)=>b.createdAt-a.createdAt);const latest=events[0];const decision:DecisionLogEntry['decision']=latest?(latest.action==='rejected'?'rejected':latest.action==='accepted'||latest.action==='saved'||latest.action==='edited'?'accepted':'pending'):'pending';return {recommendationId:r.id,title:r.title,decision,timestamp:latest?.createdAt??r.createdAt,reason:latest?.reason};});

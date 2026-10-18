@@ -1,0 +1,3 @@
+import type {Recommendation} from '../core/types';
+export interface TrustScore {id:string;trust:number;label:'high'|'medium'|'low';factors:string[];}
+export const calibrateTrust=(rows:Recommendation[]):TrustScore[]=>rows.map(r=>{const factors:string[]=[];let trust=.45+r.confidence*.35+r.evidence.length*.02+r.expectedImpact*.1-r.tradeoffs.length*.015;if(r.modelVersion)trust+=.04;if(r.actions.some(a=>a.type==='none')){trust-=.05;factors.push('No executable action attached.');}if(r.evidence.length>=3)factors.push('Multiple evidence items.');if(r.confidence>.8)factors.push('High model confidence.');trust=Math.max(0,Math.min(1,trust));return {id:r.id,trust,label:trust>=.76?'high':trust>=.5?'medium':'low',factors};});

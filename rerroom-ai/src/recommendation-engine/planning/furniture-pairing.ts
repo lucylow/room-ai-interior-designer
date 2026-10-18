@@ -1,0 +1,3 @@
+import type {RoomObject} from '../core/types';
+export interface PairScore {a:string;b:string;score:number;reasons:string[];}
+export const pairFurniture=(objects:RoomObject[]):PairScore[]=>{const out:PairScore[]=[];for(let i=0;i<objects.length;i++){for(let j=i+1;j<objects.length;j++){const a=objects[i],b=objects[j];const shared=[...(a.styleTags??[])].filter(x=>(b.styleTags??[]).includes(x)).length;const distance=Math.hypot(a.position.x-b.position.x,a.position.z-b.position.z);const proximity=Math.max(0,1-distance/4);out.push({a:a.id,b:b.id,score:Math.min(1,shared*.2+proximity*.8),reasons:[shared?`${shared} shared style tags`:'No shared style tags',`distance ${distance.toFixed(2)}m`]});}}return out.sort((a,b)=>b.score-a.score);};

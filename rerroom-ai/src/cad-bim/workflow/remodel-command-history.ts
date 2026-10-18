@@ -1,0 +1,2 @@
+import { RemodelChangeRequest } from '../core/types';
+export class RemodelCommandHistory { private commands:RemodelChangeRequest[]=[]; push(c:RemodelChangeRequest){this.commands.push(JSON.parse(JSON.stringify(c)));} all(){return JSON.parse(JSON.stringify(this.commands));} latest(){return this.commands[this.commands.length-1];} byAnchor(featureId:string){return this.commands.filter(c=>c.targetAnchors.some(a=>a.sourceFeatureId===featureId));} count(){return this.commands.length;} }

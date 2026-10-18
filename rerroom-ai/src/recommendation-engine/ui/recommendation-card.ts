@@ -1,0 +1,3 @@
+import type {Recommendation} from '../core/types';import {explain} from '../reco/explain';
+export interface RecommendationCardModel {id:string;title:string;scoreLabel:string;confidenceLabel:string;costLabel:string;effortLabel:string;why:string;previewModes:string[];}
+export const toCard=(r:Recommendation):RecommendationCardModel=>{const e=explain(r);return {id:r.id,title:r.title,scoreLabel:`${Math.round(r.score*100)}% fit`,confidenceLabel:`${e.confidenceLabel} confidence`,costLabel:r.estimatedCost==null?'No cost estimate':`${r.estimatedCost} ${r.currency??'CAD'}`,effortLabel:r.effort,why:e.why[1]??r.rationale,previewModes:r.actions.some(a=>a.targetId)?['2D','3D','compare']:['2D','3D']};};

@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "verbatimModuleSyntax": true,
+    "allowJs": false,
+    "resolveJsonModule": true,
+    "types": []
+  },
+  "include": [
+    "src/visualization/core/**/*.ts",
+    "src/visualization/state/**/*.ts",
+    "src/visualization/ai/**/*.ts",
+    "src/visualization/performance/**/*.ts",
+    "src/visualization/two-d/**/*.ts",
+    "src/visualization/demo/**/*.ts",
+    "src/tests/visualization/**/*.ts"
+  ]
+}

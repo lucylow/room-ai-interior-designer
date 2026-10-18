@@ -1,0 +1,418 @@
+{
+  "recommendations": [
+    {
+      "id": "rule-comfort-demo-living-01-1",
+      "category": "comfort",
+      "title": "Separate active and quiet uses",
+      "summary": "Separate active and quiet uses.",
+      "rationale": "The comfortScore signal and current preferences support this as an actionable starting point.",
+      "score": 0.9647565887555182,
+      "confidence": 0.8573162,
+      "effort": "moderate",
+      "expectedImpact": 0.802,
+      "evidence": [
+        {
+          "id": "ev-21-measurement",
+          "kind": "measurement",
+          "label": "comfortScore",
+          "value": "0.74",
+          "confidence": 0.91,
+          "sourceId": "comfortScore",
+          "weight": 1
+        },
+        {
+          "id": "ev-22-preference",
+          "kind": "preference",
+          "label": "preferred styles",
+          "value": "modern, warm minimal",
+          "confidence": 0.8,
+          "weight": 1
+        }
+      ],
+      "actions": [
+        {
+          "type": "none",
+          "payload": {
+            "rule": "comfort",
+            "index": 1,
+            "signal": 0.74
+          }
+        }
+      ],
+      "tradeoffs": [
+        "May require moving more than one object."
+      ],
+      "alternatives": [
+        "Test a smaller version first."
+      ],
+      "tags": [
+        "comfort",
+        "quiet",
+        "texture",
+        "ai-rule"
+      ],
+      "createdAt": 1790900384869
+    },
+    {
+      "id": "rule-comfort-demo-living-01-0",
+      "category": "comfort",
+      "title": "Protect the main relaxation zone",
+      "summary": "Protect the main relaxation zone.",
+      "rationale": "The comfortScore signal and current preferences support this as an actionable starting point.",
+      "score": 0.9647565887555182,
+      "confidence": 0.8573162,
+      "effort": "easy",
+      "expectedImpact": 0.772,
+      "evidence": [
+        {
+          "id": "ev-19-measurement",
+          "kind": "measurement",
+          "label": "comfortScore",
+          "value": "0.74",
+          "confidence": 0.91,
+          "sourceId": "comfortScore",
+          "weight": 1
+        },
+        {
+          "id": "ev-20-preference",
+          "kind": "preference",
+          "label": "preferred styles",
+          "value": "modern, warm minimal",
+          "confidence": 0.8,
+          "weight": 1
+        }
+      ],
+      "actions": [
+        {
+          "type": "none",
+          "payload": {
+            "rule": "comfort",
+            "index": 0,
+            "signal": 0.74
+          }
+        }
+      ],
+      "tradeoffs": [],
+      "alternatives": [
+        "Test a smaller version first."
+      ],
+      "tags": [
+        "comfort",
+        "quiet",
+        "texture",
+        "ai-rule"
+      ],
+      "createdAt": 1790900384869
+    },
+    {
+      "id": "rule-layout-demo-living-01-0",
+      "category": "layout",
+      "title": "Create a clearer primary path",
+      "summary": "Create a clearer primary path.",
+      "rationale": "The circulationScore signal and current preferences support this as an actionable starting point.",
+      "score": 0.9647565887555182,
+      "confidence": 0.8573162,
+      "effort": "easy",
+      "expectedImpact": 0.7330000000000001,
+      "evidence": [
+        {
+          "id": "ev-1-measurement",
+          "kind": "measurement",
+          "label": "circulationScore",
+          "value": "0.61",
+          "confidence": 0.91,
+          "sourceId": "circulationScore",
+          "weight": 1
+        },
+        {
+          "id": "ev-2-preference",
+          "kind": "preference",
+          "label": "preferred styles",
+          "value": "modern, warm minimal",
+          "confidence": 0.8,
+          "weight": 1
+        }
+      ],
+      "actions": [
+        {
+          "type": "none",
+          "payload": {
+            "rule": "layout",
+            "index": 0,
+            "signal": 0.61
+          }
+        }
+      ],
+      "tradeoffs": [],
+      "alternatives": [
+        "Test a smaller version first."
+      ],
+      "tags": [
+        "circulation",
+        "path",
+        "flow",
+        "ai-rule"
+      ],
+      "createdAt": 1790900384868
+    },
+    {
+      "id": "rule-storage-demo-living-01-0",
+      "category": "storage",
+      "title": "Increase closed storage near active zones",
+      "summary": "Increase closed storage near active zones.",
+      "rationale": "The storageScore signal and current preferences support this as an actionable starting point.",
+      "score": 0.9541274136904518,
+      "confidence": 0.8573162,
+      "effort": "easy",
+      "expectedImpact": 0.6940000000000001,
+      "evidence": [
+        {
+          "id": "ev-13-measurement",
+          "kind": "measurement",
+          "label": "storageScore",
+          "value": "0.48",
+          "confidence": 0.91,
+          "sourceId": "storageScore",
+          "weight": 1
+        },
+        {
+          "id": "ev-14-preference",
+          "kind": "preference",
+          "label": "preferred styles",
+          "value": "modern, warm minimal",
+          "confidence": 0.8,
+          "weight": 1
+        }
+      ],
+      "actions": [
+        {
+          "type": "none",
+          "payload": {
+            "rule": "storage",
+            "index": 0,
+            "signal": 0.48
+          }
+        }
+      ],
+      "tradeoffs": [],
+      "alternatives": [
+        "Test a smaller version first."
+      ],
+      "tags": [
+        "storage",
+        "organization",
+        "capacity",
+        "ai-rule"
+      ],
+      "createdAt": 1790900384869
+    },
+    {
+      "id": "rule-comfort-demo-living-01-2",
+      "category": "comfort",
+      "title": "Add tactile layers around the primary seat",
+      "summary": "Add tactile layers around the primary seat.",
+      "rationale": "The comfortScore signal and current preferences support this as an actionable starting point.",
+      "score": 0.9077664951149881,
+      "confidence": 0.8573162,
+      "effort": "tiny",
+      "expectedImpact": 0.8320000000000001,
+      "evidence": [
+        {
+          "id": "ev-23-measurement",
+          "kind": "measurement",
+          "label": "comfortScore",
+          "value": "0.74",
+          "confidence": 0.91,
+          "sourceId": "comfortScore",
+          "weight": 1
+        },
+        {
+          "id": "ev-24-preference",
+          "kind": "preference",
+          "label": "preferred styles",
+          "value": "modern, warm minimal",
+          "confidence": 0.8,
+          "weight": 1
+        }
+      ],
+      "actions": [
+        {
+          "type": "none",
+          "payload": {
+            "rule": "comfort",
+            "index": 2,
+            "signal": 0.74
+          }
+        }
+      ],
+      "tradeoffs": [],
+      "alternatives": [
+        "Test a smaller version first."
+      ],
+      "tags": [
+        "comfort",
+        "quiet",
+        "texture",
+        "ai-rule"
+      ],
+      "createdAt": 1790900384869
+    }
+  ],
+  "insights": [
+    {
+      "id": "ins-demo-living-01-storageScore",
+      "severity": "medium",
+      "category": "storage",
+      "title": "Storage readiness",
+      "summary": "Storage readiness signal is 48% based on current room inputs.",
+      "metric": 48,
+      "unit": "%",
+      "direction": "unknown",
+      "evidence": [
+        {
+          "id": "ev-141-measurement",
+          "kind": "measurement",
+          "label": "storageScore",
+          "value": "0.48",
+          "confidence": 0.91,
+          "sourceId": "storageScore",
+          "weight": 1
+        }
+      ],
+      "recommendedNextStep": "Review the related recommendations",
+      "confidence": 0.8547012500000001,
+      "createdAt": 1790900384868
+    },
+    {
+      "id": "rule-insight-storage-demo-living-01",
+      "severity": "medium",
+      "category": "storage",
+      "title": "storage opportunity",
+      "summary": "Current storageScore quality is 48%.",
+      "metric": 48,
+      "unit": "%",
+      "direction": "unknown",
+      "evidence": [
+        {
+          "id": "ev-33-rule",
+          "kind": "rule",
+          "label": "storage signal",
+          "value": "0.48",
+          "confidence": 0.91,
+          "weight": 1
+        }
+      ],
+      "recommendedNextStep": "Review the first AI recommendation in this category.",
+      "confidence": 0.8503430000000002,
+      "createdAt": 1790900384869
+    },
+    {
+      "id": "ins-demo-living-01-circulationScore",
+      "severity": "low",
+      "category": "layout",
+      "title": "Circulation quality",
+      "summary": "Circulation quality signal is 61% based on current room inputs.",
+      "metric": 61,
+      "unit": "%",
+      "direction": "unknown",
+      "evidence": [
+        {
+          "id": "ev-139-measurement",
+          "kind": "measurement",
+          "label": "circulationScore",
+          "value": "0.61",
+          "confidence": 0.91,
+          "sourceId": "circulationScore",
+          "weight": 1
+        }
+      ],
+      "recommendedNextStep": "Monitor the signal after the next edit.",
+      "confidence": 0.8547012500000001,
+      "createdAt": 1790900384868
+    },
+    {
+      "id": "ins-demo-living-01-clutterScore",
+      "severity": "low",
+      "category": "storage",
+      "title": "Visual clutter",
+      "summary": "Visual clutter signal is 58% based on current room inputs.",
+      "metric": 58.00000000000001,
+      "unit": "%",
+      "direction": "unknown",
+      "evidence": [
+        {
+          "id": "ev-140-measurement",
+          "kind": "measurement",
+          "label": "clutterScore",
+          "value": "0.42",
+          "confidence": 0.91,
+          "sourceId": "clutterScore",
+          "weight": 1
+        }
+      ],
+      "recommendedNextStep": "Review the related recommendations",
+      "confidence": 0.8547012500000001,
+      "createdAt": 1790900384868
+    },
+    {
+      "id": "ins-demo-living-01-visualBalanceScore",
+      "severity": "low",
+      "category": "style",
+      "title": "Visual balance",
+      "summary": "Visual balance signal is 67% based on current room inputs.",
+      "metric": 67,
+      "unit": "%",
+      "direction": "unknown",
+      "evidence": [
+        {
+          "id": "ev-142-measurement",
+          "kind": "measurement",
+          "label": "visualBalanceScore",
+          "value": "0.67",
+          "confidence": 0.91,
+          "sourceId": "visualBalanceScore",
+          "weight": 1
+        }
+      ],
+      "recommendedNextStep": "Monitor the signal after the next edit.",
+      "confidence": 0.8547012500000001,
+      "createdAt": 1790900384868
+    },
+    {
+      "id": "rule-insight-layout-demo-living-01",
+      "severity": "low",
+      "category": "layout",
+      "title": "layout opportunity",
+      "summary": "Current circulationScore quality is 61%.",
+      "metric": 61,
+      "unit": "%",
+      "direction": "unknown",
+      "evidence": [
+        {
+          "id": "ev-31-rule",
+          "kind": "rule",
+          "label": "layout signal",
+          "value": "0.61",
+          "confidence": 0.91,
+          "weight": 1
+        }
+      ],
+      "recommendedNextStep": "Keep the current setup and test alternatives.",
+      "confidence": 0.8503430000000002,
+      "createdAt": 1790900384869
+    }
+  ],
+  "metrics": {
+    "durationMs": 9,
+    "quality": 0.8573161999999999,
+    "agentConfidence": 0.8685,
+    "intentConfidence": 0.82,
+    "dataScore": 0.9685,
+    "decisionConfidence": 0.895,
+    "evidenceCoverage": 1,
+    "recommendationCount": 10,
+    "insightCount": 16,
+    "finalImpact": 0.768
+  },
+  "warnings": []
+}

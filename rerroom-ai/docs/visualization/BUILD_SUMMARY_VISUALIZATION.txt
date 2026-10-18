@@ -1,0 +1,18 @@
+RE:ROOM 2D + 3D VISUALIZATION EXPANSION
+
+Cumulative pack includes the prior security/privacy/state layer plus the new visualization layer.
+Visualization code: 5,545 TypeScript/TSX lines across 147 files.
+Visualization + integration TypeScript/TSX: 5,753 lines.
+Approximate 55-line pages: 105.
+TypeScript verification: tsc -p tsconfig.visualization.json --noEmit PASS.
+
+Major additions:
+- Shared meters-based SpatialScene model
+- Advanced 2D plan editor math, hit testing, labels, snapping, measurements, compare/export
+- Interactive 3D scene components for walls, openings, furniture, lighting, cameras, tours
+- LOD/culling/cache/progressive loading/quality governance/memory budgets
+- Visualization state, history, commands, compare, persistence and interaction controllers
+- AI spatial recommendations + validation gate
+- Demo catalog, rooms, tours, lighting scenarios and assets
+- Accessibility/fallback UI
+- RoomStateModel integration adapter

@@ -1,0 +1,3 @@
+import type {Recommendation,UserPreferences} from '../core/types';
+export const satisfactionPrediction=(r:Recommendation,prefs:UserPreferences)=>{const styleHit=r.tags.some(t=>prefs.preferredStyles.includes(t))?.14:0;const priorityHit=r.category&&prefs.priorities.includes(r.category)?.2:0;const budgetHit=prefs.budgetMax&&r.estimatedCost?(r.estimatedCost<=prefs.budgetMax)?.15:-.15:0;return Math.max(0,Math.min(1,.35+r.score*.35+r.confidence*.2+styleHit+priorityHit+budgetHit));};
+export const rankBySatisfaction=(rows:Recommendation[],prefs:UserPreferences)=>rows.map(r=>({recommendation:r,predicted:satisfactionPrediction(r,prefs)})).sort((a,b)=>b.predicted-a.predicted);

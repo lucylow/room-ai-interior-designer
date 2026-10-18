@@ -1,0 +1,3 @@
+import type {Insight} from '../core/types';
+export interface Pattern {category:string;count:number;meanConfidence:number;severityPeak:Insight['severity'];}
+export const detectPatterns=(items:Insight[]):Pattern[]=>{const map=new Map<string,Insight[]>();for(const i of items){const a=map.get(i.category)??[];a.push(i);map.set(i.category,a);}const weight={info:1,low:2,medium:3,high:4,critical:5};return [...map.entries()].map(([category,rows])=>({category,count:rows.length,meanConfidence:rows.reduce((s,x)=>s+x.confidence,0)/rows.length,severityPeak:rows.sort((a,b)=>weight[b.severity]-weight[a.severity])[0].severity}));};

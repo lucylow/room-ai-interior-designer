@@ -1,0 +1,12 @@
+import {modernStyle} from './modern';
+import {minimalistStyle} from './minimalist';
+import {scandinavianStyle} from './scandinavian';
+import {industrialStyle} from './industrial';
+import {japandiStyle} from './japandi';
+import {mid_centuryStyle} from './mid-century';
+import {bohemianStyle} from './bohemian';
+import {organic_modernStyle} from './organic-modern';
+import {contemporaryStyle} from './contemporary';
+import {warm_minimalStyle} from './warm-minimal';
+export const STYLE_LIBRARY=[modernStyle, minimalistStyle, scandinavianStyle, industrialStyle, japandiStyle, mid_centuryStyle, bohemianStyle, organic_modernStyle, contemporaryStyle, warm_minimalStyle];
+export const STYLE_BY_ID=Object.fromEntries(STYLE_LIBRARY.map(x=>[x.id,x]));

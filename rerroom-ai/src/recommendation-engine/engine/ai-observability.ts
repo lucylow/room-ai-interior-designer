@@ -1,0 +1,2 @@
+import type {Recommendation,Insight} from '../core/types';
+export const aiObservability=(recs:Recommendation[],insights:Insight[])=>{const recConfidence=recs.length?recs.reduce((s,r)=>s+r.confidence,0)/recs.length:0;const insightConfidence=insights.length?insights.reduce((s,i)=>s+i.confidence,0)/insights.length:0;const evidenceCoverage=recs.length?recs.filter(r=>r.evidence.length>=2).length/recs.length:0;return {recConfidence,insightConfidence,evidenceCoverage,ready:recConfidence>=.55&&insightConfidence>=.55&&evidenceCoverage>=.5};};

@@ -1,0 +1,3 @@
+import type {Candidate} from '../core/types';
+export interface DecisionMatrix{candidateId:string;benefit:number;cost:number;effort:number;confidence:number;utility:number;}
+export const decisionMatrix=(rows:Candidate[]):DecisionMatrix[]=>rows.map(c=>{const benefit=Math.min(1,c.baseScore*.55+c.impact*.45);const cost=Math.min(1,(c.cost??0)/5000);const effort=({tiny:.05,easy:.12,moderate:.25,large:.45,major:.7} as Record<string,number>)[c.effort];const utility=Math.max(0,benefit*(.7+c.evidence.length*.03)-cost*.2-effort*.1);return {candidateId:c.id,benefit,cost,effort,confidence:Math.min(1,.45+c.evidence.length*.08),utility};}).sort((a,b)=>b.utility-a.utility);

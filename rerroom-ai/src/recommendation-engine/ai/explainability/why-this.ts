@@ -1,0 +1,3 @@
+import type {Recommendation,UserPreferences} from '../../core/types';
+export interface WhyThis{matches:string[];conflicts:string[];score:number;}
+export const whyThis=(r:Recommendation,prefs:UserPreferences):WhyThis=>{const matches:string[]=[];const conflicts:string[]=[];for(const tag of r.tags){if(prefs.preferredStyles.includes(tag)||prefs.preferredColors.includes(tag)||prefs.materials.includes(tag))matches.push(tag);if(prefs.dislikes.includes(tag)||prefs.avoidedStyles.includes(tag)||prefs.avoidedColors.includes(tag))conflicts.push(tag);}const score=Math.max(0,Math.min(1,r.score+matches.length*.05-conflicts.length*.12));return {matches,conflicts,score};};

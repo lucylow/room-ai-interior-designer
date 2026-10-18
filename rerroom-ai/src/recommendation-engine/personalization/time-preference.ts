@@ -1,0 +1,2 @@
+import type {UserPreferences,Recommendation} from '../core/types';
+export const timeFit=(prefs:UserPreferences,r:Recommendation)=>{const lead=({now:7,soon:30,later:120,exploring:365} as Record<string,number>)[prefs.renovationHorizon];const effort=({tiny:1,easy:3,moderate:10,large:30,major:90} as Record<string,number>)[r.effort];return Math.max(0,Math.min(1,1-Math.max(0,effort-lead)/Math.max(1,lead)));};

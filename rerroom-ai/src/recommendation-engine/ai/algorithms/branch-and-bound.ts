@@ -1,0 +1,3 @@
+import type {Recommendation} from '../../core/types';
+export interface BranchResult{ids:string[];score:number;cost:number;}
+export const branchAndBound=(rows:Recommendation[],budget:number,maxItems=4):BranchResult=>{let best:BranchResult={ids:[],score:0,cost:0};const visit=(index:number,ids:string[],score:number,cost:number)=>{if(ids.length>=maxItems||index>=rows.length){if(score>best.score)best={ids:[...ids],score,cost};return;}const r=rows[index],c=r.estimatedCost??0;if(cost+c<=budget)visit(index+1,[...ids,r.id],score+r.expectedImpact,cost+c);visit(index+1,ids,score,cost);};visit(0,[],0,0);return best;};

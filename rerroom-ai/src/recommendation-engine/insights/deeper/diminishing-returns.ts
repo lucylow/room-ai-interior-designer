@@ -1,0 +1,2 @@
+import type {Insight} from '../../core/types';
+export const diminishingReturns=(rows:Insight[])=>{const vals=rows.map(r=>r.metric??0);const gains:number[]=[];for(let i=1;i<vals.length;i++)gains.push(vals[i]-vals[i-1]);if(gains.length<3)return {detected:false,ratio:1};const early=Math.abs(gains[0])+Math.abs(gains[1]);const late=Math.abs(gains[gains.length-1]);const ratio=early?late/Math.max(.0001,early/2):1;return {detected:ratio<.35,ratio};};

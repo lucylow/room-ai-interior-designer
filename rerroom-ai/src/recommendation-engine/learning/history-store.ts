@@ -1,0 +1,2 @@
+import type {RecommendationSet} from '../core/types';
+export class RecommendationHistoryStore {private rows:RecommendationSet[]=[];push(row:RecommendationSet){this.rows=[row,...this.rows].slice(0,50);}latest(){return this.rows[0];}find(traceId:string){return this.rows.find(r=>r.traceId===traceId);}list(limit=20){return this.rows.slice(0,limit);}clear(){this.rows=[];}size(){return this.rows.length;}}

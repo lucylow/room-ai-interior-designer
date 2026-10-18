@@ -1,0 +1,95 @@
+.visualization-workspace {
+  display: grid;
+  grid-template-rows: auto auto minmax(520px, 1fr) auto;
+  width: 100%;
+  min-height: 0;
+  background: #f3f4f7;
+  color: #17181b;
+}
+
+.visualization-workspace-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 8px;
+  min-height: 540px;
+  padding: 8px;
+}
+
+.visualization-workspace-canvas {
+  position: relative;
+  min-width: 0;
+  min-height: 520px;
+  overflow: hidden;
+  background: #eef1f4;
+}
+
+.visualization-workspace-tools {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  overflow: auto;
+}
+
+.visualization-workspace-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 8px;
+  padding: 0 8px 8px;
+}
+
+.visualization-object-count {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 6px 9px;
+  border: 1px solid #e2e3e8;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 11px;
+}
+
+.visualization-camera-presets {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #e2e3e8;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.visualization-camera-presets button {
+  margin: 2px;
+  padding: 6px 8px;
+  border: 1px solid #d8dae1;
+  border-radius: 8px;
+  background: #fff;
+}
+
+@media (max-width: 760px) {
+  .visualization-workspace-main {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .visualization-workspace-canvas {
+    height: clamp(420px, 55vh, 620px);
+    min-height: 420px;
+  }
+
+  .visualization-workspace-tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .visualization-workspace-footer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 430px) {
+  .visualization-workspace-tools {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

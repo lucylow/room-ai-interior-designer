@@ -1,0 +1,2 @@
+import {clamp} from '../core/math';
+export const novelty=(candidate:string,history:string[]):number=>{if(!history.length)return 1;const lower=candidate.toLowerCase();const sims=history.map(h=>{const A=new Set(lower.split(/\s+/)),B=new Set(h.toLowerCase().split(/\s+/));let hit=0;for(const x of A)if(B.has(x))hit++;return hit/Math.max(1,new Set([...A,...B]).size)});return clamp(1-Math.max(...sims));};

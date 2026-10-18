@@ -1,0 +1,2 @@
+import { AestheticIntent } from '../../core/types';
+export const DesignerUploadIfcScenario={room:'ifc-import',goal:'Start from IFC semantic model and preserve BIM entity identity.',intent:({preserveFeatures=[] as string[]}:{preserveFeatures?:string[]}={}):AestheticIntent=>({prompt:'Start from IFC semantic model and preserve BIM entity identity.',style:'contemporary',palette:['warm white','oak'],materials:['oak','stone'],preserveFeatures:preserveFeatures||[],constraints:['Preserve authoritative CAD/BIM dimensions','Keep source openings unchanged'],clientPreferences:{}})};

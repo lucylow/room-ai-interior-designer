@@ -1,0 +1,13 @@
+import type {RoomContext,RoomObject,Opening,Rect,Vec3} from './types';
+import {clamp,safeDiv} from './math';
+export const footprint=(o:RoomObject):Rect=>({x:o.position.x-o.size.width/2,z:o.position.z-o.size.depth/2,width:o.size.width,depth:o.size.depth});
+export const center=(o:RoomObject)=>({x:o.position.x,z:o.position.z});
+export const contains=(a:Rect,b:Rect):boolean=>b.x>=a.x&&b.z>=a.z&&b.x+b.width<=a.x+a.width&&b.z+b.depth<=a.z+a.depth;
+export const overlapArea=(a:Rect,b:Rect):number=>{const x=Math.max(0,Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x));const z=Math.max(0,Math.min(a.z+a.depth,b.z+b.depth)-Math.max(a.z,b.z));return x*z;};
+export const roomRect=(r:RoomContext):Rect=>({x:0,z:0,width:r.measurements.widthM,depth:r.measurements.depthM});
+export const boundaryMargin=(r:RoomContext,o:RoomObject):number=>{const f=footprint(o);const rr=roomRect(r);return Math.min(f.x-rr.x,f.z-rr.z,rr.x+rr.width-(f.x+f.width),rr.z+rr.depth-(f.z+f.depth));};
+export const pairwiseOverlap=(room:RoomContext):number=>{const fs=room.objects.filter(o=>!o.locked).map(footprint);let hits=0;for(let i=0;i<fs.length;i++)for(let j=i+1;j<fs.length;j++)if(overlapArea(fs[i],fs[j])>0.01)hits++;return safeDiv(hits,Math.max(1,(fs.length*(fs.length-1))/2));};
+export const averageClearance=(room:RoomContext):number=>{const rr=roomRect(room);const xs=room.objects.map(o=>{const f=footprint(o);return Math.max(0,boundaryMargin(room,o))+Math.min(f.x+f.width/2,rr.width-f.x-f.width/2,f.z+f.depth/2,rr.depth-f.z-f.depth/2);});return xs.length?Math.min(1,Math.max(0,xs.reduce((a,b)=>a+b,0)/xs.length/2)):1;};
+export const nearestOpening=(o:RoomObject,openings:Opening[]):number=>{if(!openings.length)return 1;return Math.min(...openings.map(x=>Math.hypot(o.position.x-x.x,o.position.z-x.z)));};
+export const routeClearance=(room:RoomContext):number=>clamp(.35+.65*room.circulationScore-.35*pairwiseOverlap(room));
+export const point3=(x:number,y:number,z:number):Vec3=>({x,y,z});

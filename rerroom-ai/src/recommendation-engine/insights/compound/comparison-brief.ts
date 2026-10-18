@@ -1,0 +1,2 @@
+import type {Recommendation} from '../../core/types';
+export const comparisonBrief=(a:Recommendation,b:Recommendation)=>{const scoreDelta=a.score-b.score;const impactDelta=a.expectedImpact-b.expectedImpact;const costDelta=(a.estimatedCost??0)-(b.estimatedCost??0);return {winnerByScore:scoreDelta===0?'tie':scoreDelta>0?a.id:b.id,scoreDelta,impactDelta,costDelta,summary:`${a.title} differs from ${b.title} by ${(scoreDelta*100).toFixed(0)} score points and ${(impactDelta*100).toFixed(0)} impact points.`};};

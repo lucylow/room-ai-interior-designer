@@ -1,0 +1,2 @@
+import type {Recommendation} from '../../core/types';
+export const uncertaintyText=(r:Recommendation)=>{const u=1-r.confidence;if(u>.55)return 'Low-confidence estimate: verify measurements and compare the 2D/3D preview.';if(u>.3)return 'Moderate uncertainty: treat the recommendation as a ranked concept, not a guaranteed result.';return 'Higher-confidence estimate: still validate visually before changing the room.';};

@@ -11,11 +11,23 @@
     "format:check": "prettier --check .",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "security:typecheck": "tsc -p tsconfig.security.json --noEmit",
+    "security:test": "vitest run src/tests",
+    "security:check": "pnpm run security:typecheck && pnpm run security:test",
+    "visualization:typecheck": "tsc -p tsconfig.visualization.json --noEmit",
+    "visualization:test": "vitest run src/tests/visualization",
+    "visualization:check": "pnpm run visualization:typecheck && pnpm run visualization:test",
+    "cad-bim:typecheck": "tsc -p tsconfig.cad-bim.json --pretty false",
+    "generative-design:typecheck": "tsc -p tsconfig.generative-design.json --pretty false",
+    "retail-shopping:typecheck": "tsc -p tsconfig.retail-shopping.json --pretty false"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

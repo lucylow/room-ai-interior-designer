@@ -32,7 +32,13 @@
     "commerce-v6:test": "vitest run src/tests/commerce-v6",
     "commerce-v6:check": "pnpm run commerce-v6:typecheck && pnpm run commerce-v6:test && pnpm run lint:commerce-v6",
     "all-domain-check": "pnpm run visual-ai:check && pnpm run commerce-v6:check",
-    "lint:commerce-v6": "eslint --config eslint.commerce-v6.config.mjs ."
+    "lint:commerce-v6": "eslint --config eslint.commerce-v6.config.mjs .",
+    "monetization-v11:typecheck": "tsc -p tsconfig.apple-monetization-v11.json --pretty false",
+    "monetization-v11:test": "vitest run src/tests/apple-monetization-v11.test.ts",
+    "monetization-v11:check": "pnpm run monetization-v11:typecheck && pnpm run monetization-v11:test",
+    "monetization-v13:typecheck": "tsc -p tsconfig.apple-monetization-v13.json --pretty false",
+    "monetization-v13:test": "vitest run src/tests/apple-monetization-v13.*.test.ts",
+    "monetization-v13:check": "pnpm run monetization-v13:typecheck && pnpm run monetization-v11:check && pnpm run monetization-v13:test"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",

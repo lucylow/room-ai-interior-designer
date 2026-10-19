@@ -6,11 +6,18 @@
     {"id":"com.reroom.ai.pro.monthly","type":"auto-renewable","displayName":"RE:ROOM Pro","price":"14.99","recurrencePeriod":"P1M","groupNumber":1},
     {"id":"com.reroom.ai.pro.yearly","type":"auto-renewable","displayName":"RE:ROOM Pro Annual","price":"119.99","recurrencePeriod":"P1Y","groupNumber":1},
     {"id":"com.reroom.ai.studio.monthly","type":"auto-renewable","displayName":"RE:ROOM Studio","price":"29.99","recurrencePeriod":"P1M","groupNumber":1},
+    {"id":"com.reroom.ai.studio.yearly","type":"auto-renewable","displayName":"RE:ROOM Studio Annual","price":"239.99","recurrencePeriod":"P1Y","groupNumber":1},
+    {"id":"com.reroom.ai.credits.100","type":"consumable","displayName":"100 AI Credits","price":"4.99"},
+    {"id":"com.reroom.ai.credits.500","type":"consumable","displayName":"500 AI Credits","price":"14.99"},
+    {"id":"com.reroom.ai.generation.credits.25","type":"consumable","displayName":"25 AI Design Credits","price":"2.99"},
     {"id":"com.reroom.ai.render.credits.10","type":"consumable","displayName":"10 HD Render Credits","price":"4.99"},
     {"id":"com.reroom.ai.render.credits.50","type":"consumable","displayName":"50 HD Render Credits","price":"16.99"},
-    {"id":"com.reroom.ai.generation.credits.25","type":"consumable","displayName":"25 AI Design Credits","price":"2.99"},
     {"id":"com.reroom.ai.cad.export","type":"non-consumable","displayName":"CAD Export Pack","price":"9.99"},
-    {"id":"com.reroom.ai.commercial","type":"non-consumable","displayName":"Commercial Use Unlock","price":"49.99"}
+    {"id":"com.reroom.ai.commercial","type":"non-consumable","displayName":"Commercial Use Unlock","price":"49.99"},
+    {"id":"com.reroom.ai.export.pack","type":"non-consumable","displayName":"Professional Export Pack","price":"19.99"},
+    {"id":"com.reroom.ai.pro.templates","type":"non-consumable","displayName":"Professional Templates","price":"9.99"},
+    {"id":"com.reroom.ai.3dgs.capture.unlock","type":"non-consumable","displayName":"3D Capture Tools","price":"29.99"},
+    {"id":"com.reroom.ai.virtual.tour.unlock","type":"non-consumable","displayName":"Virtual Tour Tools","price":"9.99"}
   ],
   "subscriptionGroups": [
     {"id":"reroom-subscription-group","name":"RE:ROOM Membership","groupNumber":1}

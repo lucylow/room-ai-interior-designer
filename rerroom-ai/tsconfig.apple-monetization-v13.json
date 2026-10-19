@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.apple-monetization-v11.json",
+  "include": [
+    "src/apple-monetization-v11/**/*.ts",
+    "src/apple-monetization-v13/**/*.ts",
+    "src/tests/apple-monetization-v13.*.test.ts"
+  ]
+}

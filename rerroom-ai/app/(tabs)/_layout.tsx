@@ -1,29 +1,79 @@
-import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { useColors } from "@/hooks/use-colors";
+import { Tabs } from "expo-router";
+import { mobileDesign } from "@/constants/mobile-design";
 
 export default function TabsLayout() {
-  const colors = useColors();
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.muted,
+        tabBarActiveTintColor: mobileDesign.color.clay,
+        tabBarInactiveTintColor: mobileDesign.color.muted,
+        tabBarHideOnKeyboard: true,
+        sceneStyle: { backgroundColor: mobileDesign.color.paper },
         tabBarStyle: {
-          backgroundColor: colors.surface,
-          borderTopColor: colors.border,
-          height: 78,
-          paddingTop: 10,
+          backgroundColor: mobileDesign.color.card,
+          borderTopColor: mobileDesign.color.line,
+          minHeight: 64,
+          paddingTop: 7,
+          paddingBottom: 6,
         },
-        tabBarLabelStyle: { fontSize: 11, fontWeight: "600" },
+        tabBarLabelStyle: { fontSize: 11, fontWeight: "700" },
+        tabBarItemStyle: { minHeight: mobileDesign.touchTarget },
       }}
     >
-      <Tabs.Screen name="index" options={{ title: "Home", tabBarIcon: ({ color, size }) => <Ionicons name="home-outline" color={color} size={size} /> }} />
-      <Tabs.Screen name="create" options={{ title: "Create", tabBarIcon: ({ color, size }) => <Ionicons name="add-circle-outline" color={color} size={size} /> }} />
-      <Tabs.Screen name="rooms" options={{ title: "Rooms", tabBarIcon: ({ color, size }) => <Ionicons name="albums-outline" color={color} size={size} /> }} />
-      <Tabs.Screen name="discover" options={{ title: "Discover", tabBarIcon: ({ color, size }) => <Ionicons name="sparkles-outline" color={color} size={size} /> }} />
-      <Tabs.Screen name="profile" options={{ title: "Profile", tabBarIcon: ({ color, size }) => <Ionicons name="person-outline" color={color} size={size} /> }} />
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Home",
+          tabBarAccessibilityLabel: "Home, main destination",
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? "home" : "home-outline"} color={color} size={size} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="create"
+        options={{
+          title: "Scan",
+          tabBarAccessibilityLabel: "Scan or create a room design",
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? "scan" : "scan-outline"} color={color} size={size} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="rooms"
+        options={{
+          title: "Studio",
+          tabBarAccessibilityLabel: "Studio, saved rooms and designs",
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? "cube" : "cube-outline"} color={color} size={size} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="shop"
+        options={{
+          title: "Shop",
+          tabBarAccessibilityLabel: "Shop products for your room",
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? "bag" : "bag-outline"} color={color} size={size} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="plan"
+        options={{
+          title: "Plan",
+          tabBarAccessibilityLabel: "Plan your room project",
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? "clipboard" : "clipboard-outline"} color={color} size={size} />
+          ),
+        }}
+      />
+      <Tabs.Screen name="discover" options={{ href: null }} />
+      <Tabs.Screen name="profile" options={{ href: null }} />
     </Tabs>
   );
 }

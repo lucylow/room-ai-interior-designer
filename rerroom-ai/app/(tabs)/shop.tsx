@@ -67,14 +67,6 @@ export default function ShopScreen() {
     <ScreenContainer>
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel="Back"
-            hitSlop={10}
-            onPress={() => router.back()}
-          >
-            <Ionicons name="chevron-back" size={25} color={colors.foreground} />
-          </Pressable>
           <Text style={[styles.eyebrow, { color: colors.primary }]}>SHOPPING STUDIO</Text>
           <Pressable
             accessibilityRole="button"

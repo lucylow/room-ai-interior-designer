@@ -75,6 +75,7 @@ export default function CreateScreen() {
   const [cameraOpen, setCameraOpen] = useState(false);
   const [capturedUri, setCapturedUri] = useState<string | null>(null);
   const [captureError, setCaptureError] = useState<string | null>(null);
+  const [cameraPermissionDenied, setCameraPermissionDenied] = useState(false);
   const [style, setStyle] = useState(
     params.prompt?.toLowerCase().includes("warmer") ? "warm_minimal" : "modern",
   );
@@ -107,53 +108,86 @@ export default function CreateScreen() {
 
   async function openCamera() {
     setCaptureError(null);
-    if (Platform.OS === "web") {
-      setCameraOpen(true);
-      return;
-    }
-    if (!permission?.granted) {
-      const response = await requestPermission();
-      if (!response.granted) {
-        setCaptureError("Camera access is off. Enable it in Settings to capture your room.");
+    setCameraPermissionDenied(false);
+    try {
+      if (Platform.OS === "web") {
+        setCameraOpen(true);
         return;
       }
+      if (!permission?.granted) {
+        const response = await requestPermission();
+        if (!response.granted) {
+          setCaptureError("Camera access is off. Enable it in Settings to capture your room.");
+          setCameraPermissionDenied(true);
+          return;
+        }
+      }
+      setCameraOpen(true);
+    } catch {
+      setCaptureError("We couldn’t check camera access. Choose a photo from your library or try again.");
     }
-    setCameraOpen(true);
   }
 
   async function chooseFromLibrary() {
     setCaptureError(null);
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ["images"],
-      quality: 0.92,
-      allowsEditing: false,
-    });
-    if (result.canceled || !result.assets[0]?.uri) return;
-    const asset = result.assets[0];
-    const quality = validatePhoto({ width: asset.width, height: asset.height, bytes: asset.fileSize });
-    if (!quality.ok) {
-      setCaptureError(quality.warnings[0]);
-      return;
+    setCameraPermissionDenied(false);
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ["images"],
+        quality: 0.92,
+        allowsEditing: false,
+      });
+      if (result.canceled) return;
+      const asset = result.assets[0];
+      if (!asset?.uri) {
+        setCaptureError("No photo was selected. Choose an image and try again.");
+        return;
+      }
+      const quality = validatePhoto({ width: asset.width, height: asset.height, bytes: asset.fileSize });
+      if (!quality.ok) {
+        setCaptureError(quality.warnings[0] ?? "This photo can’t be used. Choose another image.");
+        return;
+      }
+      setCapturedUri(asset.uri);
+      setStep("setup");
+    } catch {
+      setCaptureError("The photo library couldn’t be opened. Check photo access or try another image.");
     }
-    setCapturedUri(asset.uri);
-    setStep("setup");
   }
 
   async function takePhoto() {
-    if (Platform.OS === "web") {
+    setCaptureError(null);
+    try {
+      if (Platform.OS === "web") {
+        setCameraOpen(false);
+        setCapturedUri("demo://room-photo");
+        setStep("setup");
+        return;
+      }
+      const photo = await cameraRef.current?.takePictureAsync({ quality: 0.92, skipProcessing: false });
+      if (!photo?.uri) {
+        setCameraOpen(false);
+        setCaptureError("The camera wasn’t ready. Try again or choose a photo from your library.");
+        return;
+      }
+      setCapturedUri(photo.uri);
       setCameraOpen(false);
-      setCapturedUri("demo://room-photo");
       setStep("setup");
-      return;
+    } catch {
+      setCameraOpen(false);
+      setCaptureError("The photo couldn’t be captured. Try again or choose a photo from your library.");
     }
-    const photo = await cameraRef.current?.takePictureAsync({ quality: 0.92, skipProcessing: false });
-    if (!photo?.uri) {
-      setCaptureError("The camera was not ready. Please try again.");
-      return;
+  }
+
+  async function handleOpenCameraSettings() {
+    try {
+      await openCameraSettings();
+    } catch {
+      setCaptureError(
+        "Couldn’t open Settings. Open your device Settings and enable camera access for RE:ROOM.",
+      );
+      setCameraPermissionDenied(false);
     }
-    setCapturedUri(photo.uri);
-    setCameraOpen(false);
-    setStep("setup");
   }
 
   async function selectRefinement(id: string) {
@@ -652,15 +686,28 @@ export default function CreateScreen() {
                 </Text>
               </Pressable>
               {captureError ? (
-                <Pressable
-                  onPress={openCameraSettings}
-                  style={[styles.errorCard, { backgroundColor: "#F7E3DE" }]}
-                >
+                <View accessibilityRole="alert" style={[styles.errorCard, { backgroundColor: "#F7E3DE" }]}>
                   <Ionicons name="warning-outline" size={19} color={colors.error} />
-                  <Text style={[styles.errorText, { color: colors.error }]}>
-                    {captureError} Tap to open Settings.
-                  </Text>
-                </Pressable>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[styles.errorText, { color: colors.error, flex: 0 }]}>{captureError}</Text>
+                    {cameraPermissionDenied ? (
+                      <Pressable
+                        accessibilityRole="button"
+                        onPress={() => void handleOpenCameraSettings()}
+                        hitSlop={8}
+                      >
+                        <Text
+                          style={[
+                            styles.errorText,
+                            { color: colors.error, flex: 0, fontWeight: "900", marginTop: 5 },
+                          ]}
+                        >
+                          Open Settings
+                        </Text>
+                      </Pressable>
+                    ) : null}
+                  </View>
+                </View>
               ) : null}
             </View>
             <Pressable

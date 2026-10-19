@@ -10,6 +10,7 @@ import {
   StyleSheet,
   Text,
   View,
+  useWindowDimensions,
 } from "react-native";
 import type { SavedDesign } from "@/services/savedDesigns";
 import { loadSavedDesignsWithStatus } from "@/services/savedDesigns";
@@ -19,11 +20,18 @@ import { mobileDesign } from "@/constants/mobile-design";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1705326701287-346fc37a2c86?auto=format&fit=crop&w=1200&q=85";
-const QUICK_STARTS = ["Living room", "Bedroom", "Kitchen", "Home office"] as const;
+const QUICK_STARTS = [
+  { label: "Living room", icon: "home-outline" },
+  { label: "Bedroom", icon: "bed-outline" },
+  { label: "Kitchen", icon: "restaurant-outline" },
+  { label: "Home office", icon: "desktop-outline" },
+] as const;
 type RoomLoadState = "loading" | "ready" | "error";
 
 export default function HomeScreen() {
   const colors = useColors();
+  const { width } = useWindowDimensions();
+  const roomCardWidth = Math.min(width - 88, 340);
   const [rooms, setRooms] = useState<SavedDesign[]>([]);
   const [loadState, setLoadState] = useState<RoomLoadState>("loading");
   const [isDemoData, setIsDemoData] = useState(false);
@@ -220,13 +228,22 @@ export default function HomeScreen() {
           </View>
         ) : (
           <View style={styles.roomList}>
-            {rooms.slice(0, 3).map((room) => (
-              <SavedRoomCard
-                key={room.id}
-                room={room}
-                onPress={() => router.push({ pathname: "/room/[id]", params: { id: room.id } })}
-              />
-            ))}
+            <ScrollView
+              horizontal
+              nestedScrollEnabled
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.roomCarousel}
+              accessibilityLabel="Your saved spaces, swipe to browse"
+            >
+              {rooms.slice(0, 6).map((room) => (
+                <SavedRoomCard
+                  key={room.id}
+                  room={room}
+                  width={roomCardWidth}
+                  onPress={() => router.push({ pathname: "/room/[id]", params: { id: room.id } })}
+                />
+              ))}
+            </ScrollView>
           </View>
         )}
 
@@ -245,21 +262,24 @@ export default function HomeScreen() {
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.quickStarts}
         >
-          {QUICK_STARTS.map((roomType) => (
+          {QUICK_STARTS.map(({ label, icon }) => (
             <Pressable
-              key={roomType}
+              key={label}
               accessibilityRole="button"
-              accessibilityLabel={`Start a ${roomType.toLowerCase()} redesign`}
+              accessibilityLabel={`Start a ${label.toLowerCase()} redesign`}
               accessibilityHint="Opens the room photo and design flow"
-              onPress={() => startRoom(roomType)}
+              onPress={() => startRoom(label)}
               style={({ pressed }) => [
                 styles.quickStart,
                 { backgroundColor: colors.surface, borderColor: colors.border },
                 pressed && styles.pressed,
               ]}
             >
-              <Ionicons name="add" size={16} color={colors.primary} />
-              <Text style={[styles.quickStartText, { color: colors.foreground }]}>{roomType}</Text>
+              <View style={[styles.quickStartIcon, { backgroundColor: mobileDesign.color.cream }]}>
+                <Ionicons name={icon} size={15} color={colors.primary} />
+              </View>
+              <Text style={[styles.quickStartText, { color: colors.foreground }]}>{label}</Text>
+              <Ionicons name="arrow-forward" size={13} color={colors.muted} />
             </Pressable>
           ))}
         </ScrollView>
@@ -269,7 +289,7 @@ export default function HomeScreen() {
   );
 }
 
-function SavedRoomCard({ room, onPress }: { room: SavedDesign; onPress: () => void }) {
+function SavedRoomCard({ room, width, onPress }: { room: SavedDesign; width: number; onPress: () => void }) {
   const colors = useColors();
   const isDemoRoom = room.imageUri.startsWith("demo://");
   const isDemoImage = !room.imageUri || isDemoRoom;
@@ -286,6 +306,7 @@ function SavedRoomCard({ room, onPress }: { room: SavedDesign; onPress: () => vo
       onPress={onPress}
       style={({ pressed }) => [
         styles.roomCard,
+        { width },
         { backgroundColor: colors.surface, borderColor: colors.border },
         pressed && styles.pressed,
       ]}
@@ -509,7 +530,8 @@ const styles = StyleSheet.create({
     marginTop: 6,
   },
   emptyActionText: { color: mobileDesign.color.white, fontSize: 13, fontWeight: "800" },
-  roomList: { gap: 12 },
+  roomList: { marginHorizontal: -20 },
+  roomCarousel: { gap: 12, paddingHorizontal: 20, paddingBottom: 2 },
   roomCard: { borderWidth: 1, borderRadius: 22, overflow: "hidden" },
   roomImage: { height: 174, overflow: "hidden", backgroundColor: "#D7C8B4" },
   roomImageShade: { ...StyleSheet.absoluteFillObject, backgroundColor: "rgba(24, 23, 21, 0.08)" },
@@ -605,15 +627,23 @@ const styles = StyleSheet.create({
     transform: [{ rotate: "25deg" }],
     backgroundColor: "#687363",
   },
-  quickStarts: { gap: 8, paddingRight: 20 },
+  quickStarts: { gap: 9, paddingRight: 20 },
   quickStart: {
-    minHeight: 46,
+    minHeight: 50,
     flexDirection: "row",
     alignItems: "center",
-    gap: 5,
+    gap: 8,
     borderWidth: 1,
-    borderRadius: 999,
-    paddingHorizontal: 13,
+    borderRadius: 17,
+    paddingLeft: 8,
+    paddingRight: 12,
+  },
+  quickStartIcon: {
+    width: 32,
+    height: 32,
+    borderRadius: 11,
+    alignItems: "center",
+    justifyContent: "center",
   },
   quickStartText: { fontSize: 12, fontWeight: "700" },
   bottomSpace: { height: 18 },

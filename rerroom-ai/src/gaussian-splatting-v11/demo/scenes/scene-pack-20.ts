@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_20: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-20-00",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 48,
+    "splatCount": 12220,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1840,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-20-01",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 52,
+    "splatCount": 12317,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1841,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-20-02",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 56,
+    "splatCount": 12414,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1842,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-20-03",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 60,
+    "splatCount": 12511,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1843,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-20-04",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 64,
+    "splatCount": 12608,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1844,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-20-05",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 48,
+    "splatCount": 12705,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1845,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-20-06",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 52,
+    "splatCount": 12802,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1846,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-20-07",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 56,
+    "splatCount": 12899,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1847,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-20-08",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 60,
+    "splatCount": 12996,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1848,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-20-09",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 64,
+    "splatCount": 13093,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1849,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-20-10",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 48,
+    "splatCount": 13190,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1850,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-20-11",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 52,
+    "splatCount": 13287,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1851,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-20-12",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 56,
+    "splatCount": 13384,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1852,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-20-13",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 60,
+    "splatCount": 13481,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1853,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-20-14",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 64,
+    "splatCount": 13578,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1854,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-20-15",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 48,
+    "splatCount": 13675,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1855,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-20-16",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 52,
+    "splatCount": 13772,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1856,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-20-17",
+    "room": "studio",
+    "style": "contemporary",
+    "palette": "terracotta",
+    "cameraFov": 56,
+    "splatCount": 13869,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1857,
+    "prompt": "Preserve studio geometry, render contemporary styling, use terracotta, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack20(index:number) { return SCENE_PACK_20[index % SCENE_PACK_20.length]; }
+export function bestScenePack20() { return [...SCENE_PACK_20].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt20(index:number):string { return getScenePack20(index).prompt; }

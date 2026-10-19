@@ -1,0 +1,1 @@
+export function requiresAppleIap(kind:'digital'|'physical'):boolean{return kind==='digital'} export function paymentPath(kind:'digital'|'physical'):'apple-iap'|'retailer-or-apple-pay'{return kind==='digital'?'apple-iap':'retailer-or-apple-pay'}

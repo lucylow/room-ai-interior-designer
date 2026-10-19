@@ -1,0 +1,1 @@
+export type PaywallTreatment='control'|'annual-first'|'value-first'|'credits-first'; export interface ExperimentAssignment{id:string;variant:PaywallTreatment}; export function assign(seed:string,variants:PaywallTreatment[]):ExperimentAssignment{let n=0;for(const c of seed)n=(n*31+c.charCodeAt(0))%2147483647;return {id:'paywall-v10',variant:variants[Math.abs(n)%variants.length]}}

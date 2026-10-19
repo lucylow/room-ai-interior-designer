@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_17: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-17-00",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 48,
+    "splatCount": 11287,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1729,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-17-01",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 52,
+    "splatCount": 11384,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1730,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-17-02",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 56,
+    "splatCount": 11481,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1731,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-17-03",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 60,
+    "splatCount": 11578,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1732,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-17-04",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 64,
+    "splatCount": 11675,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1733,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-17-05",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 48,
+    "splatCount": 11772,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1734,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-17-06",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 52,
+    "splatCount": 11869,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1735,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-17-07",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 56,
+    "splatCount": 11966,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1736,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-17-08",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 60,
+    "splatCount": 12063,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1737,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-17-09",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 64,
+    "splatCount": 12160,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1738,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-17-10",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 48,
+    "splatCount": 12257,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1739,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-17-11",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 52,
+    "splatCount": 12354,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1740,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-17-12",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 56,
+    "splatCount": 12451,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1741,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-17-13",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 60,
+    "splatCount": 12548,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1742,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-17-14",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 64,
+    "splatCount": 12645,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1743,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-17-15",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 48,
+    "splatCount": 12742,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1744,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-17-16",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 52,
+    "splatCount": 12839,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1745,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-17-17",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "charcoal",
+    "cameraFov": 56,
+    "splatCount": 12936,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1746,
+    "prompt": "Preserve bathroom geometry, render mid-century styling, use charcoal, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack17(index:number) { return SCENE_PACK_17[index % SCENE_PACK_17.length]; }
+export function bestScenePack17() { return [...SCENE_PACK_17].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt17(index:number):string { return getScenePack17(index).prompt; }

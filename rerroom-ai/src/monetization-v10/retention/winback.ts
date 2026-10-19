@@ -1,0 +1,2 @@
+export interface CustomerLifecycle{lastActiveAt:string;subscriptionState:'active'|'expired'|'cancelled'|'never';projectsCreated:number;renders:number}
+export function winbackScore(c:CustomerLifecycle,now=Date.now()):number{const days=Math.max(0,(now-Date.parse(c.lastActiveAt))/86400000);let score=0;if(c.subscriptionState==='expired')score+=0.4;if(c.projectsCreated>=2)score+=0.2;if(c.renders>=5)score+=0.2;if(days>=14&&days<=60)score+=0.2;return Math.min(1,score)}

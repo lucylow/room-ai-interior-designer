@@ -1,0 +1,2 @@
+import { VisualMetrics, avg, clamp } from '../core/types';
+export function compareViews(a:VisualMetrics,b:VisualMetrics){ const delta={sharpness:b.sharpness-a.sharpness,composition:b.composition-a.composition,geometry:b.geometry-a.geometry,lighting:b.lighting-a.lighting,material:b.material-a.material,consistency:b.consistency-a.consistency}; const gain=avg(Object.values(delta)); return {delta,gain,improved:gain>0.02,confidence:clamp(.6+Math.abs(gain))}; }

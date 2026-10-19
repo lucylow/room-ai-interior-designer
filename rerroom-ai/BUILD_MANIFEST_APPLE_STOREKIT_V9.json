@@ -1,0 +1,21 @@
+{
+  "version": "V9",
+  "purpose": "Apple StoreKit 2 digital monetization continuation",
+  "newTypescriptFiles": 394,
+  "newTypescriptLines": 5978,
+  "swiftFiles": 3,
+  "swiftLines": 153,
+  "totalFreshCodeLines": 6131,
+  "pagesAt55Lines": 111.5,
+  "catalogProducts": 8,
+  "subscriptionProducts": 4,
+  "consumableProducts": 3,
+  "nonConsumableProducts": 1,
+  "demoMode": true,
+  "realPayment": false,
+  "physicalGoodsSeparated": true,
+  "strictTypecheck": "PASS",
+  "demoRun": "PASS",
+  "testRun": "PASS",
+  "swiftSyntaxParse": "PASS"
+}

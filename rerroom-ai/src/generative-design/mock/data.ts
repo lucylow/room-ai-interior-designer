@@ -1,4 +1,4 @@
-import type {DesignIntent,RoomContext,StyleFilter,ColorFilter,DesignFeedback,DesignSession} from '../core/types';
+import type {DesignIntent,StyleFilter,ColorFilter,DesignFeedback,DesignSession} from '../core/types';
 import {demoRoom} from '../../demo/data';
 export const mockDesignStyles:StyleFilter={enabled:['modern','minimalist','scandinavian','industrial'],excluded:[],primary:'scandinavian',intensity:'balanced',blendWeight:{modern:.2,minimalist:.15,scandinavian:.4,industrial:.1}};
 export const mockColorFilter:ColorFilter={paletteIds:['nordic-sage','warm-white-sand','industrial-charcoal','modern-neutral'],customColors:['#D8C7AD','#829075'],temperature:'warm',minContrast:.3,maxSaturation:.7,preserveExistingAccents:true};

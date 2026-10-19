@@ -1,0 +1,28 @@
+{
+  "version": "V14",
+  "newSourceFiles": 399,
+  "newTypeScriptLines": 7582,
+  "approxPages55LinesPerPage": 137.9,
+  "domains": [
+    "2D visual datasets",
+    "3D/3DGS visual datasets",
+    "cross-modal alignment",
+    "AI visual coaching",
+    "render enhancement",
+    "visual QA",
+    "demo rendering",
+    "dataset registry",
+    "UI state models"
+  ],
+  "validation": {
+    "strictTypeScript": "PASS",
+    "seededDemo": "PASS",
+    "datasetRecords": 512,
+    "scene2DFurniture": 3,
+    "scene3DSplats": 4800,
+    "regressionGate": true,
+    "referenceRender2DPixels": 1146880,
+    "referenceRender3DPixels": 1146880
+  },
+  "baseContinuation": "Gaussian Splatting V13 source carried forward alongside V14 visual-ai layer"
+}

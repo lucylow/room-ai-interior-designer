@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature, SourceDocument } from '../core/types';
+import { AuthoritativeModel, SourceFeature, SourceDocument } from '../core/types';
 import { ConceptGenerator } from '../ai/concept-generator';
 import { assessApprovalReadiness } from '../ai/approval-readiness';
 import { HandoffBuilder } from '../handoff/handoff-builder';

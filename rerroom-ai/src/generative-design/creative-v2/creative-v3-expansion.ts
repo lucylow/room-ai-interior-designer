@@ -1,6 +1,6 @@
 
 import type {DesignConcept,DesignIntent,GenerationRequest,RoomContext} from '../core/types';
-import type {CreativeDirection,CreativeFilterState,CreativeInsightCard,CreativeRunReport,CreativeSignal} from './types';
+import type {CreativeFilterState,CreativeRunReport,CreativeSignal} from './types';
 import {normalizeCreativeFilters,filterSignals} from './engine/creative-filter-model';
 import {generateCreativeDesign} from './creative-design-engine-v2';
 import {refineCreativeDesign} from './creative-design-engine-v2';

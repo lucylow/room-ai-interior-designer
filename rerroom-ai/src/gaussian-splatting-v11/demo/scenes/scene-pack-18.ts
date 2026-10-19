@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_18: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-18-00",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 48,
+    "splatCount": 11598,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1766,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-18-01",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 52,
+    "splatCount": 11695,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1767,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-18-02",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 56,
+    "splatCount": 11792,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1768,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-18-03",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 60,
+    "splatCount": 11889,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1769,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-18-04",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 64,
+    "splatCount": 11986,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1770,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-18-05",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 48,
+    "splatCount": 12083,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1771,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-18-06",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 52,
+    "splatCount": 12180,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1772,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-18-07",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 56,
+    "splatCount": 12277,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1773,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-18-08",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 60,
+    "splatCount": 12374,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1774,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-18-09",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 64,
+    "splatCount": 12471,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1775,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-18-10",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 48,
+    "splatCount": 12568,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1776,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-18-11",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 52,
+    "splatCount": 12665,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1777,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-18-12",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 56,
+    "splatCount": 12762,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1778,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-18-13",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 60,
+    "splatCount": 12859,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1779,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-18-14",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 64,
+    "splatCount": 12956,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1780,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-18-15",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 48,
+    "splatCount": 13053,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1781,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-18-16",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 52,
+    "splatCount": 13150,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1782,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-18-17",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "forest",
+    "cameraFov": 56,
+    "splatCount": 13247,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1783,
+    "prompt": "Preserve entryway geometry, render organic-modern styling, use forest, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack18(index:number) { return SCENE_PACK_18[index % SCENE_PACK_18.length]; }
+export function bestScenePack18() { return [...SCENE_PACK_18].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt18(index:number):string { return getScenePack18(index).prompt; }

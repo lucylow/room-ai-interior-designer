@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, HandoffPackage, ValidationIssue } from '../core/types';
+import { AuthoritativeModel, DesignOverlay, HandoffPackage } from '../core/types';
 
 export interface ReleaseDecision {
   allowed: boolean;

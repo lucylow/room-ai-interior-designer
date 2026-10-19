@@ -1,4 +1,4 @@
-import { AestheticIntent, AuthoritativeModel, DesignOverlay, ConceptElement, OverlayPatch } from '../core/types';
+import { AestheticIntent, DesignOverlay, ConceptElement, OverlayPatch } from '../core/types';
 import { sameAnchor } from '../core/anchors';
 export class RefinementEngine {
   refine(previous:DesignOverlay,nextIntent:AestheticIntent):{overlay:DesignOverlay;patches:OverlayPatch[]} {

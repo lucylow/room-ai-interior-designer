@@ -1,0 +1,3 @@
+import { money } from '../core/money'; import type { Currency, Money } from '../types/commerce';
+export type PlanTier='free'|'designer'|'studio'; export interface Plan{tier:PlanTier;price:Money;monthlyGenerations:number;shoppingRooms:number;proCuration:boolean}
+export const plans=(currency:Currency='CAD'):Plan[]=>[{tier:'free',price:money(0,currency),monthlyGenerations:5,shoppingRooms:1,proCuration:false},{tier:'designer',price:money(19.99,currency),monthlyGenerations:50,shoppingRooms:10,proCuration:true},{tier:'studio',price:money(49.99,currency),monthlyGenerations:250,shoppingRooms:50,proCuration:true}];

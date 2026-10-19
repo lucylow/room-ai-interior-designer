@@ -1,0 +1,4 @@
+import { Gaussian } from '../core/types';
+export type LightingProfile={temperature:number;intensity:number;direction:{x:number;y:number;z:number};contrast:number};
+export function inferLighting(gaussians:Gaussian[]):LightingProfile{const c=gaussians.reduce((p,g)=>({r:p.r+g.color.r,g:p.g+g.color.g,b:p.b+g.color.b}),{r:0,g:0,b:0});const n=gaussians.length||1;const warm=(c.r/n)/(Math.max(.001,(c.b/n)));return{temperature:Math.max(2400,Math.min(6500,4200+(warm-1)*1400)),intensity:Math.min(1,Math.max(.15,gaussians.reduce((s,g)=>s+g.opacity,0)/n)),direction:{x:.2,y:1,z:.1},contrast:.55}}
+export function harmonizeColor(base:number[],source:LightingProfile,target:LightingProfile){const scale=target.intensity/Math.max(.01,source.intensity);const temp=(target.temperature-source.temperature)/6500;return base.map((v,i)=>Math.max(0,Math.min(1,v*scale*(1+(i===0?temp:-temp*.5))))) }

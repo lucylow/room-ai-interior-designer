@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_19: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-19-00",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 48,
+    "splatCount": 11909,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1803,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-19-01",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 52,
+    "splatCount": 12006,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1804,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-19-02",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 56,
+    "splatCount": 12103,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1805,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-19-03",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 60,
+    "splatCount": 12200,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1806,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-19-04",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 64,
+    "splatCount": 12297,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1807,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-19-05",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 48,
+    "splatCount": 12394,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1808,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-19-06",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 52,
+    "splatCount": 12491,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1809,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-19-07",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 56,
+    "splatCount": 12588,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1810,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-19-08",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 60,
+    "splatCount": 12685,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1811,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-19-09",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 64,
+    "splatCount": 12782,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1812,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-19-10",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 48,
+    "splatCount": 12879,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1813,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-19-11",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 52,
+    "splatCount": 12976,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1814,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-19-12",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 56,
+    "splatCount": 13073,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1815,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-19-13",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 60,
+    "splatCount": 13170,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1816,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-19-14",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 64,
+    "splatCount": 13267,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1817,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-19-15",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 48,
+    "splatCount": 13364,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1818,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-19-16",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 52,
+    "splatCount": 13461,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1819,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-19-17",
+    "room": "nursery",
+    "style": "bohemian",
+    "palette": "sand",
+    "cameraFov": 56,
+    "splatCount": 13558,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1820,
+    "prompt": "Preserve nursery geometry, render bohemian styling, use sand, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack19(index:number) { return SCENE_PACK_19[index % SCENE_PACK_19.length]; }
+export function bestScenePack19() { return [...SCENE_PACK_19].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt19(index:number):string { return getScenePack19(index).prompt; }

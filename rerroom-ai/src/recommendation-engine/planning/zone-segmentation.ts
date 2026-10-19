@@ -1,3 +1,3 @@
-import type {RoomContext,RoomObject} from '../core/types';
+import type {RoomContext} from '../core/types';
 export interface Zone {id:string;label:string;objectIds:string[];center:{x:number;z:number};score:number;}
 export const segmentZones=(room:RoomContext,groups=3):Zone[]=>{const rows=room.objects.slice().sort((a,b)=>a.position.x-b.position.x);const zones:Zone[]=[];for(let i=0;i<Math.min(groups,rows.length);i++){const subset=rows.filter((_,idx)=>idx%Math.max(1,groups)===i);if(!subset.length)continue;const center={x:subset.reduce((s,o)=>s+o.position.x,0)/subset.length,z:subset.reduce((s,o)=>s+o.position.z,0)/subset.length};zones.push({id:`zone-${i}`,label:`Functional zone ${i+1}`,objectIds:subset.map(o=>o.id),center,score:Math.min(1,subset.length/4)});}return zones;};

@@ -1,5 +1,5 @@
 /** RE:ROOM AI Retail Shopping Studio V5 — extended module. */
-import type { RetailProduct, ProductCategory, RoomType, StyleName, FurnitureSlot, RoomEnvelope, Budget, RetailerId, ShoppingConstraints } from '../../retail-shopping-v4/domain/commerce-types';
+import type { RetailProduct, ProductCategory, RoomType, StyleName } from '../../retail-shopping-v4/domain/commerce-types';
 import { IKEA_CA_V5_CATALOG } from '../catalog/ikea-ca-current-snapshot';
 function clamp(v:number,min=0,max=1){return Math.min(max,Math.max(min,v));}
 function money(v:number){return new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(Math.max(0,v));}
@@ -14,4 +14,4 @@ export function buildRetailFacetIndex(products:RetailProduct[]=IKEA_CA_V5_CATALO
  return {styles,categories,rooms,colors,materials,priceBuckets};
 }
 export function intersectFacet(index:RetailFacetIndex,keys:Array<[Map<any,string[]>,any]>):string[]{let result:string[]|undefined;for(const [map,key] of keys){const values=map.get(key)??[];result=result===undefined?[...values]:result.filter(id=>values.includes(id));}return result??[];}
-export function facetCounts(index:RetailFacetIndex, products=IKEA_CA_V5_CATALOG){return {styles:Object.fromEntries([...index.styles].map(([k,v])=>[k,v.length])),categories:Object.fromEntries([...index.categories].map(([k,v])=>[k,v.length])),rooms:Object.fromEntries([...index.rooms].map(([k,v])=>[k,v.length])),prices:Object.fromEntries([...index.priceBuckets].map(([k,v])=>[k,v.length]))};}
+export function facetCounts(index:RetailFacetIndex, _products=IKEA_CA_V5_CATALOG){return {styles:Object.fromEntries([...index.styles].map(([k,v])=>[k,v.length])),categories:Object.fromEntries([...index.categories].map(([k,v])=>[k,v.length])),rooms:Object.fromEntries([...index.rooms].map(([k,v])=>[k,v.length])),prices:Object.fromEntries([...index.priceBuckets].map(([k,v])=>[k,v.length]))};}

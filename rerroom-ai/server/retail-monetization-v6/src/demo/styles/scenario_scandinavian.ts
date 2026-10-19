@@ -1,0 +1,5 @@
+export interface Scenario_2{id:string;name:string;facts:Record<string,string>;expected:string[]}
+export const scenario_scandinavian:Scenario_2={id:'demo_styles_scandinavian',name:'Scandinavian',facts:{room:'home-office',style:'scandinavian',budget:'1250',currency:'CAD',channel:'scandinavian'},expected:['validated','demo-ready','deterministic']};
+export function describe_scandinavian(){return Object.entries(scenario_scandinavian.facts).map(([k,v])=>`${k}=${v}`).join(' | ')}
+export function assert_scandinavian(facts:Record<string,string>){for(const [k,v] of Object.entries(scenario_scandinavian.facts))if(facts[k]!==v)throw new Error(`scenario_mismatch:${k}`);return true}
+

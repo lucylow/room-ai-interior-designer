@@ -10,7 +10,7 @@ export interface LightingAdvisorResult {
   opportunities:string[];
 }
 
-const scoreFor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):number=>clamp(room.naturalLightScore*.5+room.comfortScore*.25+room.workflowScore*.25,0,1);
+const scoreFor=(room:RoomContext,_prefs:UserPreferences,_budget?:BudgetProfile):number=>clamp(room.naturalLightScore*.5+room.comfortScore*.25+room.workflowScore*.25,0,1);
 
 export const adviseLightingAdvisor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):LightingAdvisorResult=>{
   const score=scoreFor(room,prefs,budget);

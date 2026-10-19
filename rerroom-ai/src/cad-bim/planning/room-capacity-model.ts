@@ -6,7 +6,7 @@ export interface RoomCapacityModel { roomId:string; floorAreaM2:number; usableAr
 function status(v:number,warning:number,limit:number):CapacityMetric['status']{ return v>limit?'overloaded':v>warning?'tight':'healthy'; }
 export function buildRoomCapacityModel(room:RoomContext,plan:LayoutPlan,zones:Zone[]=[]):RoomCapacityModel{
  const floorArea=room.measurements.widthM*room.measurements.depthM;
- const furnitureArea=plan.placements.reduce((s,p)=>s+0.75*0.75,0);
+ const furnitureArea=plan.placements.reduce((s,_p)=>s+0.75*0.75,0);
  const circulation=Math.max(0,floorArea-furnitureArea); const usable=Math.max(.1,floorArea*.88);
  const density=furnitureArea/usable; const zoneCount=zones.length; const movable=plan.placements.filter(p=>!p.anchor?.sourceFeatureId).length;
  const metrics:CapacityMetric[]=[

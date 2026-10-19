@@ -10,7 +10,7 @@ export interface ComfortAdvisorResult {
   opportunities:string[];
 }
 
-const scoreFor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):number=>clamp(room.comfortScore*.45+room.acousticScore*.25+room.naturalLightScore*.3,0,1);
+const scoreFor=(room:RoomContext,_prefs:UserPreferences,_budget?:BudgetProfile):number=>clamp(room.comfortScore*.45+room.acousticScore*.25+room.naturalLightScore*.3,0,1);
 
 export const adviseComfortAdvisor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):ComfortAdvisorResult=>{
   const score=scoreFor(room,prefs,budget);

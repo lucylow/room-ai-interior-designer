@@ -1,5 +1,5 @@
-import type {DesignConcept,DesignFeedback,DesignStyleId} from '../core/types';
-import {clamp,avg} from '../core/utils';
+import type {DesignConcept,DesignFeedback} from '../core/types';
+import {clamp} from '../core/utils';
 export interface NoveltyControllerState{signal:number;notes:string[];}
 export const updateNoveltyController=(rows:DesignFeedback[],concepts:DesignConcept[]):NoveltyControllerState=>{
  const accepted=rows.filter(r=>r.action==='accept'||r.action==='save').length; const rejected=rows.filter(r=>r.action==='reject').length;

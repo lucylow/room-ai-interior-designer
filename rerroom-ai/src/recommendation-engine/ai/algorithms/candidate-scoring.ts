@@ -1,4 +1,4 @@
 import type {Candidate} from '../../core/types';
 export interface CandidateScore{candidateId:string;base:number;confidence:number;impact:number;costEfficiency:number;final:number;reasons:string[];}
-export const scoreCandidates=(rows:Candidate,budget=0):never=>{throw new Error('Use scoreCandidateList for candidate collections.');};
+export const scoreCandidates=(rows:Candidate,_budget=0):never=>{throw new Error('Use scoreCandidateList for candidate collections.');};
 export const scoreCandidateList=(rows:Candidate[],budget=0):CandidateScore[]=>rows.map(c=>{const costEfficiency=c.cost?Math.max(0,1-c.cost/Math.max(1,budget||c.cost*2)):.9;const confidence=Math.min(1,.45+c.evidence.length*.08);const final=Math.max(0,Math.min(1,c.baseScore*.4+c.impact*.35+confidence*.15+costEfficiency*.1));const reasons=[`Base ${c.baseScore.toFixed(2)}`,`Impact ${c.impact.toFixed(2)}`,`Evidence ${c.evidence.length}`];if(costEfficiency<.4)reasons.push('High cost relative to the available budget.');return {candidateId:c.id,base:c.baseScore,confidence,impact:c.impact,costEfficiency,final,reasons};}).sort((a,b)=>b.final-a.final);

@@ -1,0 +1,4 @@
+import { money } from '../core/money'; import type { CommerceCart, CommerceOrder, Money } from '../types/commerce';
+export interface RevenueBreakdown{gross:Money; commission:Money; platformFee:Money; net:Money;}
+export function estimateRevenue(cart:CommerceCart,platformRate=.05):RevenueBreakdown{const commission=cart.totals.commissionEstimate;const platformFee=money(cart.totals.total.amount*platformRate,cart.currency);return {gross:cart.totals.total,commission,platformFee,net:money(cart.totals.total.amount-commission.amount-platformFee.amount,cart.currency)}}
+export function orderRevenue(order:CommerceOrder,platformRate=.05):RevenueBreakdown{const commission=order.totals.commissionEstimate;const platformFee=money(order.totals.total.amount*platformRate,order.totals.total.currency);return {gross:order.totals.total,commission,platformFee,net:money(order.totals.total.amount-commission.amount-platformFee.amount,order.totals.total.currency)}}

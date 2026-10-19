@@ -1,0 +1,2 @@
+export type Transaction={id:string;timestamp:number;label:string;beforeHash:string;afterHash:string;reversible:boolean};
+export class TransactionLog{private items:Transaction[]=[];private cursor=-1;record(tx:Transaction){this.items=this.items.slice(0,this.cursor+1);this.items.push(tx);this.cursor=this.items.length-1}undo(){if(this.cursor<0)return;this.cursor--}redo(){if(this.cursor+1>=this.items.length)return;this.cursor++}current(){return this.cursor>=0?this.items[this.cursor]:undefined}history(){return this.items.slice()}}

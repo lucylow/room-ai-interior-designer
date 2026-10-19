@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface FinishBoundariesResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class FinishBoundaries {
   /** associates finish overlays with measurable source boundaries. */

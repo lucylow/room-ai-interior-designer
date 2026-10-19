@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface ProportionalCheckerResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class ProportionalChecker {
   /** checks concept dimensions against source dimensions and tolerances. */

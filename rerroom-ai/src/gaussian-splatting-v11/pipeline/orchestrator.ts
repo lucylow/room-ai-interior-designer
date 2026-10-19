@@ -1,0 +1,3 @@
+import type { ReconstructionJob } from '../core/types';
+import { StageGraph } from './stage-graph';
+export class ReconstructionOrchestrator { private graph:StageGraph; constructor(private job:ReconstructionJob){this.graph=new StageGraph(job.stages);} tick(handler:(stageName:string)=>void){const next=this.graph.nextReady();if(!next)return false;this.graph.set(next.id,'running',10,`Running ${next.name}`);handler(next.name);this.graph.set(next.id,'completed',100,`Completed ${next.name}`);return true;} run(handler:(stageName:string)=>void){while(this.tick(handler)){}return this.graph.snapshot();}}

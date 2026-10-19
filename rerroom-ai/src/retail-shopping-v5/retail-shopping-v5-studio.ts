@@ -10,21 +10,7 @@ import type {
   RetailProduct,
   RetailerId,
   ProductCategory,
-  RoomType,
   StyleName,
-  ShoppingConstraints,
-  RetailerContext,
-  RetailerResult,
-  Candidate,
-  Recommendation,
-  FurnitureSlot,
-  RoomEnvelope,
-  DesignIntent,
-  Budget,
-  ScenePatch,
-  ShoppingCart,
-  CartLine,
-  Bundle,
 } from '../retail-shopping-v4/domain/commerce-types';
 
 const V5_SNAPSHOT = '2026-10-02';
@@ -88,7 +74,7 @@ export function runRetailShoppingV5(request:RetailShoppingV5Request, catalog=IKE
   const selected=diversifyRoomKit(dedup.map(r=>r.product),Math.min(6,request.room.slots.length));
   const hard=optimizeUnderHardCap(selected.map((product,index)=>({slotId:request.room.slots[index]?.id ?? `slot-${index}`,product,quantity:1,priority:1-index*.05})),request.room.budget);
   const finalProducts=hard.choices.map(c=>c.product);
-  const explanations=finalProducts.map((product,index)=>explainBuyableChoice(product,style,palette,request.budget,rankedAll.find(r=>r.product.id===product.id)?.score??.5));
+  const explanations=finalProducts.map((product,_index)=>explainBuyableChoice(product,style,palette,request.budget,rankedAll.find(r=>r.product.id===product.id)?.score??.5));
   const provenance=finalProducts.map((product,index)=>makeShoppingProvenance(product,'concept-v5',style,palette,request.room.slots[index] ?? request.room.slots[0],`cad-anchor-${index+1}`));
   const concept=composeRetailConcept({room:request.room.room.roomType,style,paletteId:palette,budget:request.budget,vibe:'buyable design studio',productIds:finalProducts.map(p=>p.id)},catalog);
   return {intent,queryPlan:querySummary(plan),ranked:rankedAll,selected:finalProducts,budgetReport:demoBudgetReport(finalProducts,request.budget),explanations,concept,revisionOptions:RETAIL_REVISION_SUGGESTIONS_V2.slice(0,6),provenance};

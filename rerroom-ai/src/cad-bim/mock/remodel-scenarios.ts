@@ -1,4 +1,4 @@
-import { AuthoritativeModel, RemodelProject, SourceFeature } from '../core/types';
+import { AuthoritativeModel, SourceFeature } from '../core/types';
 export interface MockRemodelScenario { id:string; label:string; prompt:string; expectedPreserved:string[]; model:AuthoritativeModel; }
 function sourceFeature(id:string,kind:SourceFeature['kind'],x:number,z:number,w:number,d:number,h:number):SourceFeature{return {id,sourceDocumentId:'demo-cad',kind,authority:'authoritative',center:{x:x,y:0,z:z},size:{width:w,depth:d,height:h},properties:{},sourceRefs:[`DEMO:${id}`]};}
 export const remodelScenarios:MockRemodelScenario[]=[

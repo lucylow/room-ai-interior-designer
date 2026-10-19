@@ -1,0 +1,13 @@
+{
+  "products": 10,
+  "tests": "PASS",
+  "paywallOffers": [
+    "introductory",
+    "win-back"
+  ],
+  "credits": {
+    "ai": 6,
+    "render": 0
+  },
+  "reconciledTier": "pro"
+}

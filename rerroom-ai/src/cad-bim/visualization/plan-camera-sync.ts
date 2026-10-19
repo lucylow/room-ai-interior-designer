@@ -1,4 +1,4 @@
-import { Vec3, AuthoritativeModel, ConceptElement } from '../core/types';
+import {  AuthoritativeModel, ConceptElement } from '../core/types';
 import { LayoutPlan, ViewMode } from '../planning/types';
 
 export interface PlanCameraSyncEntry { id:string; label:string; value:string|number|boolean; linkedId?:string; }

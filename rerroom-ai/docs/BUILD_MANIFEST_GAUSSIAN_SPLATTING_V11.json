@@ -1,0 +1,32 @@
+{
+  "version": "v11",
+  "focus": "Technical Gaussian Splatting for RE:ROOM AI",
+  "newSourceFiles": 266,
+  "newTypeScriptLines": 8996,
+  "estimatedPagesAt55Lines": 163.6,
+  "typescriptBuild": "PASS",
+  "pythonSyntax": "PASS",
+  "demo": "PASS",
+  "referenceSources": [
+    "https://github.com/graphdeco-inria/gaussian-splatting",
+    "https://docs.gsplat.studio/main/apis/rasterization.html"
+  ],
+  "features": [
+    "photo-video capture QA",
+    "COLMAP adapters",
+    "Gaussian representation",
+    "covariance projection",
+    "CPU reference rasterizer",
+    "tile binning",
+    "culling",
+    "LOD",
+    "streaming",
+    "semantic queries",
+    "AI edit planning",
+    "CAD/BIM anchor alignment",
+    "GPU worker boundary",
+    "PLY export",
+    "scene health",
+    "privacy scrub"
+  ]
+}

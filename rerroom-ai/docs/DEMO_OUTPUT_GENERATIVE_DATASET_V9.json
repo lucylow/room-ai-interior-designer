@@ -1,0 +1,25 @@
+{
+  "sourceRecords": 192,
+  "dedupedRecords": 192,
+  "balancedRecords": 192,
+  "metrics": {
+    "total": 192,
+    "gold": 165,
+    "silver": 27,
+    "review": 0,
+    "rooms": 12,
+    "styles": 8,
+    "palettes": 12,
+    "avgPromptLength": 176.38
+  },
+  "evaluation": {
+    "coverage": 0.083,
+    "specificity": 1,
+    "constraintRate": 1,
+    "explanationRate": 1,
+    "score": 0.817
+  },
+  "rankingConsistency": 1,
+  "spatialGrounding": 1,
+  "readyForDemo": true
+}

@@ -1,0 +1,68 @@
+export interface DemoDesignCase { id: string; roomType: string; style: string; paletteId: string; request: string; expectedOutput: string[]; }
+
+export const DEMO_CASES_14: DemoDesignCase[] = [
+  {
+    id: "demo-v9-0105",
+    roomType: "media_room",
+    style: "moody_modern",
+    paletteId: "forest_moss",
+    request: "add more texture",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0106",
+    roomType: "guest_room",
+    style: "craft_modern",
+    paletteId: "terracotta_oak",
+    request: "make it more family friendly",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0107",
+    roomType: "reading_nook",
+    style: "urban_soft",
+    paletteId: "olive_cream",
+    request: "make it more budget conscious",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0108",
+    roomType: "living_room",
+    style: "modern",
+    paletteId: "sandstone",
+    request: "make it warmer",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0109",
+    roomType: "bedroom",
+    style: "scandinavian",
+    paletteId: "forest_moss",
+    request: "make it brighter",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0110",
+    roomType: "kitchen",
+    style: "japandi",
+    paletteId: "terracotta_oak",
+    request: "reduce visual clutter",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0111",
+    roomType: "dining_room",
+    style: "organic_modern",
+    paletteId: "olive_cream",
+    request: "push the style further",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0112",
+    roomType: "home_office",
+    style: "contemporary",
+    paletteId: "sandstone",
+    request: "make the layout feel more open",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+];

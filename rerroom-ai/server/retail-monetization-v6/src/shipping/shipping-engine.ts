@@ -1,0 +1,2 @@
+import { money } from '../core/money'; import type { CommerceCart, ShippingQuote } from '../types/commerce';
+export function quoteShipping(cart:CommerceCart,method:'ship'|'pickup'='ship'):ShippingQuote{if(method==='pickup')return {method:'pickup',amount:money(0,cart.currency),etaDays:2,label:'Store pickup'};const weightScore=Math.max(1,cart.lines.reduce((n,l)=>n+l.quantity,0));const amount=weightScore>8?49:weightScore>4?29:15;return {method:'ship',amount:money(amount,cart.currency),etaDays:weightScore>8?7:4,label:'Standard delivery'} }

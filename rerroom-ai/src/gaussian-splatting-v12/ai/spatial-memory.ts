@@ -1,0 +1,3 @@
+import { Vec3 } from '../core/types';
+export type SpatialMemory={roomId:string;facts:{key:string;value:string;confidence:number;position?:Vec3}[]};
+export class MemoryStore{private rooms=new Map<string,SpatialMemory>();put(roomId:string,key:string,value:string,confidence=.8,position?:Vec3){const r=this.rooms.get(roomId)||{roomId,facts:[]};r.facts=r.facts.filter(f=>f.key!==key);r.facts.push({key,value,confidence,position});this.rooms.set(roomId,r)}get(roomId:string,key?:string){const r=this.rooms.get(roomId);return key?r?.facts.filter(f=>f.key===key):r?.facts}snapshot(){return [...this.rooms.values()]}}

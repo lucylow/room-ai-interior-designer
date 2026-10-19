@@ -1,0 +1,2 @@
+export interface OfferCode{code:string;productId:string;kind:'promo'|'win-back'|'intro';remaining:number;expiresAt:string}
+export class OfferCodeBook{private codes=new Map<string,OfferCode>();seed(codes:OfferCode[]){for(const c of codes)this.codes.set(c.code,c)}redeem(code:string){const c=this.codes.get(code);if(!c||c.remaining<=0||Date.parse(c.expiresAt)<Date.now())return null;c.remaining--;return {...c}}remaining(code:string){return this.codes.get(code)?.remaining||0}}

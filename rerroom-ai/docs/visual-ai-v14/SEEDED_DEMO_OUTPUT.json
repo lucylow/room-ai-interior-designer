@@ -1,0 +1,93 @@
+{
+  "datasetCount": 512,
+  "scene2DFurniture": 3,
+  "scene3DSplats": 4800,
+  "metrics": {
+    "sharpness": 0.62,
+    "composition": 0.84,
+    "geometry": 0.75,
+    "lighting": 0.88,
+    "material": 0.79,
+    "consistency": 0.61,
+    "overall": 0.7414999999999999
+  },
+  "insights": [
+    {
+      "id": "2d-composition",
+      "title": "TwoD composition",
+      "message": "Score 85%",
+      "severity": "info",
+      "confidence": 0.5900000000000001,
+      "evidence": [
+        "visual balance inspected"
+      ]
+    },
+    {
+      "id": "2d-furniture",
+      "title": "Furniture placement",
+      "message": "Score 85%",
+      "severity": "info",
+      "confidence": 0.5900000000000001,
+      "evidence": [
+        "furniture placement inspected"
+      ]
+    }
+  ],
+  "gate": {
+    "pass": true,
+    "loss": 0.0030000000000001137,
+    "threshold": 0.12,
+    "severity": "info",
+    "confidence": 0.6984999999999999
+  },
+  "scenarios": [
+    {
+      "id": "v14-modern",
+      "style": "modern",
+      "palette": "warm-white",
+      "concepts": 512,
+      "overall": 0.7915
+    },
+    {
+      "id": "v14-minimal",
+      "style": "minimalist",
+      "palette": "sand",
+      "concepts": 512,
+      "overall": 0.779
+    },
+    {
+      "id": "v14-scandi",
+      "style": "scandinavian",
+      "palette": "sage",
+      "concepts": 512,
+      "overall": 0.7665
+    },
+    {
+      "id": "v14-industrial",
+      "style": "industrial",
+      "palette": "charcoal",
+      "concepts": 512,
+      "overall": 0.7539999999999999
+    }
+  ],
+  "comparison": {
+    "delta": {
+      "sharpness": -0.25,
+      "composition": 0.09999999999999998,
+      "geometry": 0.14,
+      "lighting": 0.22000000000000008,
+      "material": -0.04999999999999993,
+      "consistency": -0.2799999999999999
+    },
+    "gain": -0.019999999999999962,
+    "improved": false,
+    "confidence": 0.6199999999999999
+  },
+  "render": {
+    "planPixels": 1146880,
+    "planSharpness": 0.01734069058130588,
+    "enhancedSharpness": 0.018906848343172564,
+    "planConsistency": 0.9772271688624296,
+    "splatPixels": 1146880
+  }
+}

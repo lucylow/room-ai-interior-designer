@@ -1,0 +1,1 @@
+import { EntitlementGrant } from '../types'; export interface RestoredTransaction{productId:string;verified:boolean;revoked:boolean}; export function grantsFromRestored(txns:RestoredTransaction[]):EntitlementGrant[]{return txns.filter(t=>t.verified&&!t.revoked).map(t=>({feature:'project_exports',state:'active',productId:t.productId,source:'apple'}))}

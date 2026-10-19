@@ -1,0 +1,68 @@
+export interface DemoDesignCase { id: string; roomType: string; style: string; paletteId: string; request: string; expectedOutput: string[]; }
+
+export const DEMO_CASES_16: DemoDesignCase[] = [
+  {
+    id: "demo-v9-0121",
+    roomType: "bedroom",
+    style: "scandinavian",
+    paletteId: "forest_moss",
+    request: "make it brighter",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0122",
+    roomType: "kitchen",
+    style: "japandi",
+    paletteId: "terracotta_oak",
+    request: "reduce visual clutter",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0123",
+    roomType: "dining_room",
+    style: "organic_modern",
+    paletteId: "olive_cream",
+    request: "push the style further",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0124",
+    roomType: "home_office",
+    style: "contemporary",
+    paletteId: "sandstone",
+    request: "make the layout feel more open",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0125",
+    roomType: "entryway",
+    style: "quiet_luxury",
+    paletteId: "forest_moss",
+    request: "add one stronger focal point",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0126",
+    roomType: "bathroom",
+    style: "modern_farmhouse",
+    paletteId: "terracotta_oak",
+    request: "swap the main chair",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0127",
+    roomType: "nursery",
+    style: "art_deco",
+    paletteId: "olive_cream",
+    request: "soften the contrast",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0128",
+    roomType: "studio",
+    style: "soft_industrial",
+    paletteId: "sandstone",
+    request: "use lighter wood",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+];

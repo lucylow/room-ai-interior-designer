@@ -1,0 +1,2 @@
+import type { CommerceCart, CartLine } from '../types/commerce';
+export function mergeCarts(a:CommerceCart,b:CommerceCart):CommerceCart{if(a.currency!==b.currency)throw new Error('currency_mismatch');const lines:[...CartLine[]]=[...a.lines];for(const line of b.lines){const existing=lines.find(x=>x.variantId===line.variantId);if(existing)existing.quantity+=line.quantity;else lines.push({...line});}return {...a,lines,version:Math.max(a.version,b.version)+1,updatedAt:new Date().toISOString()}}

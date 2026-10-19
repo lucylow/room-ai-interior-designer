@@ -1,4 +1,4 @@
-import { ProjectArtifact, ProjectActivity, ProjectMember, ProjectMilestone, ProjectTask, ProjectWorkspaceState } from '../planning/types';
+import {   ProjectWorkspaceState } from '../planning/types';
 
 export interface ProjectHealthResult { id:string; title:string; score:number; warnings:string[]; items:string[]; metadata:Record<string,string|number|boolean>; }
 

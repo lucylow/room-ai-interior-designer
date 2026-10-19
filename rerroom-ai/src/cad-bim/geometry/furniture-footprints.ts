@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface FurnitureFootprintsResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class FurnitureFootprints {
   /** projects furniture into 2D footprints from anchored 3D dimensions. */

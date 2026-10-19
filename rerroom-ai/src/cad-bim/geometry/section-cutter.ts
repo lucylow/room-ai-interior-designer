@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface SectionCutterResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class SectionCutter {
   /** creates a lightweight planning section from canonical geometry. */

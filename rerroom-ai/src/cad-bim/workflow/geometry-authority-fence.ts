@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature, Vec3 } from '../core/types';
+import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
 
 export interface FenceDecision {
   featureId: string;

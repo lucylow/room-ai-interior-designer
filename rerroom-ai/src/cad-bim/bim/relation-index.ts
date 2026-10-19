@@ -1,4 +1,4 @@
-import { BIMIndex, BIMEntity, BIMPropertySet } from '../core/types';
+import { BIMIndex, BIMEntity } from '../core/types';
 export interface RelationIndexResult { count:number; values:Array<Record<string,unknown>>; warnings:string[]; }
 export class RelationIndex {
   /** indexes EXPRESS references between BIM entities. */

@@ -1,0 +1,3 @@
+import type { ReconstructionJob, TrainingCheckpoint } from '../core/types';
+export interface ResumePlan {canResume:boolean;fromIteration:number;stageId?:string;reason:string;}
+export function buildResumePlan(job:ReconstructionJob,checkpoint?:TrainingCheckpoint):ResumePlan{if(!checkpoint)return {canResume:false,fromIteration:0,reason:'No checkpoint'};const stage=job.stages.find(s=>s.name==='gaussian-train');if(!stage)return {canResume:false,fromIteration:checkpoint.iteration,reason:'Training stage missing'};return {canResume:true,fromIteration:checkpoint.iteration,stageId:stage.id,reason:'Checkpoint available'};}

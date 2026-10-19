@@ -1,2 +1,2 @@
-import { DesignOverlay, ConceptElement, OverlayPatch } from '../core/types';
+import {  ConceptElement, OverlayPatch } from '../core/types';
 export function ensureNonDestructive(elements:ConceptElement[],patches:OverlayPatch[]):{safe:boolean;warnings:string[]} {const warnings:string[]=[];for(const p of patches){if(p.operation==='replace'&&p.path.includes('authoritative'))warnings.push(`Patch ${p.id} attempts to replace authoritative data.`);}for(const e of elements){if(e.anchor===undefined&&e.source==='ai')warnings.push(`AI element ${e.id} has no anchor; it remains illustrative.`);}return {safe:warnings.length===0,warnings};}

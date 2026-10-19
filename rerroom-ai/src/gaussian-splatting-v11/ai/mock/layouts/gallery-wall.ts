@@ -1,0 +1,3 @@
+export interface LayoutAdvice {id:string;name:string;primaryGoal:string;minimumClearance:number;recommendedRatio:number;notes:string[];}
+export const LAYOUT_06:LayoutAdvice={id:'layout-06',name:'gallery-wall',primaryGoal:['circulation','focus','storage','daylight'][6%4],minimumClearance:0.93,recommendedRatio:0.670,notes:['Preserve primary door path','Keep windows visible from key camera','Anchor furniture to functional zones']};
+export function layoutFit(roomArea:number,furnitureArea:number):number{const ratio=furnitureArea/Math.max(1,roomArea);return Math.max(0,Math.min(1,1-Math.abs(ratio-LAYOUT_06.recommendedRatio)));}

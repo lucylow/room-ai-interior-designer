@@ -1,4 +1,4 @@
-import { AuthoritativeModel, SourceFeature } from '../core/types';
+import { AuthoritativeModel } from '../core/types';
 import { LayoutPlan, Zone } from '../planning/types';
 
 export interface BIMLayoutLineageRow { id:string; sourceId?:string; kind:string; label:string; value:string|number|boolean; }

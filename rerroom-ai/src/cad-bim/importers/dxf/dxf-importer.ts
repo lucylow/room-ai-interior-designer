@@ -1,4 +1,4 @@
-import { AuthoritativeModel, SourceDocument, SourceFeature, SourceLevel, Polygon2 } from '../../core/types';
+import { AuthoritativeModel, SourceDocument, SourceFeature, SourceLevel } from '../../core/types';
 import { v2 } from '../../core/geometry';
 
 interface Pair { code:string; value:string; }

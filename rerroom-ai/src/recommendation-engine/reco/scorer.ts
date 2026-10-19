@@ -1,5 +1,5 @@
 import type {Candidate,Recommendation,UserPreferences,BudgetProfile,RoomContext} from '../core/types';
-import {clamp,weightedMean} from '../core/math';
+import {clamp} from '../core/math';
 import {effortWeight,evidenceScore} from './factory';
 export interface ScoreWeights { relevance:number; impact:number; confidence:number; effort:number; cost:number; novelty:number; preference:number; }
 export const defaultWeights:ScoreWeights={relevance:.22,impact:.22,confidence:.16,effort:.08,cost:.1,novelty:.08,preference:.14};

@@ -1,4 +1,4 @@
-import { BIMIndex, BIMEntity, BIMPropertySet } from '../core/types';
+import { BIMIndex, BIMEntity } from '../core/types';
 export interface SpaceBoundaryReaderResult { count:number; values:Array<Record<string,unknown>>; warnings:string[]; }
 export class SpaceBoundaryReader {
   /** collects space boundary relation references. */

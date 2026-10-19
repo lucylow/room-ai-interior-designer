@@ -1,0 +1,1 @@
+import { RevenueEvent } from '../types'; export function minimizeRevenueEvent(e:RevenueEvent):RevenueEvent{return {name:e.name,at:e.at,productId:e.productId,amount:e.amount,properties:Object.fromEntries(Object.entries(e.properties).filter(([k])=>!/(email|phone|address|name|token|secret)/i.test(k)))}}

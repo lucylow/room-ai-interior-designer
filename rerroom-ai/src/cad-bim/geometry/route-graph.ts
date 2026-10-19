@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface RouteGraphResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class RouteGraph {
   /** creates a circulation graph for AI layout scoring. */

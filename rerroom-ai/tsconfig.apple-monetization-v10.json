@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "types": []
+  },
+  "include": [
+    "src/monetization-v10/**/*.ts",
+    "src/mocks/**/*.ts",
+    "run-apple-monetization-v10-demo.ts",
+    "run-apple-monetization-v10-tests.ts"
+  ]
+}

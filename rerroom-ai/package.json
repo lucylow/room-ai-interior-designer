@@ -20,7 +20,19 @@
     "visualization:check": "pnpm run visualization:typecheck && pnpm run visualization:test",
     "cad-bim:typecheck": "tsc -p tsconfig.cad-bim.json --pretty false",
     "generative-design:typecheck": "tsc -p tsconfig.generative-design.json --pretty false",
-    "retail-shopping:typecheck": "tsc -p tsconfig.retail-shopping.json --pretty false"
+    "retail-shopping:typecheck": "tsc -p tsconfig.retail-shopping.json --pretty false",
+    "gaussian-splatting-v13:typecheck": "tsc -p tsconfig.gaussian-splatting-v13.json --pretty false",
+    "gaussian-splatting-v13:test": "vitest run src/tests/gaussian-splatting-v13",
+    "gaussian-splatting-v13:check": "pnpm run gaussian-splatting-v13:typecheck && pnpm run gaussian-splatting-v13:test",
+    "visual-ai-v14:typecheck": "tsc -p tsconfig.visual-ai-v14.json --pretty false",
+    "visual-ai-v14:test": "vitest run src/tests/visual-ai-v14",
+    "visual-ai-v14:check": "pnpm run visual-ai-v14:typecheck && pnpm run visual-ai-v14:test",
+    "visual-ai:check": "pnpm run gaussian-splatting-v13:check && pnpm run visual-ai-v14:check",
+    "commerce-v6:typecheck": "tsc -p tsconfig.commerce-v6.json --pretty false",
+    "commerce-v6:test": "vitest run src/tests/commerce-v6",
+    "commerce-v6:check": "pnpm run commerce-v6:typecheck && pnpm run commerce-v6:test && pnpm run lint:commerce-v6",
+    "all-domain-check": "pnpm run visual-ai:check && pnpm run commerce-v6:check",
+    "lint:commerce-v6": "eslint --config eslint.commerce-v6.config.mjs ."
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",

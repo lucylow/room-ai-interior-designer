@@ -1,0 +1,18 @@
+{
+  "identifier": "RoomAI-Demo",
+  "products": [
+    {"id":"com.reroom.ai.plus.monthly","type":"auto-renewable","displayName":"RE:ROOM Plus","price":"7.99","recurrencePeriod":"P1M","groupNumber":1},
+    {"id":"com.reroom.ai.plus.yearly","type":"auto-renewable","displayName":"RE:ROOM Plus Annual","price":"59.99","recurrencePeriod":"P1Y","groupNumber":1},
+    {"id":"com.reroom.ai.pro.monthly","type":"auto-renewable","displayName":"RE:ROOM Pro","price":"14.99","recurrencePeriod":"P1M","groupNumber":1},
+    {"id":"com.reroom.ai.pro.yearly","type":"auto-renewable","displayName":"RE:ROOM Pro Annual","price":"119.99","recurrencePeriod":"P1Y","groupNumber":1},
+    {"id":"com.reroom.ai.studio.monthly","type":"auto-renewable","displayName":"RE:ROOM Studio","price":"29.99","recurrencePeriod":"P1M","groupNumber":1},
+    {"id":"com.reroom.ai.render.credits.10","type":"consumable","displayName":"10 HD Render Credits","price":"4.99"},
+    {"id":"com.reroom.ai.render.credits.50","type":"consumable","displayName":"50 HD Render Credits","price":"16.99"},
+    {"id":"com.reroom.ai.generation.credits.25","type":"consumable","displayName":"25 AI Design Credits","price":"2.99"},
+    {"id":"com.reroom.ai.cad.export","type":"non-consumable","displayName":"CAD Export Pack","price":"9.99"},
+    {"id":"com.reroom.ai.commercial","type":"non-consumable","displayName":"Commercial Use Unlock","price":"49.99"}
+  ],
+  "subscriptionGroups": [
+    {"id":"reroom-subscription-group","name":"RE:ROOM Membership","groupNumber":1}
+  ]
+}

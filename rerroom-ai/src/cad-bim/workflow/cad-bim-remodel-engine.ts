@@ -110,7 +110,7 @@ export class CadBimRemodelEngine {
     return JSON.parse(JSON.stringify(validation));
   }
 
-  approve(approvedBy = 'client'): RemodelEngineState {
+  approve(_approvedBy = 'client'): RemodelEngineState {
     const state = this.requireState();
     if (!state.activeConcept) throw new Error('No concept to approve.');
     const readiness = assessApprovalReadiness(state.project.authoritativeModel, state.activeConcept);

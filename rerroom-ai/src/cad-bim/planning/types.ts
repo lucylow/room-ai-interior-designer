@@ -1,4 +1,4 @@
-import { AnchorReference, AuthoritativeModel, ConceptElement, RemodelProject, Size3, Vec2, Vec3 } from '../core/types';
+import { AnchorReference, AuthoritativeModel, RemodelProject, Size3, Vec3 } from '../core/types';
 import { RoomType } from '../../core/types';
 
 export type ZoneType = 'living'|'circulation'|'dining'|'work'|'sleep'|'storage'|'service'|'entry'|'activity'|'buffer';

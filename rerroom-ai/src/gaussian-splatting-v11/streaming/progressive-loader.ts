@@ -1,0 +1,3 @@
+import type { StreamChunk } from '../core/types';
+export interface LoaderState {queued:number;loaded:number;active:number;bytes:number;}
+export class ProgressiveSplatLoader { private queue:StreamChunk[]=[];private loaded=0;private bytes=0;private active=0; enqueue(chunks:StreamChunk[]){this.queue.push(...chunks.sort((a,b)=>b.priority-a.priority));} next():StreamChunk|undefined{const c=this.queue.shift();if(c)this.active++;return c;} complete(c:StreamChunk){this.active=Math.max(0,this.active-1);this.loaded++;this.bytes+=c.byteLength;} state():LoaderState{return {queued:this.queue.length,loaded:this.loaded,active:this.active,bytes:this.bytes};}}

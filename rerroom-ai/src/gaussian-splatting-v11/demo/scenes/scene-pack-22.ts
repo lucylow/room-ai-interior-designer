@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_22: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-22-00",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 48,
+    "splatCount": 12842,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1914,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-22-01",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 52,
+    "splatCount": 12939,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1915,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-22-02",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 56,
+    "splatCount": 13036,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1916,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-22-03",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 60,
+    "splatCount": 13133,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1917,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-22-04",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 64,
+    "splatCount": 13230,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1918,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-22-05",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 48,
+    "splatCount": 13327,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1919,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-22-06",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 52,
+    "splatCount": 13424,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1920,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-22-07",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 56,
+    "splatCount": 13521,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1921,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-22-08",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 60,
+    "splatCount": 13618,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1922,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-22-09",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 64,
+    "splatCount": 13715,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1923,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-22-10",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 48,
+    "splatCount": 13812,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1924,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-22-11",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 52,
+    "splatCount": 13909,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1925,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-22-12",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 56,
+    "splatCount": 14006,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1926,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-22-13",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 60,
+    "splatCount": 14103,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1927,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-22-14",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 64,
+    "splatCount": 14200,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1928,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-22-15",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 48,
+    "splatCount": 14297,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1929,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-22-16",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 52,
+    "splatCount": 14394,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1930,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-22-17",
+    "room": "sunroom",
+    "style": "quiet-luxury",
+    "palette": "soft-black",
+    "cameraFov": 56,
+    "splatCount": 14491,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1931,
+    "prompt": "Preserve sunroom geometry, render quiet-luxury styling, use soft-black, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack22(index:number) { return SCENE_PACK_22[index % SCENE_PACK_22.length]; }
+export function bestScenePack22() { return [...SCENE_PACK_22].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt22(index:number):string { return getScenePack22(index).prompt; }

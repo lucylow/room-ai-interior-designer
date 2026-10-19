@@ -1,0 +1,3 @@
+export interface VerifiedAppleTransaction{transactionId:string;originalTransactionId:string;productId:string;environment:'Sandbox'|'Production';purchaseDate:string;expiresDate?:string;revocationDate?:string}
+export interface ServerEntitlementResponse{appUserId:string;verified:boolean;entitlementKeys:string[];transactions:VerifiedAppleTransaction[];serverTime:string}
+export function buildServerResponse(appUserId:string,transactions:VerifiedAppleTransaction[]):ServerEntitlementResponse{return {appUserId,verified:true,entitlementKeys:transactions.filter(t=>!t.revocationDate).map(t=>t.productId),transactions,serverTime:new Date().toISOString()}}

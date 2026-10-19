@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface SceneOriginResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class SceneOrigin {
   /** normalizes a project scene origin for stable 2D/3D navigation. */

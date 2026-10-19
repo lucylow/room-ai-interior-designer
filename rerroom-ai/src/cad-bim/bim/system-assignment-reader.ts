@@ -1,4 +1,4 @@
-import { BIMIndex, BIMEntity, BIMPropertySet } from '../core/types';
+import { BIMIndex, BIMEntity } from '../core/types';
 export interface SystemAssignmentReaderResult { count:number; values:Array<Record<string,unknown>>; warnings:string[]; }
 export class SystemAssignmentReader {
   /** retains HVAC/electrical/plumbing system names. */

@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_15: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-15-00",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 48,
+    "splatCount": 10665,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1655,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-15-01",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 52,
+    "splatCount": 10762,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1656,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-15-02",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 56,
+    "splatCount": 10859,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1657,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-15-03",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 60,
+    "splatCount": 10956,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1658,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-15-04",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 64,
+    "splatCount": 11053,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1659,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-15-05",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 48,
+    "splatCount": 11150,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1660,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-15-06",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 52,
+    "splatCount": 11247,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1661,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-15-07",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 56,
+    "splatCount": 11344,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1662,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-15-08",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 60,
+    "splatCount": 11441,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1663,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-15-09",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 64,
+    "splatCount": 11538,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1664,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-15-10",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 48,
+    "splatCount": 11635,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1665,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-15-11",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 52,
+    "splatCount": 11732,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1666,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-15-12",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 56,
+    "splatCount": 11829,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1667,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-15-13",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 60,
+    "splatCount": 11926,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1668,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-15-14",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 64,
+    "splatCount": 12023,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1669,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-15-15",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 48,
+    "splatCount": 12120,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1670,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-15-16",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 52,
+    "splatCount": 12217,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1671,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-15-17",
+    "room": "dining-room",
+    "style": "industrial",
+    "palette": "dusty-blue",
+    "cameraFov": 56,
+    "splatCount": 12314,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1672,
+    "prompt": "Preserve dining-room geometry, render industrial styling, use dusty-blue, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack15(index:number) { return SCENE_PACK_15[index % SCENE_PACK_15.length]; }
+export function bestScenePack15() { return [...SCENE_PACK_15].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt15(index:number):string { return getScenePack15(index).prompt; }

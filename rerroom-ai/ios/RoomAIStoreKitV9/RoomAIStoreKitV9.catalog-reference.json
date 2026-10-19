@@ -1,0 +1,57 @@
+{
+  "identifier": "RoomAIStoreKitV9",
+  "products": [
+    {
+      "id": "com.reroom.ai.pro.monthly",
+      "type": "RecurringSubscription",
+      "referenceName": "Pro Monthly",
+      "price": "14.99",
+      "family": "Pro"
+    },
+    {
+      "id": "com.reroom.ai.pro.yearly",
+      "type": "RecurringSubscription",
+      "referenceName": "Pro Yearly",
+      "price": "149.99",
+      "family": "Pro"
+    },
+    {
+      "id": "com.reroom.ai.studio.monthly",
+      "type": "RecurringSubscription",
+      "referenceName": "Studio Monthly",
+      "price": "39.99",
+      "family": "Studio"
+    },
+    {
+      "id": "com.reroom.ai.studio.yearly",
+      "type": "RecurringSubscription",
+      "referenceName": "Studio Yearly",
+      "price": "399.99",
+      "family": "Studio"
+    },
+    {
+      "id": "com.reroom.ai.pro.lifetime",
+      "type": "NonConsumable",
+      "referenceName": "Pro Lifetime",
+      "price": "399.99"
+    },
+    {
+      "id": "com.reroom.ai.credits.100",
+      "type": "Consumable",
+      "referenceName": "100 AI Credits",
+      "price": "9.99"
+    },
+    {
+      "id": "com.reroom.ai.credits.500",
+      "type": "Consumable",
+      "referenceName": "500 AI Credits",
+      "price": "39.99"
+    },
+    {
+      "id": "com.reroom.ai.render.10",
+      "type": "Consumable",
+      "referenceName": "10 HD Renders",
+      "price": "7.99"
+    }
+  ]
+}

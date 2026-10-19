@@ -1,0 +1,5 @@
+import { FrameRecord } from '../core/types';
+export type OverlapEdge={a:string;b:string;score:number;sharedCoverage:number;temporalGap:number};
+export function overlapScore(a:FrameRecord,b:FrameRecord){const coverage=(a.coverage+b.coverage)/2;const sharp=Math.min(a.sharpness,b.sharpness);const motion=1-Math.min(1,Math.abs(a.motion-b.motion));const exposure=1-Math.min(1,Math.abs(a.exposure-b.exposure));return coverage*.4+sharp*.25+motion*.15+exposure*.2}
+export function buildOverlapGraph(frames:FrameRecord[],maxGapMs=1200):OverlapEdge[]{const out:OverlapEdge[]=[];const sorted=[...frames].sort((a,b)=>a.timestampMs-b.timestampMs);for(let i=0;i<sorted.length;i++)for(let j=i+1;j<sorted.length;j++){const gap=sorted[j].timestampMs-sorted[i].timestampMs;if(gap>maxGapMs)break;const score=overlapScore(sorted[i],sorted[j]);if(score>.45)out.push({a:sorted[i].id,b:sorted[j].id,score,sharedCoverage:Math.min(sorted[i].coverage,sorted[j].coverage),temporalGap:gap})}return out}
+export function graphStats(edges:OverlapEdge[]){return {edges:edges.length,mean:edges.reduce((s,e)=>s+e.score,0)/(edges.length||1),max:Math.max(0,...edges.map(e=>e.score))}}

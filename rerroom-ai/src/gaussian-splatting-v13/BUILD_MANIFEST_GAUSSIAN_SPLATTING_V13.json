@@ -1,0 +1,11 @@
+{
+  "version": "13",
+  "focus": "production-oriented Gaussian Splatting continuation",
+  "newTypeScriptFiles": 225,
+  "newTypeScriptLines": 19982,
+  "pageEstimate55Lines": 363.3,
+  "dependencyFreeReferencePath": true,
+  "gpuAdapterBoundary": true,
+  "validation": "strict TypeScript compilation passed",
+  "demo": "seeded reference renderer + 10-stage pipeline passed"
+}

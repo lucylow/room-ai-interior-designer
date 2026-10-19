@@ -1,0 +1,89 @@
+{
+  "version": "v10.0.0",
+  "continuation_of": "v9",
+  "new_source_files": 151,
+  "new_typescript_lines": 11030,
+  "approx_pages_at_55_lines": 200.55,
+  "indexed_record_counts": {
+    "multimodal_generation": 216,
+    "instruction": 0,
+    "critique": 120,
+    "preference": 120,
+    "counterfactual": 96,
+    "spatial_grounding": 120,
+    "cad_bim_grounding": 72,
+    "tool_trace": 96,
+    "quality": 96,
+    "safety": 72,
+    "dialogue": 96,
+    "retail_grounding": 72,
+    "evaluation": 72,
+    "augmentation": 96,
+    "project_context": 72
+  },
+  "indexed_record_total": 1416,
+  "deterministic_seed_range": [
+    91000,
+    94300
+  ],
+  "pii_free": true,
+  "license_safe": true,
+  "strict_typescript_check": "PASS",
+  "deterministic_demo": "PASS",
+  "demo_output": "DEMO_OUTPUT_GENERATIVE_DATA_V10.json",
+  "notes": [
+    "Synthetic/demo-only data; replace incrementally with reviewed, rights-cleared datasets for production.",
+    "Architectural dimensions and fixed openings are treated as immutable source truth in multimodal and project records."
+  ],
+  "demo_summary": {
+    "version": "v10.0.0",
+    "quality": {
+      "schemaErrors": 0,
+      "groundingFailures": 0,
+      "score": 1,
+      "duplicateIds": 0
+    },
+    "split_counts": {
+      "challenge": 14,
+      "train": 212,
+      "validation": 37,
+      "test": 25
+    },
+    "style_coverage_top": [
+      [
+        "art_deco",
+        12
+      ],
+      [
+        "bohemian",
+        12
+      ],
+      [
+        "modern",
+        12
+      ],
+      [
+        "desert_modern",
+        12
+      ]
+    ],
+    "room_coverage_top": [
+      [
+        "nursery",
+        20
+      ],
+      [
+        "media_room",
+        20
+      ],
+      [
+        "reading_nook",
+        20
+      ],
+      [
+        "basement",
+        20
+      ]
+    ]
+  }
+}

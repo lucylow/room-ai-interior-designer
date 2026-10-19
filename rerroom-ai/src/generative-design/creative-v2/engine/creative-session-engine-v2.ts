@@ -1,5 +1,5 @@
 
-import type {DesignConcept,DesignFeedback,DesignIntent,DesignSession,GenerationRequest,RoomContext} from '../../core/types';
+import type {DesignConcept,DesignFeedback,DesignIntent,DesignSession,RoomContext} from '../../core/types';
 import type {CreativeFilterState,CreativeRunReport} from '../types';
 import {normalizeCreativeFilters} from './creative-filter-model';
 import {recommendRevision,applyRevisionById} from './revision-engine-v2';

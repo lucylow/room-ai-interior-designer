@@ -1,4 +1,4 @@
-import type {RoomContext,DesignIntent,DesignConcept,StyleMatch,PaletteMatch,LayoutAdvice,FurnitureIdea} from '../core/types';
+import type {RoomContext,DesignIntent,StyleMatch,PaletteMatch,LayoutAdvice,FurnitureIdea} from '../core/types';
 import {clamp,weightedMean} from '../core/utils';
 export const candidateScore=(room:RoomContext,intent:DesignIntent,style:StyleMatch,palette:PaletteMatch,layouts:LayoutAdvice[],furniture:FurnitureIdea[]):number=>{
  const layout=layouts[0]?.score??.5; const furnitureScore=furniture.length?furniture.reduce((s,f)=>s+f.confidence,0)/furniture.length:.75;

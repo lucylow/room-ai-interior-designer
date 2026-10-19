@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, AnchorReference } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 import { resolveAnchor } from '../core/anchors';
 
 export interface GroundingRow {

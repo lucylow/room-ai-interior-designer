@@ -1,4 +1,4 @@
-import { RetailProduct, RoomEnvelope, DesignIntent, Budget, ShoppingConstraints, FurnitureSlot, Candidate, Recommendation, ScenePatch, CartLine } from '../domain/commerce-types';
+import { RetailProduct, RoomEnvelope, DesignIntent, Budget, ShoppingConstraints, FurnitureSlot, Candidate } from '../domain/commerce-types';
 
 export interface CartDrawerModelConfig {
   weight: number;

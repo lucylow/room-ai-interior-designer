@@ -1,0 +1,4 @@
+import { RenderRequest } from '../core/types';
+export type BudgetPlan={targetGaussians:number;tileSize:number;maxMs:number;reason:string};
+export function chooseBudget(r:RenderRequest,device:{gpuMs:number;memoryMb:number}):BudgetPlan{const pixels=r.width*r.height;const qualityWeight={preview:.35,balanced:.6,high:.82,ultra:1}[r.quality];const pixelFactor=Math.sqrt(pixels/(1280*720));const target=Math.round((device.memoryMb*800)*qualityWeight/Math.max(1,pixelFactor));return{targetGaussians:Math.min(r.maxGaussians??Infinity,target),tileSize:qualityWeight<.5?32:16,maxMs:device.gpuMs*qualityWeight,reason:`q=${r.quality};pixels=${pixels}`}}
+export function budgetWarning(plan:BudgetPlan,observed:number){return observed>plan.maxMs?'frame-budget-exceeded':observed>plan.maxMs*.85?'near-budget':'within-budget'}

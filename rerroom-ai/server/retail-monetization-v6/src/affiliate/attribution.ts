@@ -1,0 +1,3 @@
+import { deterministicId } from '../core/id'; import type { AffiliateAttribution, Money } from '../types/commerce';
+export class AttributionStore { private rows=new Map<string,AffiliateAttribution>(); capture(input:Omit<AffiliateAttribution,'clickId'|'createdAt'>):AffiliateAttribution{const row={...input,clickId:deterministicId('click',input.sessionId+input.productId+input.source),createdAt:new Date().toISOString()};this.rows.set(row.clickId,row);return row} get(clickId:string){return this.rows.get(clickId)??null} list(){return [...this.rows.values()]}}
+export function commission(value:Money,rate:number):Money{return {amount:Math.round(value.amount*rate*100)/100,currency:value.currency}}

@@ -1,0 +1,63 @@
+{
+  "sceneId": "demo-3dgs-living-room",
+  "splatCount": 600,
+  "rgbVisible": 600,
+  "depthVisible": 600,
+  "lodPreviewCount": 600,
+  "queryHits": 8,
+  "captureQuality": {
+    "score": 0.99955,
+    "usable": true,
+    "blurRate": 0,
+    "exposureVariance": 0.001125,
+    "poseReady": true,
+    "warnings": []
+  },
+  "privacy": {
+    "strippedMetadata": true,
+    "faceBlurred": true,
+    "consentPurpose": "interior design visualization",
+    "gpsRemoved": true,
+    "filenamesNormalized": true,
+    "faceBlurRequired": false
+  },
+  "alignment": {
+    "translation": [
+      1,
+      0,
+      2
+    ],
+    "scale": 2,
+    "rotationY": 0,
+    "rmse": 0,
+    "confidence": 1
+  },
+  "completedStages": 10,
+  "plyHeaderLines": [
+    "ply",
+    "format ascii 1.0",
+    "element vertex 5",
+    "property float x",
+    "property float y",
+    "property float z",
+    "property float nx",
+    "property float ny",
+    "property float nz",
+    "property float f_dc_0",
+    "property float f_dc_1",
+    "property float f_dc_2",
+    "property float opacity",
+    "property float scale_0",
+    "property float scale_1",
+    "property float scale_2",
+    "property float rot_0",
+    "property float rot_1",
+    "property float rot_2",
+    "property float rot_3"
+  ],
+  "health": {
+    "healthy": true,
+    "score": 0.9,
+    "warnings": []
+  }
+}

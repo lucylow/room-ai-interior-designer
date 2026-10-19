@@ -1,0 +1,4 @@
+import type { GaussianScene } from '../core/types';
+import { vec3 } from '../math/vec3';
+export interface GroundedRegion {label:string;center:[number,number,number];radius:number;confidence:number;splatIds:string[];}
+export function groundLabel(scene:GaussianScene,label:string):GroundedRegion|null{const items=scene.splats.filter(s=>(s.semanticLabel||'').toLowerCase()===label.toLowerCase());if(!items.length)return null;const center=items.reduce((a,s)=>[a[0]+s.mean[0],a[1]+s.mean[1],a[2]+s.mean[2]] as [number,number,number],[0,0,0] as [number,number,number]).map(v=>v/items.length) as [number,number,number];const radius=Math.max(...items.map(s=>vec3.distance(s.mean,center)+Math.max(...s.scale)));return {label,center,radius,confidence:items.reduce((a,s)=>a+s.confidence,0)/items.length,splatIds:items.map(s=>s.id)};}

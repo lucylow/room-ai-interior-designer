@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_00: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-00-00",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 48,
+    "splatCount": 6000,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1100,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-00-01",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 52,
+    "splatCount": 6097,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1101,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-00-02",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 56,
+    "splatCount": 6194,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1102,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-00-03",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 60,
+    "splatCount": 6291,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1103,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-00-04",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 64,
+    "splatCount": 6388,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1104,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-00-05",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 48,
+    "splatCount": 6485,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1105,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-00-06",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 52,
+    "splatCount": 6582,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1106,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-00-07",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 56,
+    "splatCount": 6679,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1107,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-00-08",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 60,
+    "splatCount": 6776,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1108,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-00-09",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 64,
+    "splatCount": 6873,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1109,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-00-10",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 48,
+    "splatCount": 6970,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1110,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-00-11",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 52,
+    "splatCount": 7067,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1111,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-00-12",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 56,
+    "splatCount": 7164,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1112,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-00-13",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 60,
+    "splatCount": 7261,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1113,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-00-14",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 64,
+    "splatCount": 7358,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1114,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-00-15",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 48,
+    "splatCount": 7455,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1115,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-00-16",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 52,
+    "splatCount": 7552,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1116,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-00-17",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "cameraFov": 56,
+    "splatCount": 7649,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1117,
+    "prompt": "Preserve living-room geometry, render modern styling, use warm-white, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack00(index:number) { return SCENE_PACK_00[index % SCENE_PACK_00.length]; }
+export function bestScenePack00() { return [...SCENE_PACK_00].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt00(index:number):string { return getScenePack00(index).prompt; }

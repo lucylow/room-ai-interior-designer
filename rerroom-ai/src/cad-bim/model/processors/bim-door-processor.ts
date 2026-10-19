@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature, ValidationIssue } from '../../core/types';
+import { AuthoritativeModel, DesignOverlay, ValidationIssue } from '../../core/types';
 
 export interface BimDoorProcessorResult { accepted:boolean; issues:ValidationIssue[]; featureIds:string[]; score:number; }
 

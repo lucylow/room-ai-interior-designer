@@ -19,7 +19,7 @@ function buildConstraints(room:RoomContext,zones:Zone[]):LayoutConstraint[]{
 }
 export function solveLayoutConstraints(room:RoomContext,plan:LayoutPlan,zones:Zone[]=[]):ConstraintSolution{
  const constraints=buildConstraints(room,zones); const violations:ConstraintViolation[]=[]; const moves:Array<{placementId:string;dx:number;dy:number;reason:string}>=[];
- const density=(plan.placements.length*Math.max(.1,plan.placements.reduce((s,p)=>s+0.75*0.75,0)))/Math.max(.1,area(room));
+ const density=(plan.placements.length*Math.max(.1,plan.placements.reduce((s,_p)=>s+0.75*0.75,0)))/Math.max(.1,area(room));
  if(density>.72) violations.push({constraintId:'capacity',severity:'warning',message:'Layout occupies a high fraction of usable floor area',penalty:.18});
  for(let i=0;i<plan.placements.length;i++) for(let j=i+1;j<plan.placements.length;j++){
   const a=plan.placements[i],b=plan.placements[j]; const minGap=.9;

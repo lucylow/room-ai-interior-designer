@@ -1,0 +1,3 @@
+import type { ProjectedSplat, RenderTarget } from '../core/types';
+export interface Tile {id:string;x:number;y:number;width:number;height:number;splats:ProjectedSplat[];}
+export function buildTiles(target:RenderTarget,projected:ProjectedSplat[]):Map<string,Tile>{const m=new Map<string,Tile>();const cols=Math.ceil(target.width/target.tileSize);const rows=Math.ceil(target.height/target.tileSize);for(let y=0;y<rows;y++)for(let x=0;x<cols;x++)m.set(`${x}:${y}`,{id:`${x}:${y}`,x:x*target.tileSize,y:y*target.tileSize,width:Math.min(target.tileSize,target.width-x*target.tileSize),height:Math.min(target.tileSize,target.height-y*target.tileSize),splats:[]});for(const s of projected){const t=m.get(`${s.tileX}:${s.tileY}`);if(t)t.splats.push(s);}return m;}

@@ -1,0 +1,4 @@
+import { ReconstructionJob } from '../core/types';
+export type V12Stage='ingest'|'keyframes'|'poses'|'loop-closure'|'initialize'|'train'|'semantic'|'optimize'|'validate'|'publish';
+const stages:V12Stage[]=['ingest','keyframes','poses','loop-closure','initialize','train','semantic','optimize','validate','publish'];
+export class V12Orchestrator{private job:ReconstructionJob={id:'',stage:'ingest',progress:0,warnings:[],metrics:{},artifacts:[]};start(id:string){this.job={id,stage:'ingest',progress:0,warnings:[],metrics:{},artifacts:[]};return this.job}advance(stage:V12Stage,progress:number,metrics:Record<string,number>={}){this.job.stage=stage;this.job.progress=Math.max(0,Math.min(1,progress));this.job.metrics={...this.job.metrics,...metrics};return this.job}next(){const i=stages.indexOf(this.job.stage as V12Stage);return stages[Math.min(stages.length-1,i+1)]}status(){return this.job}static stages(){return stages.slice()}}

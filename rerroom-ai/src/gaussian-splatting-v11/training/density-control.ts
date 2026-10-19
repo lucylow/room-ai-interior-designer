@@ -1,0 +1,3 @@
+import type { Gaussian3D } from '../core/types';
+export interface DensityAction {id:string;action:'clone'|'split'|'prune';reason:string;score:number;}
+export function proposeDensityActions(splats:Gaussian3D[],iteration:number):DensityAction[]{const out:DensityAction[]=[];for(const g of splats.slice(0,5000)){const size=Math.max(...g.scale);if(g.opacity<0.015)out.push({id:g.id,action:'prune',reason:'low opacity',score:1-g.opacity});else if(size>0.09&&g.confidence>0.55)out.push({id:g.id,action:'split',reason:'large covariance',score:size});else if(g.confidence>0.8&&g.opacity>0.5&&iteration%200===0)out.push({id:g.id,action:'clone',reason:'high-confidence detail',score:g.confidence});}return out.slice(0,1000);}

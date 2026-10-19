@@ -1,4 +1,4 @@
-import type {Insight,Recommendation} from '../core/types';
+import type {Insight} from '../core/types';
 export interface Trigger {id:string;when:(insight:Insight)=>boolean;message:string;category:Insight['category'];}
 export const triggers:Trigger[]=[
  {id:'high-layout',category:'layout',when:i=>i.category==='layout'&&(i.severity==='high'||i.severity==='critical'),message:'Open the 2D plan and preview alternate furniture groupings.'},

@@ -10,7 +10,7 @@ export interface SustainabilityAdvisorResult {
   opportunities:string[];
 }
 
-const scoreFor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):number=>clamp(room.sustainabilityScore*.7+(1-room.clutterScore)*.15+room.comfortScore*.15,0,1);
+const scoreFor=(room:RoomContext,_prefs:UserPreferences,_budget?:BudgetProfile):number=>clamp(room.sustainabilityScore*.7+(1-room.clutterScore)*.15+room.comfortScore*.15,0,1);
 
 export const adviseSustainabilityAdvisor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):SustainabilityAdvisorResult=>{
   const score=scoreFor(room,prefs,budget);

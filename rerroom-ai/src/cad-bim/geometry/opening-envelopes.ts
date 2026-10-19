@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface OpeningEnvelopesResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class OpeningEnvelopes {
   /** builds door/window clearance envelopes without mutating openings. */

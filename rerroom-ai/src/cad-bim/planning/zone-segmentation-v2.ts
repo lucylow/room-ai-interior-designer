@@ -1,5 +1,5 @@
 import { RoomType } from '../../core/types';
-import { PlanPoint, Zone, ZoneType, areaOfPolygon, rectPolygon } from './types';
+import {  Zone, ZoneType, areaOfPolygon, rectPolygon } from './types';
 import { RoomBoundary } from './room-boundary';
 
 const ratios:Record<RoomType,Partial<Record<ZoneType,number>>> = {

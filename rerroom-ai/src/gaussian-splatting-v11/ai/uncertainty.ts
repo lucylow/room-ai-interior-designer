@@ -1,0 +1,2 @@
+export interface Uncertainty {aleatoric:number;epistemic:number;total:number;confidence:number;}
+export function estimateUncertainty(data:{capture:number;pose:number;semantic:number;photometric:number}):Uncertainty{const aleatoric=Math.max(0,1-data.photometric);const epistemic=Math.max(0,1-(data.capture+data.pose+data.semantic)/3);const total=Math.min(1,0.55*aleatoric+0.45*epistemic);return {aleatoric,epistemic,total,confidence:1-total};}

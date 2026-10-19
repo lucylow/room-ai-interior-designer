@@ -1,0 +1,3 @@
+export type ReconstructionMetrics={coverage:number;blur:number;reprojectionError:number;loopClosure:number;gaussianCount:number;temporalStability:number};
+export type Gate={passed:boolean;score:number;reasons:string[]};
+export function gate(m:ReconstructionMetrics):Gate{const reasons:string[]=[];let score=0;if(m.coverage>.7)score+=.25;else reasons.push('coverage-low');if(m.blur<.2)score+=.15;else reasons.push('blur-high');if(m.reprojectionError<1.5)score+=.2;else reasons.push('reprojection-high');if(m.loopClosure>.75)score+=.2;else reasons.push('loop-closure-low');if(m.gaussianCount>1000)score+=.1;else reasons.push('too-few-gaussians');if(m.temporalStability>.7)score+=.1;else reasons.push('temporal-unstable');return{passed:score>=.75,score,reasons}}

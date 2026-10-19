@@ -1,4 +1,4 @@
-import { BIMIndex, BIMEntity, SourceFeature, AuthoritativeModel, DesignOverlay } from '../core/types';
+import { BIMIndex, AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface MaterialMapResult { rows:Array<Record<string,string|number|boolean|null>>; warnings:string[]; }
 export class MaterialMap {
   /** maps source material names to concept material tokens. */

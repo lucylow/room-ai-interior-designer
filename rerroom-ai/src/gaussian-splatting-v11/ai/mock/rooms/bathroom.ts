@@ -1,0 +1,3 @@
+export interface RoomTemplate {id:string;roomType:string;width:number;depth:number;ceiling:number;requiredZones:string[];openingCount:number;commonRisks:string[];}
+export const ROOM_TEMPLATE_05:RoomTemplate={id:'room-template-05',roomType:'bathroom',width:4.15,depth:5.05,ceiling:2.74,requiredZones:['circulation','focal','storage'],openingCount:3,commonRisks:['blocked-opening','oversized-furniture','low-clearance']};
+export function roomConstraintScore(width:number,depth:number):number{const area=ROOM_TEMPLATE_05.width*ROOM_TEMPLATE_05.depth;const candidate=width*depth;return Math.max(0,1-Math.abs(candidate-area)/Math.max(area,1));}

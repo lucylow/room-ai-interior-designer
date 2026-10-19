@@ -1,6 +1,6 @@
 import type {CreativeConceptMock,RoomType} from './types';
 import {MOCK_CREATIVE_STYLES,getMockStyle} from './style-library';
-import {MOCK_PALETTES,getMockPalette,palettesForRoom} from './palette-library';
+import {getMockPalette,palettesForRoom} from './palette-library';
 import {conceptsFor} from './concept-library';
 import {layoutAdviceFor} from './layout-advice-library';
 import {MOCK_REFINEMENTS} from './refinement-library';

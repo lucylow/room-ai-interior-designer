@@ -10,7 +10,7 @@ export interface StorageAdvisorResult {
   opportunities:string[];
 }
 
-const scoreFor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):number=>clamp(room.storageScore*.55+(1-room.clutterScore)*.3+room.workflowScore*.15,0,1);
+const scoreFor=(room:RoomContext,_prefs:UserPreferences,_budget?:BudgetProfile):number=>clamp(room.storageScore*.55+(1-room.clutterScore)*.3+room.workflowScore*.15,0,1);
 
 export const adviseStorageAdvisor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):StorageAdvisorResult=>{
   const score=scoreFor(room,prefs,budget);

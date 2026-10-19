@@ -1,0 +1,68 @@
+export interface DemoDesignCase { id: string; roomType: string; style: string; paletteId: string; request: string; expectedOutput: string[]; }
+
+export const DEMO_CASES_09: DemoDesignCase[] = [
+  {
+    id: "demo-v9-0065",
+    roomType: "entryway",
+    style: "quiet_luxury",
+    paletteId: "forest_moss",
+    request: "add one stronger focal point",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0066",
+    roomType: "bathroom",
+    style: "modern_farmhouse",
+    paletteId: "terracotta_oak",
+    request: "swap the main chair",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0067",
+    roomType: "nursery",
+    style: "art_deco",
+    paletteId: "olive_cream",
+    request: "soften the contrast",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0068",
+    roomType: "studio",
+    style: "soft_industrial",
+    paletteId: "sandstone",
+    request: "use lighter wood",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0069",
+    roomType: "media_room",
+    style: "moody_modern",
+    paletteId: "forest_moss",
+    request: "add more texture",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0070",
+    roomType: "guest_room",
+    style: "craft_modern",
+    paletteId: "terracotta_oak",
+    request: "make it more family friendly",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0071",
+    roomType: "reading_nook",
+    style: "urban_soft",
+    paletteId: "olive_cream",
+    request: "make it more budget conscious",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+  {
+    id: "demo-v9-0072",
+    roomType: "living_room",
+    style: "modern",
+    paletteId: "sandstone",
+    request: "make it warmer",
+    expectedOutput: ["style-consistent concept", "palette rationale", "layout advice", "geometry preservation flag"],
+  },
+];

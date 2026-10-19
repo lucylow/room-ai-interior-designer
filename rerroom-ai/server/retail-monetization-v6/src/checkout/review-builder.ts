@@ -1,0 +1,2 @@
+import type { CommerceCart, Address, ShippingQuote, TaxQuote } from '../types/commerce';import { totalsSummary } from '../pricing/price-engine';
+export function buildReview(cart:CommerceCart,address?:Address,shipping?:ShippingQuote,tax?:TaxQuote){return {cartId:cart.id,lines:cart.lines.map(x=>({title:x.title,quantity:x.quantity,unitPrice:x.unitPrice})),address,shipping,tax,totals:totalsSummary(cart),budget:cart.budgetCap?{cap:cart.budgetCap,headroom:cart.budgetHeadroom}:undefined,ready:cart.lines.length>0&&(!cart.budgetCap||cart.budgetHeadroom.amount>=0)}}

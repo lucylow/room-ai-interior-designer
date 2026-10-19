@@ -1,0 +1,3 @@
+import type { PlanTier } from './service-plan';
+export interface Entitlements{tier:PlanTier;canExportCAD:boolean;canUse3DGS:boolean;monthlyGenerationLimit:number;roomProjectLimit:number;canUseRetailCheckout:boolean}
+export function entitlements(tier:PlanTier):Entitlements{if(tier==='studio')return {tier,canExportCAD:true,canUse3DGS:true,monthlyGenerationLimit:250,roomProjectLimit:50,canUseRetailCheckout:true};if(tier==='designer')return {tier,canExportCAD:true,canUse3DGS:true,monthlyGenerationLimit:50,roomProjectLimit:10,canUseRetailCheckout:true};return {tier,canExportCAD:false,canUse3DGS:false,monthlyGenerationLimit:5,roomProjectLimit:1,canUseRetailCheckout:true}}

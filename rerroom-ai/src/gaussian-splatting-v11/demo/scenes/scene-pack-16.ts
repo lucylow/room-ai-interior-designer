@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_16: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-16-00",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 48,
+    "splatCount": 10976,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1692,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-16-01",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 52,
+    "splatCount": 11073,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1693,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-16-02",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 56,
+    "splatCount": 11170,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1694,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-16-03",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 60,
+    "splatCount": 11267,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1695,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-16-04",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 64,
+    "splatCount": 11364,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1696,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-16-05",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 48,
+    "splatCount": 11461,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1697,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-16-06",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 52,
+    "splatCount": 11558,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1698,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-16-07",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 56,
+    "splatCount": 11655,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1699,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-16-08",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 60,
+    "splatCount": 11752,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1700,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-16-09",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 64,
+    "splatCount": 11849,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1701,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-16-10",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 48,
+    "splatCount": 11946,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1702,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-16-11",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 52,
+    "splatCount": 12043,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1703,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-16-12",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 56,
+    "splatCount": 12140,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1704,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-16-13",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 60,
+    "splatCount": 12237,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1705,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-16-14",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 64,
+    "splatCount": 12334,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1706,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-16-15",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 48,
+    "splatCount": 12431,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1707,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-16-16",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 52,
+    "splatCount": 12528,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1708,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-16-17",
+    "room": "home-office",
+    "style": "japandi",
+    "palette": "clay",
+    "cameraFov": 56,
+    "splatCount": 12625,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1709,
+    "prompt": "Preserve home-office geometry, render japandi styling, use clay, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack16(index:number) { return SCENE_PACK_16[index % SCENE_PACK_16.length]; }
+export function bestScenePack16() { return [...SCENE_PACK_16].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt16(index:number):string { return getScenePack16(index).prompt; }

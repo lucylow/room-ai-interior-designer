@@ -10,7 +10,7 @@ export interface StyleAdvisorResult {
   opportunities:string[];
 }
 
-const scoreFor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):number=>clamp((Math.max(...Object.values(room.styleSignals),0))*.65+room.visualBalanceScore*.2+(1-room.clutterScore)*.15,0,1);
+const scoreFor=(room:RoomContext,_prefs:UserPreferences,_budget?:BudgetProfile):number=>clamp((Math.max(...Object.values(room.styleSignals),0))*.65+room.visualBalanceScore*.2+(1-room.clutterScore)*.15,0,1);
 
 export const adviseStyleAdvisor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):StyleAdvisorResult=>{
   const score=scoreFor(room,prefs,budget);

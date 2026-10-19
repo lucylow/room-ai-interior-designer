@@ -1,0 +1,22 @@
+// Stable, collision-free namespace exports for V13 render capabilities.
+export * as AlphaCompositor from './alpha-compositor';
+export * as BackfaceHeuristic from './backface-heuristic';
+export * as DebugOverlay from './debug-overlay';
+export * as DepthCompositor from './depth-compositor';
+export * as DepthOrder from './depth-order';
+export * as DynamicResolution from './dynamic-resolution';
+export * as FoveatedPolicy from './foveated-policy';
+export * as FramePacer from './frame-pacer';
+export * as FrustumCull from './frustum-cull';
+export * as GpuWorkload from './gpu-workload';
+export * as LodPolicy from './lod-policy';
+export * as OverdrawEstimator from './overdraw-estimator';
+export * as QualityPolicy from './quality-policy';
+export * as ReferenceRasterizer from './reference-rasterizer';
+export * as RenderBudget from './render-budget';
+export * as RenderHealth from './render-health';
+export * as ScreenError from './screen-error';
+export * as SemanticMask from './semantic-mask';
+export * as TemporalStability from './temporal-stability';
+export * as TileBinning from './tile-binning';
+export * as VisibilityScore from './visibility-score';

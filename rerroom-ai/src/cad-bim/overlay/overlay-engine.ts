@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 import { resolveAnchor } from '../core/anchors';
 export interface ProjectedElement { id:string; sourceFeatureId?:string; position:{x:number;y:number;z:number}; size?:{width:number;depth:number;height:number}; appearance:Record<string,unknown>; }
 export class OverlayEngine {

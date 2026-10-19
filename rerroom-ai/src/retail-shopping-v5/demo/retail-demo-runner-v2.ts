@@ -7,23 +7,8 @@
  */
 
 import type {
-  RetailProduct,
-  RetailerId,
-  ProductCategory,
-  RoomType,
-  StyleName,
-  ShoppingConstraints,
-  RetailerContext,
-  RetailerResult,
-  Candidate,
-  Recommendation,
-  FurnitureSlot,
-  RoomEnvelope,
-  DesignIntent,
-  Budget,
-  ScenePatch,
-  ShoppingCart,
-  CartLine,
+  
+  
   Bundle,
 } from '../../retail-shopping-v4/domain/commerce-types';
 
@@ -58,7 +43,7 @@ import type { DemoShoppingScenarioV2 } from './retail-demo-scenarios-v2';
 import { DEMO_RETAIL_ROOMS_V2 } from './retail-demo-room-data-v2';
 import { DEMO_SHOPPING_SCENARIOS_V2 } from './retail-demo-scenarios-v2';
 import { parseShoppingIntent } from '../ai/shopping-intent-parser-v2';
-import { executeRetailQuery, normalizeRetailQuery } from '../search/retail-query-dsl';
+import { executeRetailQuery } from '../search/retail-query-dsl';
 import { filterByStyle } from '../matching/retail-style-filter-engine';
 import { filterByPalette } from '../matching/palette-retail-fit-v2';
 

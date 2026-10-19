@@ -1,0 +1,13 @@
+{"family": "generation", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "preference", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "critique", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "counterfactual", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "spatial", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "tooltrace", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "quality", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "safety", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "dialogue", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "retail", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "evaluation", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "augmentation", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}
+{"family": "project", "demo": true, "version": "v10.0.0", "source": "synthetic", "piiFree": true}

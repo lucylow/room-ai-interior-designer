@@ -1,0 +1,24 @@
+{
+  "catalog": 10,
+  "paywall": {
+    "eligible": true,
+    "kind": "promotional",
+    "productId": "com.reroom.ai.plus.yearly",
+    "discountPercent": 15,
+    "reason": "Project limit pressure"
+  },
+  "creditBalance": {
+    "ai": 22,
+    "render": 0
+  },
+  "redeemedOffer": "com.reroom.ai.pro.yearly",
+  "checklistPassed": 5,
+  "checklistTotal": 5,
+  "kpis": {
+    "trialStartRate": 0.24,
+    "paywallToPurchase": 0.14,
+    "renewalRate": 0.8,
+    "refundRate": 0.043478260869565216,
+    "averageRevenuePerUser": 3.1853225806451615
+  }
+}

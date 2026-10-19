@@ -10,7 +10,7 @@ export interface AccessibilityAdvisorResult {
   opportunities:string[];
 }
 
-const scoreFor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):number=>clamp(room.accessibilityScore*.65+room.circulationScore*.2+room.safetyScore*.15,0,1);
+const scoreFor=(room:RoomContext,_prefs:UserPreferences,_budget?:BudgetProfile):number=>clamp(room.accessibilityScore*.65+room.circulationScore*.2+room.safetyScore*.15,0,1);
 
 export const adviseAccessibilityAdvisor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):AccessibilityAdvisorResult=>{
   const score=scoreFor(room,prefs,budget);

@@ -1,0 +1,2 @@
+export type GeometryLock={sceneRevision:string;lockedIds:string[];reason:string;expiresAt?:number};
+export class GeometryLockService{private locks=new Map<string,GeometryLock>();lock(sceneRevision:string,ids:string[],reason:string){const lock={sceneRevision,lockedIds:[...ids],reason};this.locks.set(sceneRevision,lock);return lock}canEdit(sceneRevision:string,id:string){return !this.locks.get(sceneRevision)?.lockedIds.includes(id)}get(sceneRevision:string){return this.locks.get(sceneRevision)}}

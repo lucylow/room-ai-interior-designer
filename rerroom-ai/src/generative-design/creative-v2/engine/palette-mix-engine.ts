@@ -7,7 +7,7 @@ import {clamp} from '../../core/utils';
 export interface PaletteMix {id:string;paletteIds:string[];weights:number[];score:number;confidence:number;language:string[];}
 export function rankPalettes(room:RoomContext,filter:ColorFilter,limit=8):PaletteMix[]{
  const ids=(filter.paletteIds.length?filter.paletteIds:PALETTE_LIBRARY.map(p=>p.id)).filter(id=>PALETTE_BY_ID[id]).slice(0,limit);
- const mixes=ids.map((id,i)=>{const p=PALETTE_BY_ID[id] as ColorPalette;const signal=room.colorSignals[id]??.5;const requested=filter.paletteIds.includes(id)?.22:0;const score=clamp(.48+signal*.35+requested+p.naturalness*.06);return {id:`palette-mix-${id}`,paletteIds:[id],weights:[1],score,confidence:.72+p.naturalness*.15,language:p.colors.slice(0,4).map(c=>c.name)};});
+ const mixes=ids.map((id,_i)=>{const p=PALETTE_BY_ID[id] as ColorPalette;const signal=room.colorSignals[id]??.5;const requested=filter.paletteIds.includes(id)?.22:0;const score=clamp(.48+signal*.35+requested+p.naturalness*.06);return {id:`palette-mix-${id}`,paletteIds:[id],weights:[1],score,confidence:.72+p.naturalness*.15,language:p.colors.slice(0,4).map(c=>c.name)};});
  return mixes.sort((a,b)=>b.score-a.score);
 }
 export function paletteSignals(room:RoomContext,paletteId:string):CreativeSignal[]{

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target":"ES2022",
+    "module":"CommonJS",
+    "moduleResolution":"Node",
+    "strict":true,
+    "esModuleInterop":true,
+    "skipLibCheck":true,
+    "outDir":"dist-gaussian-splatting-v13",
+    "rootDir":"src/gaussian-splatting-v13",
+    "lib":["ES2022"],
+    "noEmitOnError":true
+  },
+  "include":["src/gaussian-splatting-v13/**/*.ts"]
+}

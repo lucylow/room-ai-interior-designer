@@ -1,0 +1,1 @@
+export interface MonetizationAttribution{source:string;campaign?:string;experiment?:string;firstTouchAt:string;lastTouchAt:string}; export class AttributionStore{private rows:MonetizationAttribution[]=[];record(a:MonetizationAttribution){this.rows.push({...a})}forCampaign(c:string){return this.rows.filter(r=>r.campaign===c)}}

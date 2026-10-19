@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature, ValidationIssue } from '../../core/types';
+import { AuthoritativeModel, DesignOverlay, ValidationIssue } from '../../core/types';
 
 export interface BathroomProcessorResult { accepted:boolean; issues:ValidationIssue[]; featureIds:string[]; score:number; }
 

@@ -1,4 +1,4 @@
-import { BIMIndex, BIMEntity, SourceFeature, AuthoritativeModel, DesignOverlay } from '../core/types';
+import { BIMIndex, AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface HostRelationshipMapResult { rows:Array<Record<string,string|number|boolean|null>>; warnings:string[]; }
 export class HostRelationshipMap {
   /** builds host links for hosted BIM objects. */

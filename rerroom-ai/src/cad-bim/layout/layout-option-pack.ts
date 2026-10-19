@@ -1,6 +1,6 @@
 import { AuthoritativeModel } from '../core/types';
 import { RoomContext } from '../../core/types';
-import { LayoutPlan, PlacementCandidate, Zone, FurnitureSpec } from '../planning/types';
+import { LayoutPlan, Zone, FurnitureSpec } from '../planning/types';
 
 export interface LayoutOptionPackResult {
   id:string;

@@ -10,7 +10,7 @@ export interface MaintenanceAdvisorResult {
   opportunities:string[];
 }
 
-const scoreFor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):number=>clamp((1-room.clutterScore)*.35+room.sustainabilityScore*.25+room.workflowScore*.2+room.comfortScore*.2,0,1);
+const scoreFor=(room:RoomContext,_prefs:UserPreferences,_budget?:BudgetProfile):number=>clamp((1-room.clutterScore)*.35+room.sustainabilityScore*.25+room.workflowScore*.2+room.comfortScore*.2,0,1);
 
 export const adviseMaintenanceAdvisor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):MaintenanceAdvisorResult=>{
   const score=scoreFor(room,prefs,budget);

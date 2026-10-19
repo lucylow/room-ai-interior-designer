@@ -1,0 +1,2 @@
+export interface SchedulePoint {iteration:number;lr:number;reason:string;}
+export function cosineSchedule(start:number,end:number,total:number):SchedulePoint[]{const n=Math.max(1,total);return Array.from({length:Math.min(100,n)},(_,i)=>{const t=i/Math.max(1,Math.min(99,n-1));const c=end+(start-end)*(0.5+0.5*Math.cos(Math.PI*t));return {iteration:Math.round(t*total),lr:c,reason:'cosine-decay'};});}

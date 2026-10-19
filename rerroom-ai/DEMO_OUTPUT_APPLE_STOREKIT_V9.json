@@ -1,0 +1,11 @@
+{
+  "beforeProducts": 8,
+  "afterEntitlements": [
+    "pro"
+  ],
+  "purchaseState": "purchased",
+  "paywallRecommended": "com.reroom.ai.pro.yearly",
+  "events": 1,
+  "physicalGoodsPaymentPath": "retailer-or-Apple-Pay-not-StoreKit-IAP"
+}
+undefined

@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_09: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-09-00",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 48,
+    "splatCount": 8799,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1433,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-09-01",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 52,
+    "splatCount": 8896,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1434,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-09-02",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 56,
+    "splatCount": 8993,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1435,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-09-03",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 60,
+    "splatCount": 9090,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1436,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-09-04",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 64,
+    "splatCount": 9187,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1437,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-09-05",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 48,
+    "splatCount": 9284,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1438,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-09-06",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 52,
+    "splatCount": 9381,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1439,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-09-07",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 56,
+    "splatCount": 9478,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1440,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-09-08",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 60,
+    "splatCount": 9575,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1441,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-09-09",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 64,
+    "splatCount": 9672,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1442,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-09-10",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 48,
+    "splatCount": 9769,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1443,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-09-11",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 52,
+    "splatCount": 9866,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1444,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-09-12",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 56,
+    "splatCount": 9963,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1445,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-09-13",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 60,
+    "splatCount": 10060,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1446,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-09-14",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 64,
+    "splatCount": 10157,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1447,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-09-15",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 48,
+    "splatCount": 10254,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1448,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-09-16",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 52,
+    "splatCount": 10351,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1449,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-09-17",
+    "room": "den",
+    "style": "warm-minimal",
+    "palette": "ink-brass",
+    "cameraFov": 56,
+    "splatCount": 10448,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1450,
+    "prompt": "Preserve den geometry, render warm-minimal styling, use ink-brass, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack09(index:number) { return SCENE_PACK_09[index % SCENE_PACK_09.length]; }
+export function bestScenePack09() { return [...SCENE_PACK_09].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt09(index:number):string { return getScenePack09(index).prompt; }

@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface RoomShellResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class RoomShell {
   /** builds planning shells from boundary features while retaining source references. */

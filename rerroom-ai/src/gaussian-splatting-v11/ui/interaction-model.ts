@@ -1,0 +1,3 @@
+export type ViewerGesture={type:'orbit'|'pan'|'zoom'|'select'|'focus';dx?:number;dy?:number;delta?:number;id?:string};
+export interface OrbitState {yaw:number;pitch:number;distance:number;target:[number,number,number];}
+export function applyGesture(s:OrbitState,g:ViewerGesture):OrbitState{if(g.type==='orbit')return {...s,yaw:s.yaw+(g.dx||0)*0.005,pitch:Math.max(-1.45,Math.min(1.45,s.pitch+(g.dy||0)*0.005))};if(g.type==='zoom')return {...s,distance:Math.max(0.3,Math.min(40,s.distance*Math.exp(-(g.delta||0)*0.001)))};if(g.type==='pan')return {...s,target:[s.target[0]-(g.dx||0)*0.001*s.distance,s.target[1]+(g.dy||0)*0.001*s.distance,s.target[2]]};return s;}

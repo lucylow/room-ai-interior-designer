@@ -1,3 +1,3 @@
-import {demoRoom,demoPrefs,demoBudget,demoCatalog} from '../demo/data';
+import {demoRoom,demoPrefs,demoCatalog} from '../demo/data';
 import {buildFeatures} from '../engine/features';import {inferGoals} from '../engine/goals';import {simulate} from '../engine/simulation';import {qualityReport} from '../engine/quality';
 export const runSmoke=()=>{const f=buildFeatures(demoRoom,demoPrefs);if(f.values.length<10)throw new Error('feature extraction failed');if(inferGoals(demoRoom,demoPrefs).length<3)throw new Error('goal inference failed');const q=qualityReport(demoRoom,[],[]);if(q.confidence<0)throw new Error('quality report invalid');const s=simulate(demoRoom,{id:'s',name:'move',description:'',deltas:[{objectId:'coffee',moveX:.1}],expectedOutcome:'more space'});if(!s.scenarioId)throw new Error('simulation failed');return {features:f.values.length,catalog:demoCatalog.length,scenario:s};};

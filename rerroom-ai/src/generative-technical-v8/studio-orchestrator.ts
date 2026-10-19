@@ -1,4 +1,4 @@
-import { CreativeConcept, CreativeUserIntent, MockGenerationRequest, MockGenerationResult, RefinementRequest, DesignSignal } from "./types";
+import { CreativeConcept, MockGenerationRequest, MockGenerationResult, RefinementRequest, DesignSignal } from "./types";
 import { STYLE_CATALOG } from "./style-catalog";
 import { PALETTE_CATALOG } from "./palette-catalog";
 import { buildStyleFilterConcept, runStyleFilter, mockStyleFilterSignals } from "./style-filter";

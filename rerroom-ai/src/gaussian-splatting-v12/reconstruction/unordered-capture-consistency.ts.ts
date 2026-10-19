@@ -1,0 +1,6 @@
+import { FrameRecord } from '../core/types';
+import { clamp } from '../core/utils';
+export type ConsistencyReport={coverage:number;temporalSpread:number;qualitySpread:number;orderInvariant:boolean;recommendation:string};
+export function evaluateUnorderedCapture(frames:FrameRecord[]):ConsistencyReport{const coverage=frames.reduce((s,f)=>s+f.coverage,0)/(frames.length||1);const qs=frames.map(f=>f.sharpness);const mean=qs.reduce((s,v)=>s+v,0)/(qs.length||1);const spread=Math.sqrt(qs.reduce((s,v)=>s+(v-mean)**2,0)/(qs.length||1));const times=frames.map(f=>f.timestampMs);const spreadT=times.length?Math.max(...times)-Math.min(...times):0;return{coverage,temporalSpread:spreadT,qualitySpread:spread,orderInvariant:coverage>.55&&spread<.18,recommendation:coverage<.55?'capture-more-views':spread>.18?'balance-image-quality':'ready-for-global-matching'}}
+export function reorderForMatching(frames:FrameRecord[]){return [...frames].sort((a,b)=>(b.coverage-a.coverage)||(b.sharpness-a.sharpness)||((a.timestampMs%97)-(b.timestampMs%97)))}
+export function matchingConfidence(frames:FrameRecord[]){const r=evaluateUnorderedCapture(frames);return clamp(r.coverage*.65+(1-r.qualitySpread)*.25+(r.orderInvariant?.1:0),0,1)}

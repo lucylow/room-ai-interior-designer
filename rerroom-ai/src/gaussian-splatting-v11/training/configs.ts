@@ -1,0 +1,3 @@
+import type { QualityTier, TrainingConfig } from '../core/types';
+const BASE:TrainingConfig={iterations:30_000,shDegree:3,positionLearningRate:0.00016,featureLearningRate:0.0025,opacityLearningRate:0.05,scalingLearningRate:0.005,rotationLearningRate:0.001,densifyFrom:500,densifyUntil:15_000,densifyEvery:100,opacityResetEvery:3_000,evalEvery:1_000,seed:42};
+export function trainingConfig(tier:QualityTier):TrainingConfig{const factor=tier==='preview'?0.15:tier==='balanced'?0.45:tier==='high'?1:2;return {...BASE,iterations:Math.round(BASE.iterations*factor),densifyUntil:Math.round(BASE.densifyUntil*factor),evalEvery:Math.max(250,Math.round(BASE.evalEvery*factor))};}

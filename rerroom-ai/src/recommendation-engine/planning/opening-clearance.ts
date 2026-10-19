@@ -1,3 +1,3 @@
-import type {RoomContext,RoomObject} from '../core/types';
+import type {RoomContext} from '../core/types';
 export interface OpeningClearance {openingId:string;objectId:string;distance:number;required:number;ok:boolean;}
 export const checkOpeningClearances=(room:RoomContext):OpeningClearance[]=>{const out:OpeningClearance[]=[];for(const op of room.openings){for(const obj of room.objects){const dx=Math.abs(obj.position.x-op.x),dz=Math.abs(obj.position.z-op.z);const distance=Math.max(0,Math.hypot(dx,dz)-Math.max(obj.size.width,obj.size.depth)/2);const required=op.kind==='door'?.8:.35;out.push({openingId:op.id,objectId:obj.id,distance,required,ok:distance>=required});}}return out.sort((a,b)=>a.distance-b.distance);};

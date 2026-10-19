@@ -1,0 +1,187 @@
+{
+  "name": "RE_ROOM_AI_RETAIL_MONETIZATION_V6",
+  "version": "6.0.0",
+  "generatedAt": "2026-10-02T16:35:00-04:00",
+  "typescriptFiles": 451,
+  "typescriptLines": 5547,
+  "approxPagesAt55Lines": 100.85,
+  "demo": {
+    "cartId": "cart_murfsb9a_32c",
+    "lines": [
+      {
+        "title": "Modern Sofa",
+        "quantity": 1,
+        "unitPrice": {
+          "amount": 39,
+          "currency": "CAD"
+        }
+      },
+      {
+        "title": "Mid Century Sofa",
+        "quantity": 1,
+        "unitPrice": {
+          "amount": 104,
+          "currency": "CAD"
+        }
+      },
+      {
+        "title": "Japandi Armchair",
+        "quantity": 1,
+        "unitPrice": {
+          "amount": 108,
+          "currency": "CAD"
+        }
+      }
+    ],
+    "totals": {
+      "subtotal": {
+        "amount": 251,
+        "currency": "CAD"
+      },
+      "discount": {
+        "amount": 37.65,
+        "currency": "CAD"
+      },
+      "shipping": {
+        "amount": 15,
+        "currency": "CAD"
+      },
+      "tax": {
+        "amount": 32.63,
+        "currency": "CAD"
+      },
+      "total": {
+        "amount": 260.98,
+        "currency": "CAD"
+      },
+      "commissionEstimate": {
+        "amount": 20.08,
+        "currency": "CAD"
+      }
+    },
+    "budgetHeadroom": {
+      "amount": 1239.02,
+      "currency": "CAD"
+    },
+    "checkout": {
+      "provider": "demo",
+      "id": "demo_63097013",
+      "url": "https://demo.reroom.local/checkout/cart_murfsb9a_32c",
+      "status": "open"
+    },
+    "launch": [
+      {
+        "id": "cart-lines",
+        "name": "Cart contains purchasable lines",
+        "ok": true,
+        "severity": "blocker",
+        "detail": "lines present"
+      },
+      {
+        "id": "currency",
+        "name": "Currency normalized",
+        "ok": true,
+        "severity": "blocker",
+        "detail": "CAD"
+      },
+      {
+        "id": "budget",
+        "name": "Budget constraint respected",
+        "ok": true,
+        "severity": "blocker",
+        "detail": "260.98 <= 1500"
+      },
+      {
+        "id": "prices",
+        "name": "Prices are non-negative",
+        "ok": true,
+        "severity": "blocker",
+        "detail": "validated line prices"
+      },
+      {
+        "id": "quantities",
+        "name": "Quantities bounded",
+        "ok": true,
+        "severity": "blocker",
+        "detail": "1..20"
+      },
+      {
+        "id": "session",
+        "name": "Checkout session created",
+        "ok": true,
+        "severity": "blocker",
+        "detail": "demo_63097013"
+      },
+      {
+        "id": "session-expiry",
+        "name": "Checkout session has expiry",
+        "ok": true,
+        "severity": "warning",
+        "detail": "2026-10-02T21:19:42.143Z"
+      },
+      {
+        "id": "checkout-url",
+        "name": "Checkout handoff exists",
+        "ok": true,
+        "severity": "warning",
+        "detail": "https://demo.reroom.local/checkout/cart_murfsb9a_32c"
+      }
+    ],
+    "funnel": {
+      "views": 0,
+      "tryInRoom": 0,
+      "addToCart": 3,
+      "checkoutStarted": 1,
+      "purchases": 0,
+      "viewToCart": 0,
+      "cartToCheckout": 0.3333,
+      "checkoutToPurchase": 0,
+      "overall": 0
+    },
+    "journey": {
+      "product_view": 1,
+      "try_in_room": 1,
+      "add_to_cart": 1,
+      "checkout_started": 1,
+      "purchase": 1
+    },
+    "checklist": {
+      "ready": true,
+      "blockers": 0,
+      "warnings": 0
+    },
+    "status": "PASS"
+  },
+  "integrations": [
+    "Stripe Checkout Sessions",
+    "Shopify Storefront API cart/checkoutUrl",
+    "Affiliate retailer handoff",
+    "Demo checkout"
+  ],
+  "providers": {
+    "stripe": "server-only",
+    "shopify": "Storefront API",
+    "affiliate": "deep-link + attribution",
+    "demo": "no-network"
+  },
+  "validation": {
+    "typecheck": "PASS",
+    "demo": "PASS",
+    "hardBudget": "PASS",
+    "webhookEventStore": "PASS",
+    "idempotency": "PASS"
+  },
+  "sourceFiles": [
+    "src/core/commerce-app.ts",
+    "src/cart/cart-store.ts",
+    "src/checkout/checkout-orchestrator.ts",
+    "src/providers/stripe-provider.ts",
+    "src/providers/shopify-provider.ts",
+    "src/providers/affiliate-provider.ts",
+    "src/orders/order-state-machine.ts",
+    "src/webhooks/event-store.ts",
+    "src/monetization/revenue-model.ts",
+    "src/security/checkout-safety.ts",
+    "src/demo/run.ts"
+  ]
+}

@@ -1,4 +1,4 @@
-import { RetailProduct,RoomEnvelope,DesignIntent,Budget,ShoppingConstraints,FurnitureSlot,Recommendation } from '../domain/commerce-types';
+import { RetailProduct,RoomEnvelope,DesignIntent,Budget,ShoppingConstraints,FurnitureSlot } from '../domain/commerce-types';
 import { rankForSlot } from './multi-objective-retail-ranking';
 export interface SlotPlan { slotId:string; productId:string; score:number; price:number; fit:string; }
 export function optimizeRoom(products:RetailProduct[],room:RoomEnvelope,intent:DesignIntent,budget:Budget,constraints:ShoppingConstraints,slots:FurnitureSlot[]):SlotPlan[]{

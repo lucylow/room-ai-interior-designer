@@ -1,4 +1,4 @@
-import { BIMIndex, BIMEntity, BIMPropertySet } from '../core/types';
+import { BIMIndex, BIMEntity } from '../core/types';
 export interface QuantityPropertyReaderResult { count:number; values:Array<Record<string,unknown>>; warnings:string[]; }
 export class QuantityPropertyReader {
   /** reads area/volume/length quantities from property sets. */

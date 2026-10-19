@@ -10,7 +10,7 @@ export interface ShoppingAdvisorResult {
   opportunities:string[];
 }
 
-const scoreFor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):number=>clamp(room.measurements.confidence*.5+room.styleSignals.modern*.15+room.storageScore*.2+room.circulationScore*.15,0,1);
+const scoreFor=(room:RoomContext,_prefs:UserPreferences,_budget?:BudgetProfile):number=>clamp(room.measurements.confidence*.5+room.styleSignals.modern*.15+room.storageScore*.2+room.circulationScore*.15,0,1);
 
 export const adviseShoppingAdvisor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):ShoppingAdvisorResult=>{
   const score=scoreFor(room,prefs,budget);

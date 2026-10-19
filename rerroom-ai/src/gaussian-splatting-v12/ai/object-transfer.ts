@@ -1,0 +1,3 @@
+import { Gaussian } from '../core/types';
+export type TransferPlan={sourceIds:string[];targetRegion:string;scale:number;rotationDelta:number;lightingMatch:number;risks:string[]};
+export function planTransfer(source:Gaussian[],targetLabel:string):TransferPlan{const center=source.reduce((p,g)=>({x:p.x+g.mean.x,y:p.y+g.mean.y,z:p.z+g.mean.z}),{x:0,y:0,z:0});const n=source.length||1;const spread=Math.max(...source.map(g=>Math.hypot(g.mean.x-center.x/n,g.mean.y-center.y/n,g.mean.z-center.z/n)));return{sourceIds:source.map(g=>g.id),targetRegion:targetLabel,scale:spread>.5?.85:1,rotationDelta:0,lightingMatch:source.reduce((s,g)=>s+(g.confidence??1),0)/n,risks:spread>1?['large-source-bounds']:[]}}

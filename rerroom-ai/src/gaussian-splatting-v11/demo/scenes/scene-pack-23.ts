@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_23: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-23-00",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 48,
+    "splatCount": 13153,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1951,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-23-01",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 52,
+    "splatCount": 13250,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1952,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-23-02",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 56,
+    "splatCount": 13347,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1953,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-23-03",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 60,
+    "splatCount": 13444,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1954,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-23-04",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 64,
+    "splatCount": 13541,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1955,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-23-05",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 48,
+    "splatCount": 13638,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1956,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-23-06",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 52,
+    "splatCount": 13735,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1957,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-23-07",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 56,
+    "splatCount": 13832,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1958,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-23-08",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 60,
+    "splatCount": 13929,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1959,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-23-09",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 64,
+    "splatCount": 14026,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1960,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-23-10",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 48,
+    "splatCount": 14123,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1961,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-23-11",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 52,
+    "splatCount": 14220,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1962,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-23-12",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 56,
+    "splatCount": 14317,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1963,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-23-13",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 60,
+    "splatCount": 14414,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1964,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-23-14",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 64,
+    "splatCount": 14511,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1965,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-23-15",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 48,
+    "splatCount": 14608,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1966,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-23-16",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 52,
+    "splatCount": 14705,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1967,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-23-17",
+    "room": "guest-room",
+    "style": "coastal-modern",
+    "palette": "oatmeal",
+    "cameraFov": 56,
+    "splatCount": 14802,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1968,
+    "prompt": "Preserve guest-room geometry, render coastal-modern styling, use oatmeal, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack23(index:number) { return SCENE_PACK_23[index % SCENE_PACK_23.length]; }
+export function bestScenePack23() { return [...SCENE_PACK_23].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt23(index:number):string { return getScenePack23(index).prompt; }

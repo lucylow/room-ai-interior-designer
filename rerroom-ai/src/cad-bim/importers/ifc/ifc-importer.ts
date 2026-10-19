@@ -1,5 +1,5 @@
 import { AuthoritativeModel, BIMClass, BIMEntity, BIMIndex, SourceDocument, SourceFeature } from '../../core/types';
-import { tokenizeStep, parseStepRefs } from './step-tokenizer';
+import { tokenizeStep } from './step-tokenizer';
 
 const CLASS_MAP:Record<string,BIMClass>={IFCWALL:'IfcWall',IFCSLAB:'IfcSlab',IFCROOF:'IfcRoof',IFCSPACE:'IfcSpace',IFCDOOR:'IfcDoor',IFCWINDOW:'IfcWindow',IFCOPENINGELEMENT:'IfcOpeningElement',IFCCOLUMN:'IfcColumn',IFCBEAM:'IfcBeam',IFCFURNISHINGELEMENT:'IfcFurnishingElement',IFCFURNITURE:'IfcFurniture'};
 export class IfcImporter {

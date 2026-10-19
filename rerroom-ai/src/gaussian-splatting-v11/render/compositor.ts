@@ -1,0 +1,8 @@
+import type { ProjectedSplat, RenderMode, RenderResult, RenderTarget } from '../core/types';
+import { sortFrontToBack } from './depth-sort';
+
+export function rasterizeCpu(projected:ProjectedSplat[],target:RenderTarget,mode:RenderMode,frameMs=0):RenderResult{
+  const n=target.width*target.height,rgba=new Float32Array(n*4),depth=new Float32Array(n),alpha=new Float32Array(n);depth.fill(Infinity);for(let i=0;i<n;i++){rgba[i*4]=target.background[0];rgba[i*4+1]=target.background[1];rgba[i*4+2]=target.background[2];rgba[i*4+3]=1;}
+  for(const s of sortFrontToBack(projected)){const minX=Math.max(0,Math.floor(s.center[0]-s.radiusPx)),maxX=Math.min(target.width-1,Math.ceil(s.center[0]+s.radiusPx));const minY=Math.max(0,Math.floor(s.center[1]-s.radiusPx)),maxY=Math.min(target.height-1,Math.ceil(s.center[1]+s.radiusPx));for(let y=minY;y<=maxY;y++)for(let x=minX;x<=maxX;x++){const dx=x-s.center[0],dy=y-s.center[1],e=s.conic[0]*dx*dx+2*s.conic[1]*dx*dy+s.conic[2]*dy*dy;if(e>9)continue;const a=Math.min(0.98,s.opacity*Math.exp(-0.5*e));if(a<1e-4)continue;const idx=y*target.width+x;const remain=1-alpha[idx];if(remain<=1e-4)continue;if(mode==='depth'){depth[idx]=(depth[idx]===Infinity?s.depth:depth[idx]*(1-a)+s.depth*a);alpha[idx]=Math.min(1,alpha[idx]+a);continue;}const r=s.color[0],g=s.color[1],b=s.color[2];rgba[idx*4]=rgba[idx*4]*0.0 + rgba[idx*4]* (1-a)+r*a;rgba[idx*4+1]=rgba[idx*4+1]*(1-a)+g*a;rgba[idx*4+2]=rgba[idx*4+2]*(1-a)+b*a;alpha[idx]=Math.min(1,alpha[idx]+a);depth[idx]=depth[idx]===Infinity?s.depth:Math.min(depth[idx],s.depth);}}
+  return {mode,width:target.width,height:target.height,rgba,depth,alpha,visibleSplats:projected.length,culledSplats:0,frameMs};
+}

@@ -1,4 +1,4 @@
-import { AuthoritativeModel, SourceFeature, Vec2, Vec3 } from '../types';
+import { AuthoritativeModel } from '../types';
 export interface ToolResult { values:Array<Record<string,number|string>>; warnings:string[]; }
 export class FinishAreaMeasurer {
   run(model:AuthoritativeModel):ToolResult {

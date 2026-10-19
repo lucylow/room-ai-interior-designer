@@ -1,4 +1,4 @@
-import { RetailProduct, RoomEnvelope, DesignIntent, Budget, ShoppingConstraints, FurnitureSlot, Recommendation } from '../domain/commerce-types';
+import { RetailProduct, RoomEnvelope, DesignIntent, Budget, ShoppingConstraints, FurnitureSlot } from '../domain/commerce-types';
 import { buildStyleFitRanker } from '../ranking/style-fit-ranker';
 import { buildPaletteFitRanker } from '../ranking/palette-fit-ranker';
 import { buildPriceFitRanker } from '../ranking/price-fit-ranker';

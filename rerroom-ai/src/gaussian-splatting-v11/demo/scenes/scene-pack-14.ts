@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_14: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-14-00",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 48,
+    "splatCount": 10354,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1618,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-14-01",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 52,
+    "splatCount": 10451,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1619,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-14-02",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 56,
+    "splatCount": 10548,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1620,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-14-03",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 60,
+    "splatCount": 10645,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1621,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-14-04",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 64,
+    "splatCount": 10742,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1622,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-14-05",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 48,
+    "splatCount": 10839,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1623,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-14-06",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 52,
+    "splatCount": 10936,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1624,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-14-07",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 56,
+    "splatCount": 11033,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1625,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-14-08",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 60,
+    "splatCount": 11130,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1626,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-14-09",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 64,
+    "splatCount": 11227,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1627,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-14-10",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 48,
+    "splatCount": 11324,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1628,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-14-11",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 52,
+    "splatCount": 11421,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1629,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-14-12",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 56,
+    "splatCount": 11518,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1630,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-14-13",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 60,
+    "splatCount": 11615,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1631,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-14-14",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 64,
+    "splatCount": 11712,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1632,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-14-15",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 48,
+    "splatCount": 11809,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1633,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-14-16",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 52,
+    "splatCount": 11906,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1634,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-14-17",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "nordic-sage",
+    "cameraFov": 56,
+    "splatCount": 12003,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1635,
+    "prompt": "Preserve kitchen geometry, render scandinavian styling, use nordic-sage, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack14(index:number) { return SCENE_PACK_14[index % SCENE_PACK_14.length]; }
+export function bestScenePack14() { return [...SCENE_PACK_14].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt14(index:number):string { return getScenePack14(index).prompt; }

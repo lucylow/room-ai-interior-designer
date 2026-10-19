@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface ElevationBuilderResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class ElevationBuilder {
   /** builds an elevation-oriented collection for designer review. */

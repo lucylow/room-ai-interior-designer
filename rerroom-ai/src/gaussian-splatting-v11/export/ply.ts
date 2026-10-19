@@ -1,0 +1,4 @@
+import type { Gaussian3D } from '../core/types';
+export function gaussianPlyHeader(splats:number):string{return ['ply','format ascii 1.0',`element vertex ${splats}`,'property float x','property float y','property float z','property float nx','property float ny','property float nz','property float f_dc_0','property float f_dc_1','property float f_dc_2','property float opacity','property float scale_0','property float scale_1','property float scale_2','property float rot_0','property float rot_1','property float rot_2','property float rot_3','end_header'].join('\n');}
+export function gaussianToPlyRow(g:Gaussian3D):string{return [g.mean[0],g.mean[1],g.mean[2],0,0,0,g.sh[0]||0,g.sh[1]||0,g.sh[2]||0,g.opacity,Math.log(g.scale[0]),Math.log(g.scale[1]),Math.log(g.scale[2]),...g.rotation].join(' ');}
+export function writeAsciiPly(splats:Gaussian3D[]):string{return gaussianPlyHeader(splats.length)+'\n'+splats.map(gaussianToPlyRow).join('\n')+'\n';}

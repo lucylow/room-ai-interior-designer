@@ -1,0 +1,21 @@
+// Stable, collision-free namespace exports for V13 ai capabilities.
+export * as D3dgsSceneSummary from './3dgs-scene-summary';
+export * as AiCache from './ai-cache';
+export * as ConceptCritic from './concept-critic';
+export * as ConceptDiversity from './concept-diversity';
+export * as ConceptRanker from './concept-ranker';
+export * as DesignIntent from './design-intent';
+export * as EditConfidence from './edit-confidence';
+export * as EditPlan from './edit-plan';
+export * as EditUncertainty from './edit-uncertainty';
+export * as LightingEstimation from './lighting-estimation';
+export * as MaterialGrounding from './material-grounding';
+export * as ObjectRanking from './object-ranking';
+export * as PromptCompiler from './prompt-compiler';
+export * as PromptSafety from './prompt-safety';
+export * as RegionQuery from './region-query';
+export * as RoomNarrative from './room-narrative';
+export * as SceneQuery from './scene-query';
+export * as SemanticGrounding from './semantic-grounding';
+export * as SpatialAdvice from './spatial-advice';
+export * as StyleGrounding from './style-grounding';

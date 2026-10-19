@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface CeilingPlanResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class CeilingPlan {
   /** creates reflected ceiling planning data from source features. */

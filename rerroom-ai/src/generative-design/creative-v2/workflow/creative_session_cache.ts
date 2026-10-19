@@ -1,7 +1,7 @@
 
 import type {DesignConcept,GenerationRequest} from '../../core/types';
-import type {CreativeDirection,CreativeSignal} from '../types';
-import {clamp,stableSort} from '../../core/utils';
+import type {CreativeSignal} from '../types';
+import {clamp} from '../../core/utils';
 
 export interface CreativeSessionCacheResult {id:string;summary:string;score:number;confidence:number;signals:CreativeSignal[];actions:string[];}
 export function runCreativeSessionCache(request:GenerationRequest,concepts:DesignConcept[]):CreativeSessionCacheResult{

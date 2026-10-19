@@ -1,0 +1,31 @@
+{
+  "version": "10.0.0",
+  "generatedAt": "2026-10-02",
+  "freshTypeScriptFiles": 152,
+  "freshTypeScriptLines": 25009,
+  "freshTypeScriptPagesAt55Lines": 454.7,
+  "freshSwiftFiles": 2,
+  "freshSwiftLines": 158,
+  "totalFreshCodeLines": 25167,
+  "totalFreshPagesAt55Lines": 457.6,
+  "cumulativeSourceTypeScriptFiles": 1428,
+  "cumulativeSourceTypeScriptLines": 51057,
+  "continues": "RE:ROOM AI Apple StoreKit Monetization V9",
+  "demo": "run-apple-monetization-v10-demo.ts",
+  "tests": "run-apple-monetization-v10-tests.ts",
+  "focus": [
+    "StoreKit 2 monetization",
+    "subscriptions",
+    "consumable credits",
+    "entitlements",
+    "offers",
+    "paywall experiments",
+    "credit economics",
+    "revenue analytics",
+    "App Store review readiness",
+    "mock data",
+    "pricing localization",
+    "purchase recovery"
+  ],
+  "physicalGoodsPath": "retailer-or-Apple-Pay/card; not Apple IAP"
+}

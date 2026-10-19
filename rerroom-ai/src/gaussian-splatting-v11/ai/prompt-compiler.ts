@@ -1,0 +1,3 @@
+import type { EditInstruction } from '../core/types';
+export interface PromptBundle { positive:string;negative:string;conditions:string[];preserve:string[];}
+export function compileEditPrompt(instruction:EditInstruction,style:string,palette:string):PromptBundle{return {positive:`${instruction.operation} ${instruction.targetLabels.join(', ')} in ${style} style with ${palette} palette; preserve room realism`,negative:'distorted walls, duplicated furniture, warped openings, floating objects, inconsistent scale, broken perspective',conditions:['camera-consistent','room-consistent','CAD/BIM anchored'],preserve:[...(instruction.preserveAnchors?['anchors']:[]),...(instruction.preserveGeometry?['geometry']:[])]};}

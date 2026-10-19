@@ -1,5 +1,5 @@
-import type {DesignConcept,DesignFeedback,DesignStyleId} from '../core/types';
-import {clamp,avg} from '../core/utils';
+import type {DesignConcept,DesignFeedback} from '../core/types';
+import {clamp} from '../core/utils';
 export interface FeedbackLearnerState{signal:number;notes:string[];}
 export const updateFeedbackLearner=(rows:DesignFeedback[],concepts:DesignConcept[]):FeedbackLearnerState=>{
  const accepted=rows.filter(r=>r.action==='accept'||r.action==='save').length; const rejected=rows.filter(r=>r.action==='reject').length;

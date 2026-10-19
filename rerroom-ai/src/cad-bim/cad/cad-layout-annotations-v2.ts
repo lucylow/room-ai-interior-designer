@@ -1,12 +1,12 @@
-import { AuthoritativeModel, SourceFeature } from '../core/types';
-import { LayoutPlan, Zone, FurnitureSpec, ProjectWorkspaceState } from '../planning/types';
+import { AuthoritativeModel } from '../core/types';
+import { LayoutPlan, Zone, ProjectWorkspaceState } from '../planning/types';
 
 export interface CADLayoutAnnotationsV2Result {
   id:string; score:number; summary:string; warnings:string[]; rows:Array<Record<string,string|number|boolean>>; 
 }
 
 export class CADLayoutAnnotationsV2 {
-  build(model:AuthoritativeModel,plan?:LayoutPlan,zones:Zone[]=[],workspace?:ProjectWorkspaceState):CADLayoutAnnotationsV2Result {
+  build(model:AuthoritativeModel,plan?:LayoutPlan,zones:Zone[]=[],_workspace?:ProjectWorkspaceState):CADLayoutAnnotationsV2Result {
     const warnings:string[]=[]; const rows:Array<Record<string,string|number|boolean>>=[];
     const sourceCount=model.features.length; const placementCount=plan?.placements.length||0; const zoneCount=zones.length;
     const anchored=model.features.filter(f=>f.authority==='authoritative').length;

@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": []
+  },
+  "include": [
+    "src/generative-data-v9/**/*.ts",
+    "src/generative-data-v10/**/*.ts",
+    "services/generativeDataset.ts",
+    "services/generativeDatasetV10.ts"
+  ]
+}

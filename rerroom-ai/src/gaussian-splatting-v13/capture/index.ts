@@ -1,0 +1,19 @@
+// Stable, collision-free namespace exports for V13 capture capabilities.
+export * as CameraBaseline from './camera-baseline';
+export * as CaptureCoverage from './capture-coverage';
+export * as CaptureFailure from './capture-failure';
+export * as CapturePath from './capture-path';
+export * as CaptureQuality from './capture-quality';
+export * as CaptureRecovery from './capture-recovery';
+export * as CaptureReport from './capture-report';
+export * as CaptureSession from './capture-session';
+export * as ExposureBalance from './exposure-balance';
+export * as FrameClustering from './frame-clustering';
+export * as FrameDedup from './frame-dedup';
+export * as FrameRanking from './frame-ranking';
+export * as MotionBlur from './motion-blur';
+export * as RevisitPlanner from './revisit-planner';
+export * as TextureRichness from './texture-richness';
+export * as VideoKeyframes from './video-keyframes';
+export * as ViewpointNovelty from './viewpoint-novelty';
+export * as WhiteBalance from './white-balance';

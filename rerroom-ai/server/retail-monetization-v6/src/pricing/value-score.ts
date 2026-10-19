@@ -1,0 +1,2 @@
+import type { CommerceProduct, ProductVariant } from '../types/commerce';
+export function valueScore(product:CommerceProduct,variant:ProductVariant,targetWidthM?:number){const price=Math.max(1,variant.price.amount);const sizeFit=targetWidthM?Math.max(0,1-Math.abs(variant.widthM-targetWidthM)/Math.max(targetWidthM,.1)):1;const styleBreadth=Math.min(1,product.styleTags.length/3);const inventory=Math.min(1,variant.inventory/10);return Math.round((0.35*sizeFit+0.25*styleBreadth+0.2*inventory+0.2*Math.min(1,200/price))*10000)/10000}

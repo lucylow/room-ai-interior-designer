@@ -1,5 +1,5 @@
 /** RE:ROOM AI Retail Shopping Studio V5 — extended module. */
-import type { RetailProduct, ProductCategory, RoomType, StyleName, FurnitureSlot, RoomEnvelope, Budget, RetailerId, ShoppingConstraints } from '../../retail-shopping-v4/domain/commerce-types';
+import type {   RoomType, StyleName } from '../../retail-shopping-v4/domain/commerce-types';
 import { IKEA_CA_V5_CATALOG } from '../catalog/ikea-ca-current-snapshot';
 function clamp(v:number,min=0,max=1){return Math.min(max,Math.max(min,v));}
 function money(v:number){return new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(Math.max(0,v));}

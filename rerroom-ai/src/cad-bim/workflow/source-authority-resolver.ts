@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, HandoffPackage, RemodelChangeRequest, ValidationIssue, AnchorReference } from '../core/types';
+import { AuthoritativeModel, DesignOverlay, HandoffPackage, ValidationIssue } from '../core/types';
 export interface SourceAuthorityResolverResult { ok:boolean; score:number; messages:string[]; issues:ValidationIssue[]; revision:string; }
 
 export class SourceAuthorityResolver {

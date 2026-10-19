@@ -1,0 +1,1 @@
+const fx:Record<string,number>={USD:1,CAD:1.37,EUR:0.92,GBP:0.78,AUD:1.52}; export function localizeUsd(usd:number,currency:string):number{return Math.round(usd*(fx[currency]||1)*100)/100}; export function formatMoney(amount:number,currency:string):string{return new Intl.NumberFormat(undefined,{style:'currency',currency}).format(amount)}

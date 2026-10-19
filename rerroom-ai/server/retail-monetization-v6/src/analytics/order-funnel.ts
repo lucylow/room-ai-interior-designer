@@ -1,0 +1,3 @@
+import type { MonetizationEvent } from '../types/commerce';
+export interface DailyPoint{date:string;views:number;carts:number;checkouts:number;purchases:number;revenue:number}
+export function daily(events:MonetizationEvent[]):DailyPoint[]{const map=new Map<string,DailyPoint>();for(const e of events){const d=e.at.slice(0,10);let p=map.get(d);if(!p)p={date:d,views:0,carts:0,checkouts:0,purchases:0,revenue:0};if(e.type==='product_view')p.views++;if(e.type==='add_to_cart')p.carts++;if(e.type==='checkout_started')p.checkouts++;if(e.type==='purchase'){p.purchases++;p.revenue+=(e.value?.amount??0)}map.set(d,p)}return [...map.values()].sort((a,b)=>a.date.localeCompare(b.date))}

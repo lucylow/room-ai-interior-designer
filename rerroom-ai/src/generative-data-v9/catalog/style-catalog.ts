@@ -1,0 +1,28 @@
+import type { DesignStyle } from "../core/types";
+
+export const STYLE_CATALOG: ReadonlyArray<{ id: DesignStyle; family: string; signature: string; materials: string[]; preferredColors: string[]; avoid: string[] }> = [
+  { id: "modern", family: "clean lines", signature: "modern signature", materials: ["oak", "stone", "brushed metal"], preferredColors: ["neutral", "charcoal"], avoid: ["clutter", "ornate trim"] },
+  { id: "minimalist", family: "quiet reduction", signature: "minimalist signature", materials: ["matte white", "pale oak", "linen"], preferredColors: ["off_white", "sand"], avoid: ["visual noise", "oversized decor"] },
+  { id: "scandinavian", family: "light and comfortable", signature: "scandinavian signature", materials: ["oak", "wool", "birch"], preferredColors: ["mist", "sage"], avoid: ["heavy dark mass", "high gloss"] },
+  { id: "industrial", family: "graphic utility", signature: "industrial signature", materials: ["steel", "walnut", "concrete"], preferredColors: ["charcoal", "rust"], avoid: ["fussy ornament", "pastel overload"] },
+  { id: "japandi", family: "calm natural restraint", signature: "japandi signature", materials: ["oak", "clay", "linen"], preferredColors: ["mushroom", "cedar"], avoid: ["shiny chrome", "visual clutter"] },
+  { id: "mid_century", family: "playful proportion", signature: "mid century signature", materials: ["walnut", "teak", "boucle"], preferredColors: ["olive", "terracotta"], avoid: ["overstuffed forms", "generic gray"] },
+  { id: "organic_modern", family: "soft natural contrast", signature: "organic modern signature", materials: ["travertine", "oak", "plaster"], preferredColors: ["sand", "moss"], avoid: ["plastic sheen", "harsh cool white"] },
+  { id: "bohemian", family: "layered collected warmth", signature: "bohemian signature", materials: ["rattan", "textiles", "wood"], preferredColors: ["ochre", "clay"], avoid: ["sterile symmetry", "single-texture rooms"] },
+  { id: "contemporary", family: "refined current balance", signature: "contemporary signature", materials: ["stone", "oak", "metal"], preferredColors: ["greige", "ink"], avoid: ["dated motifs", "visual clutter"] },
+  { id: "warm_minimal", family: "soft simplicity", signature: "warm minimal signature", materials: ["oak", "linen", "plaster"], preferredColors: ["cream", "caramel"], avoid: ["cold white", "busy pattern"] },
+  { id: "quiet_luxury", family: "subtle richness", signature: "quiet luxury signature", materials: ["marble", "walnut", "wool"], preferredColors: ["taupe", "olive"], avoid: ["logos", "high-contrast novelty"] },
+  { id: "coastal_modern", family: "airy texture", signature: "coastal modern signature", materials: ["white oak", "linen", "rattan"], preferredColors: ["sea_glass", "sand"], avoid: ["nautical kitsch", "heavy industrial metal"] },
+  { id: "modern_farmhouse", family: "casual structure", signature: "modern farmhouse signature", materials: ["oak", "shiplap", "linen"], preferredColors: ["warm_white", "sage"], avoid: ["country clutter", "too much black"] },
+  { id: "transitional", family: "classic with restraint", signature: "transitional signature", materials: ["oak", "brass", "stone"], preferredColors: ["ivory", "blue_gray"], avoid: ["theme-park traditional", "extreme minimalism"] },
+  { id: "art_deco", family: "geometric glamour", signature: "art deco signature", materials: ["lacquer", "brass", "velvet"], preferredColors: ["emerald", "midnight"], avoid: ["raw utility", "washed-out palette"] },
+  { id: "new_nordic", family: "fresh Nordic softness", signature: "new nordic signature", materials: ["ash", "wool", "paper cord"], preferredColors: ["frost", "pine"], avoid: ["heavy ornament", "oversaturated color"] },
+  { id: "soft_industrial", family: "warm utility", signature: "soft industrial signature", materials: ["blackened steel", "oak", "leather"], preferredColors: ["smoke", "cognac"], avoid: ["cold warehouse feel", "delicate furniture"] },
+  { id: "desert_modern", family: "sun-baked modern", signature: "desert modern signature", materials: ["travertine", "clay", "oak"], preferredColors: ["terracotta", "desert_cream"], avoid: ["icy blue", "glossy plastic"] },
+  { id: "moody_modern", family: "dramatic comfort", signature: "moody modern signature", materials: ["walnut", "plaster", "velvet"], preferredColors: ["ink", "plum"], avoid: ["flat lighting", "thin contrast"] },
+  { id: "eclectic_modern", family: "curated mix", signature: "eclectic modern signature", materials: ["mixed woods", "art", "textiles"], preferredColors: ["coral", "cobalt"], avoid: ["random clutter", "one-note repetition"] },
+  { id: "craft_modern", family: "maker-forward warmth", signature: "craft modern signature", materials: ["oak", "ceramics", "woven fiber"], preferredColors: ["clay", "moss"], avoid: ["mass-produced look", "excess chrome"] },
+  { id: "heritage_modern", family: "old-meets-new", signature: "heritage modern signature", materials: ["wood", "linen", "stone"], preferredColors: ["burgundy", "cream"], avoid: ["novelty trends", "overly rustic props"] },
+  { id: "urban_soft", family: "compact city calm", signature: "urban soft signature", materials: ["oak", "boucle", "steel"], preferredColors: ["stone", "olive"], avoid: ["visual heaviness", "too many small objects"] },
+  { id: "naturalist", family: "biophilic calm", signature: "naturalist signature", materials: ["wood", "cork", "woven grass"], preferredColors: ["leaf", "earth"], avoid: ["synthetic shine", "monochrome sterility"] },
+];

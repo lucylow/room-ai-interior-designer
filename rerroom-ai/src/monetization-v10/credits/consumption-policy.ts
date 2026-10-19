@@ -1,0 +1,1 @@
+export interface CreditUsagePolicy{kind:'ai'|'render';perAction:number;refundOnFailure:boolean}; export const CREDIT_POLICIES:CreditUsagePolicy[]=[{kind:'ai',perAction:1,refundOnFailure:true},{kind:'render',perAction:2,refundOnFailure:true}]; export function creditsFor(kind:'ai'|'render',actions:number):number{return (CREDIT_POLICIES.find(p=>p.kind===kind)?.perAction||1)*actions}

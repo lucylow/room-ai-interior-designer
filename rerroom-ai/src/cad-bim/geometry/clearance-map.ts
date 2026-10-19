@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface ClearanceMapResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class ClearanceMap {
   /** calculates clearance samples around anchored objects. */

@@ -3,7 +3,7 @@ import type {DesignFeedback,UserPreferences,DesignConcept} from '../../core/type
 import type {CreativeSignal} from '../types';
 import {clamp} from '../../core/utils';
 
-export function analyzestyle_rejection(feedback:DesignFeedback[],concepts:DesignConcept[]):CreativeSignal{
+export function analyzestyle_rejection(feedback:DesignFeedback[],_concepts:DesignConcept[]):CreativeSignal{
   const relevant=feedback.filter(item=>item.action==='reject');
   const accepted=relevant.filter(item=>item.action==='save'||item.action==='accept').length;
   const rejected=relevant.filter(item=>item.action==='reject').length;

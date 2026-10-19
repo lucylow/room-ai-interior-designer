@@ -1,0 +1,2 @@
+export interface BenchmarkPoint {splats:number;visible:number;frameMs:number;fps:number;memoryMb:number;}
+export function summarize(points:BenchmarkPoint[]){if(!points.length)return {medianFps:0,p95FrameMs:0,maxMemoryMb:0};const fps=[...points].map(p=>p.fps).sort((a,b)=>a-b),ms=[...points].map(p=>p.frameMs).sort((a,b)=>a-b);return {medianFps:fps[Math.floor(fps.length/2)],p95FrameMs:ms[Math.min(ms.length-1,Math.floor(ms.length*0.95))],maxMemoryMb:Math.max(...points.map(p=>p.memoryMb))};}

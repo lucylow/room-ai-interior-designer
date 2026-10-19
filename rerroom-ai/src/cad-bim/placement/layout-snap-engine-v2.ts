@@ -1,4 +1,4 @@
-import { PlacementCandidate, LayoutPlan } from '../planning/types';
+import {  LayoutPlan } from '../planning/types';
 
 export type SnapMode='grid'|'edge'|'center'|'alignment'|'off';
 export interface SnapConfig { mode:SnapMode; gridM:number; thresholdM:number; preserveY:boolean; }

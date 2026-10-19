@@ -1,4 +1,4 @@
-import { DesignOverlay, OverlayPatch, AuthoritativeModel } from '../core/types';
+import { DesignOverlay, OverlayPatch } from '../core/types';
 export class OverlayStore {
   private overlays:DesignOverlay[]=[]; private patches:OverlayPatch[]=[];
   create(overlay:DesignOverlay):DesignOverlay{this.overlays.push(JSON.parse(JSON.stringify(overlay)));return overlay;}

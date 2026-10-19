@@ -1,6 +1,6 @@
 
 import type {DesignConcept,DesignInsight,RoomContext} from '../../core/types';
-import type {CreativeSignal,CreativeDirection} from '../types';
+import type {CreativeSignal} from '../types';
 import {clamp,stableSort} from '../../core/utils';
 
 export interface SelectionPolicy {minConfidence:number;minScore:number;maxCandidates:number;preferNovelty:number;preferFit:number;}

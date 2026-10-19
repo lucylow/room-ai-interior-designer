@@ -1,0 +1,1282 @@
+[
+  {
+    "id": "v14-sample-0",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "wide",
+    "seed": 1000,
+    "quality": 0.58
+  },
+  {
+    "id": "v14-sample-1",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "corner",
+    "seed": 1001,
+    "quality": 0.59
+  },
+  {
+    "id": "v14-sample-2",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "detail",
+    "seed": 1002,
+    "quality": 0.6
+  },
+  {
+    "id": "v14-sample-3",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "eye-level",
+    "seed": 1003,
+    "quality": 0.61
+  },
+  {
+    "id": "v14-sample-4",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "wide",
+    "seed": 1004,
+    "quality": 0.62
+  },
+  {
+    "id": "v14-sample-5",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "corner",
+    "seed": 1005,
+    "quality": 0.63
+  },
+  {
+    "id": "v14-sample-6",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "detail",
+    "seed": 1006,
+    "quality": 0.64
+  },
+  {
+    "id": "v14-sample-7",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "eye-level",
+    "seed": 1007,
+    "quality": 0.65
+  },
+  {
+    "id": "v14-sample-8",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "wide",
+    "seed": 1008,
+    "quality": 0.66
+  },
+  {
+    "id": "v14-sample-9",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "corner",
+    "seed": 1009,
+    "quality": 0.67
+  },
+  {
+    "id": "v14-sample-10",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "detail",
+    "seed": 1010,
+    "quality": 0.68
+  },
+  {
+    "id": "v14-sample-11",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "eye-level",
+    "seed": 1011,
+    "quality": 0.69
+  },
+  {
+    "id": "v14-sample-12",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "wide",
+    "seed": 1012,
+    "quality": 0.7
+  },
+  {
+    "id": "v14-sample-13",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "corner",
+    "seed": 1013,
+    "quality": 0.71
+  },
+  {
+    "id": "v14-sample-14",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "detail",
+    "seed": 1014,
+    "quality": 0.72
+  },
+  {
+    "id": "v14-sample-15",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "eye-level",
+    "seed": 1015,
+    "quality": 0.73
+  },
+  {
+    "id": "v14-sample-16",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "wide",
+    "seed": 1016,
+    "quality": 0.74
+  },
+  {
+    "id": "v14-sample-17",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "corner",
+    "seed": 1017,
+    "quality": 0.75
+  },
+  {
+    "id": "v14-sample-18",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "detail",
+    "seed": 1018,
+    "quality": 0.76
+  },
+  {
+    "id": "v14-sample-19",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "eye-level",
+    "seed": 1019,
+    "quality": 0.77
+  },
+  {
+    "id": "v14-sample-20",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "wide",
+    "seed": 1020,
+    "quality": 0.78
+  },
+  {
+    "id": "v14-sample-21",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "corner",
+    "seed": 1021,
+    "quality": 0.79
+  },
+  {
+    "id": "v14-sample-22",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "detail",
+    "seed": 1022,
+    "quality": 0.8
+  },
+  {
+    "id": "v14-sample-23",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "eye-level",
+    "seed": 1023,
+    "quality": 0.81
+  },
+  {
+    "id": "v14-sample-24",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "wide",
+    "seed": 1024,
+    "quality": 0.82
+  },
+  {
+    "id": "v14-sample-25",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "corner",
+    "seed": 1025,
+    "quality": 0.83
+  },
+  {
+    "id": "v14-sample-26",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "detail",
+    "seed": 1026,
+    "quality": 0.84
+  },
+  {
+    "id": "v14-sample-27",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "eye-level",
+    "seed": 1027,
+    "quality": 0.85
+  },
+  {
+    "id": "v14-sample-28",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "wide",
+    "seed": 1028,
+    "quality": 0.86
+  },
+  {
+    "id": "v14-sample-29",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "corner",
+    "seed": 1029,
+    "quality": 0.87
+  },
+  {
+    "id": "v14-sample-30",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "detail",
+    "seed": 1030,
+    "quality": 0.88
+  },
+  {
+    "id": "v14-sample-31",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "eye-level",
+    "seed": 1031,
+    "quality": 0.89
+  },
+  {
+    "id": "v14-sample-32",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "wide",
+    "seed": 1032,
+    "quality": 0.9
+  },
+  {
+    "id": "v14-sample-33",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "corner",
+    "seed": 1033,
+    "quality": 0.91
+  },
+  {
+    "id": "v14-sample-34",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "detail",
+    "seed": 1034,
+    "quality": 0.92
+  },
+  {
+    "id": "v14-sample-35",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "eye-level",
+    "seed": 1035,
+    "quality": 0.58
+  },
+  {
+    "id": "v14-sample-36",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "wide",
+    "seed": 1036,
+    "quality": 0.59
+  },
+  {
+    "id": "v14-sample-37",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "corner",
+    "seed": 1037,
+    "quality": 0.6
+  },
+  {
+    "id": "v14-sample-38",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "detail",
+    "seed": 1038,
+    "quality": 0.61
+  },
+  {
+    "id": "v14-sample-39",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "eye-level",
+    "seed": 1039,
+    "quality": 0.62
+  },
+  {
+    "id": "v14-sample-40",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "wide",
+    "seed": 1040,
+    "quality": 0.63
+  },
+  {
+    "id": "v14-sample-41",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "corner",
+    "seed": 1041,
+    "quality": 0.64
+  },
+  {
+    "id": "v14-sample-42",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "detail",
+    "seed": 1042,
+    "quality": 0.65
+  },
+  {
+    "id": "v14-sample-43",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "eye-level",
+    "seed": 1043,
+    "quality": 0.66
+  },
+  {
+    "id": "v14-sample-44",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "wide",
+    "seed": 1044,
+    "quality": 0.67
+  },
+  {
+    "id": "v14-sample-45",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "corner",
+    "seed": 1045,
+    "quality": 0.68
+  },
+  {
+    "id": "v14-sample-46",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "detail",
+    "seed": 1046,
+    "quality": 0.69
+  },
+  {
+    "id": "v14-sample-47",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "eye-level",
+    "seed": 1047,
+    "quality": 0.7
+  },
+  {
+    "id": "v14-sample-48",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "wide",
+    "seed": 1048,
+    "quality": 0.71
+  },
+  {
+    "id": "v14-sample-49",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "corner",
+    "seed": 1049,
+    "quality": 0.72
+  },
+  {
+    "id": "v14-sample-50",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "detail",
+    "seed": 1050,
+    "quality": 0.73
+  },
+  {
+    "id": "v14-sample-51",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "eye-level",
+    "seed": 1051,
+    "quality": 0.74
+  },
+  {
+    "id": "v14-sample-52",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "wide",
+    "seed": 1052,
+    "quality": 0.75
+  },
+  {
+    "id": "v14-sample-53",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "corner",
+    "seed": 1053,
+    "quality": 0.76
+  },
+  {
+    "id": "v14-sample-54",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "detail",
+    "seed": 1054,
+    "quality": 0.77
+  },
+  {
+    "id": "v14-sample-55",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "eye-level",
+    "seed": 1055,
+    "quality": 0.78
+  },
+  {
+    "id": "v14-sample-56",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "wide",
+    "seed": 1056,
+    "quality": 0.79
+  },
+  {
+    "id": "v14-sample-57",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "corner",
+    "seed": 1057,
+    "quality": 0.8
+  },
+  {
+    "id": "v14-sample-58",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "detail",
+    "seed": 1058,
+    "quality": 0.81
+  },
+  {
+    "id": "v14-sample-59",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "eye-level",
+    "seed": 1059,
+    "quality": 0.82
+  },
+  {
+    "id": "v14-sample-60",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "wide",
+    "seed": 1060,
+    "quality": 0.83
+  },
+  {
+    "id": "v14-sample-61",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "corner",
+    "seed": 1061,
+    "quality": 0.84
+  },
+  {
+    "id": "v14-sample-62",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "detail",
+    "seed": 1062,
+    "quality": 0.85
+  },
+  {
+    "id": "v14-sample-63",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "eye-level",
+    "seed": 1063,
+    "quality": 0.86
+  },
+  {
+    "id": "v14-sample-64",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "wide",
+    "seed": 1064,
+    "quality": 0.87
+  },
+  {
+    "id": "v14-sample-65",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "corner",
+    "seed": 1065,
+    "quality": 0.88
+  },
+  {
+    "id": "v14-sample-66",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "detail",
+    "seed": 1066,
+    "quality": 0.89
+  },
+  {
+    "id": "v14-sample-67",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "eye-level",
+    "seed": 1067,
+    "quality": 0.9
+  },
+  {
+    "id": "v14-sample-68",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "wide",
+    "seed": 1068,
+    "quality": 0.91
+  },
+  {
+    "id": "v14-sample-69",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "corner",
+    "seed": 1069,
+    "quality": 0.92
+  },
+  {
+    "id": "v14-sample-70",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "detail",
+    "seed": 1070,
+    "quality": 0.58
+  },
+  {
+    "id": "v14-sample-71",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "eye-level",
+    "seed": 1071,
+    "quality": 0.59
+  },
+  {
+    "id": "v14-sample-72",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "wide",
+    "seed": 1072,
+    "quality": 0.6
+  },
+  {
+    "id": "v14-sample-73",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "corner",
+    "seed": 1073,
+    "quality": 0.61
+  },
+  {
+    "id": "v14-sample-74",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "detail",
+    "seed": 1074,
+    "quality": 0.62
+  },
+  {
+    "id": "v14-sample-75",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "eye-level",
+    "seed": 1075,
+    "quality": 0.63
+  },
+  {
+    "id": "v14-sample-76",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "wide",
+    "seed": 1076,
+    "quality": 0.64
+  },
+  {
+    "id": "v14-sample-77",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "corner",
+    "seed": 1077,
+    "quality": 0.65
+  },
+  {
+    "id": "v14-sample-78",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "detail",
+    "seed": 1078,
+    "quality": 0.66
+  },
+  {
+    "id": "v14-sample-79",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "eye-level",
+    "seed": 1079,
+    "quality": 0.67
+  },
+  {
+    "id": "v14-sample-80",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "wide",
+    "seed": 1080,
+    "quality": 0.68
+  },
+  {
+    "id": "v14-sample-81",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "corner",
+    "seed": 1081,
+    "quality": 0.69
+  },
+  {
+    "id": "v14-sample-82",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "detail",
+    "seed": 1082,
+    "quality": 0.7
+  },
+  {
+    "id": "v14-sample-83",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "eye-level",
+    "seed": 1083,
+    "quality": 0.71
+  },
+  {
+    "id": "v14-sample-84",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "wide",
+    "seed": 1084,
+    "quality": 0.72
+  },
+  {
+    "id": "v14-sample-85",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "corner",
+    "seed": 1085,
+    "quality": 0.73
+  },
+  {
+    "id": "v14-sample-86",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "detail",
+    "seed": 1086,
+    "quality": 0.74
+  },
+  {
+    "id": "v14-sample-87",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "eye-level",
+    "seed": 1087,
+    "quality": 0.75
+  },
+  {
+    "id": "v14-sample-88",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "wide",
+    "seed": 1088,
+    "quality": 0.76
+  },
+  {
+    "id": "v14-sample-89",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "corner",
+    "seed": 1089,
+    "quality": 0.77
+  },
+  {
+    "id": "v14-sample-90",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "detail",
+    "seed": 1090,
+    "quality": 0.78
+  },
+  {
+    "id": "v14-sample-91",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "eye-level",
+    "seed": 1091,
+    "quality": 0.79
+  },
+  {
+    "id": "v14-sample-92",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "wide",
+    "seed": 1092,
+    "quality": 0.8
+  },
+  {
+    "id": "v14-sample-93",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "corner",
+    "seed": 1093,
+    "quality": 0.81
+  },
+  {
+    "id": "v14-sample-94",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "detail",
+    "seed": 1094,
+    "quality": 0.82
+  },
+  {
+    "id": "v14-sample-95",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "eye-level",
+    "seed": 1095,
+    "quality": 0.83
+  },
+  {
+    "id": "v14-sample-96",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "wide",
+    "seed": 1096,
+    "quality": 0.84
+  },
+  {
+    "id": "v14-sample-97",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "corner",
+    "seed": 1097,
+    "quality": 0.85
+  },
+  {
+    "id": "v14-sample-98",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "detail",
+    "seed": 1098,
+    "quality": 0.86
+  },
+  {
+    "id": "v14-sample-99",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "eye-level",
+    "seed": 1099,
+    "quality": 0.87
+  },
+  {
+    "id": "v14-sample-100",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "wide",
+    "seed": 1100,
+    "quality": 0.88
+  },
+  {
+    "id": "v14-sample-101",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "corner",
+    "seed": 1101,
+    "quality": 0.89
+  },
+  {
+    "id": "v14-sample-102",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "detail",
+    "seed": 1102,
+    "quality": 0.9
+  },
+  {
+    "id": "v14-sample-103",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "eye-level",
+    "seed": 1103,
+    "quality": 0.91
+  },
+  {
+    "id": "v14-sample-104",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "wide",
+    "seed": 1104,
+    "quality": 0.92
+  },
+  {
+    "id": "v14-sample-105",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "corner",
+    "seed": 1105,
+    "quality": 0.58
+  },
+  {
+    "id": "v14-sample-106",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "detail",
+    "seed": 1106,
+    "quality": 0.59
+  },
+  {
+    "id": "v14-sample-107",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "eye-level",
+    "seed": 1107,
+    "quality": 0.6
+  },
+  {
+    "id": "v14-sample-108",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "wide",
+    "seed": 1108,
+    "quality": 0.61
+  },
+  {
+    "id": "v14-sample-109",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "corner",
+    "seed": 1109,
+    "quality": 0.62
+  },
+  {
+    "id": "v14-sample-110",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "detail",
+    "seed": 1110,
+    "quality": 0.63
+  },
+  {
+    "id": "v14-sample-111",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "eye-level",
+    "seed": 1111,
+    "quality": 0.64
+  },
+  {
+    "id": "v14-sample-112",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "wide",
+    "seed": 1112,
+    "quality": 0.65
+  },
+  {
+    "id": "v14-sample-113",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "corner",
+    "seed": 1113,
+    "quality": 0.66
+  },
+  {
+    "id": "v14-sample-114",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "detail",
+    "seed": 1114,
+    "quality": 0.67
+  },
+  {
+    "id": "v14-sample-115",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "eye-level",
+    "seed": 1115,
+    "quality": 0.68
+  },
+  {
+    "id": "v14-sample-116",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "wide",
+    "seed": 1116,
+    "quality": 0.69
+  },
+  {
+    "id": "v14-sample-117",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "corner",
+    "seed": 1117,
+    "quality": 0.7
+  },
+  {
+    "id": "v14-sample-118",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "warm-minimal",
+    "palette": "oak",
+    "camera": "detail",
+    "seed": 1118,
+    "quality": 0.71
+  },
+  {
+    "id": "v14-sample-119",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "eclectic-modern",
+    "palette": "mist",
+    "camera": "eye-level",
+    "seed": 1119,
+    "quality": 0.72
+  },
+  {
+    "id": "v14-sample-120",
+    "kind": "floorplan-2d",
+    "room": "living-room",
+    "style": "modern",
+    "palette": "warm-white",
+    "camera": "wide",
+    "seed": 1120,
+    "quality": 0.73
+  },
+  {
+    "id": "v14-sample-121",
+    "kind": "render-3d",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "camera": "corner",
+    "seed": 1121,
+    "quality": 0.74
+  },
+  {
+    "id": "v14-sample-122",
+    "kind": "splat-view",
+    "room": "kitchen",
+    "style": "scandinavian",
+    "palette": "sage",
+    "camera": "detail",
+    "seed": 1122,
+    "quality": 0.75
+  },
+  {
+    "id": "v14-sample-123",
+    "kind": "photo",
+    "room": "bathroom",
+    "style": "industrial",
+    "palette": "slate",
+    "camera": "eye-level",
+    "seed": 1123,
+    "quality": 0.76
+  },
+  {
+    "id": "v14-sample-124",
+    "kind": "floorplan-2d",
+    "room": "dining",
+    "style": "japandi",
+    "palette": "terracotta",
+    "camera": "wide",
+    "seed": 1124,
+    "quality": 0.77
+  },
+  {
+    "id": "v14-sample-125",
+    "kind": "render-3d",
+    "room": "office",
+    "style": "mid-century",
+    "palette": "navy",
+    "camera": "corner",
+    "seed": 1125,
+    "quality": 0.78
+  },
+  {
+    "id": "v14-sample-126",
+    "kind": "splat-view",
+    "room": "entryway",
+    "style": "organic-modern",
+    "palette": "sand",
+    "camera": "detail",
+    "seed": 1126,
+    "quality": 0.79
+  },
+  {
+    "id": "v14-sample-127",
+    "kind": "photo",
+    "room": "nursery",
+    "style": "contemporary",
+    "palette": "charcoal",
+    "camera": "eye-level",
+    "seed": 1127,
+    "quality": 0.8
+  }
+]

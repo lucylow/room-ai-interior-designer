@@ -1,5 +1,5 @@
 
-import type {DesignConcept,DesignStyleId} from '../../core/types';
+import type {DesignConcept} from '../../core/types';
 import type {CreativeRevision} from '../types';
 import {clamp} from '../../core/utils';
 import {getwarmerRevision,applywarmerRevision} from '../revisions/warmer';

@@ -1,4 +1,4 @@
-import { AuthoritativeModel, DesignOverlay, SourceFeature } from '../core/types';
+import { AuthoritativeModel, DesignOverlay } from '../core/types';
 export interface WallCenterlinesResult { values:Array<Record<string,string|number>>; warnings:string[]; }
 export class WallCenterlines {
   /** derives normalized wall segments for plan visualization. */

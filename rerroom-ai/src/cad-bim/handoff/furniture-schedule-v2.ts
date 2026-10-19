@@ -1,12 +1,12 @@
-import { AuthoritativeModel, SourceFeature } from '../core/types';
-import { LayoutPlan, Zone, FurnitureSpec, ProjectWorkspaceState } from '../planning/types';
+import { AuthoritativeModel } from '../core/types';
+import { LayoutPlan, Zone, ProjectWorkspaceState } from '../planning/types';
 
 export interface FurnitureScheduleV2Result {
   id:string; score:number; summary:string; warnings:string[]; rows:Array<Record<string,string|number|boolean>>; 
 }
 
 export class FurnitureScheduleV2 {
-  build(model:AuthoritativeModel,plan?:LayoutPlan,zones:Zone[]=[],workspace?:ProjectWorkspaceState):FurnitureScheduleV2Result {
+  build(model:AuthoritativeModel,plan?:LayoutPlan,zones:Zone[]=[],_workspace?:ProjectWorkspaceState):FurnitureScheduleV2Result {
     const warnings:string[]=[]; const rows:Array<Record<string,string|number|boolean>>=[];
     const sourceCount=model.features.length; const placementCount=plan?.placements.length||0; const zoneCount=zones.length;
     const anchored=model.features.filter(f=>f.authority==='authoritative').length;

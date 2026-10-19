@@ -1,0 +1,1 @@
+import { RevenueEvent } from '../types'; export function revenueByProduct(events:RevenueEvent[]){const m=new Map<string,number>();for(const e of events){if(!e.productId||!e.amount)continue;m.set(e.productId,(m.get(e.productId)||0)+e.amount.amount)}return [...m.entries()].map(([productId,amount])=>({productId,amount}))}

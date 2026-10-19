@@ -1,0 +1,2 @@
+import type { CommerceOrder, FulfillmentMethod } from '../types/commerce';export interface FulfillmentPlan{method:FulfillmentMethod;label:string;etaDays:number;trackingRequired:boolean}
+export function fulfillmentPlan(order:CommerceOrder,method:FulfillmentMethod):FulfillmentPlan{return {method,label:method==='pickup'?'Store pickup':'Home delivery',etaDays:method==='pickup'?2:5,trackingRequired:method==='ship'}}

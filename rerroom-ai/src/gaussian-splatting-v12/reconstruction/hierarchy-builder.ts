@@ -1,0 +1,5 @@
+import { Gaussian } from '../core/types';
+import {  stableId } from '../core/utils';
+export type GaussianLevel={level:number;ids:string[];voxelSize:number;centroid:{x:number;y:number;z:number}};
+export function buildHierarchy(gaussians:Gaussian[],levels=5):GaussianLevel[]{const out:GaussianLevel[]=[];for(let level=0;level<levels;level++){const voxel=.05*Math.pow(2,level);const buckets=new Map<string,Gaussian[]>();for(const g of gaussians){const k=[Math.floor(g.mean.x/voxel),Math.floor(g.mean.y/voxel),Math.floor(g.mean.z/voxel)].join(':');const a=buckets.get(k)||[];a.push(g);buckets.set(k,a)}const ids=[...buckets.values()].map(a=>stableId(`lvl${level}`,a.map(g=>g.id).sort().join('|')));const c=gaussians.reduce((p,g)=>({x:p.x+g.mean.x,y:p.y+g.mean.y,z:p.z+g.mean.z}),{x:0,y:0,z:0});const n=gaussians.length||1;out.push({level,ids,voxelSize:voxel,centroid:{x:c.x/n,y:c.y/n,z:c.z/n}})}return out}
+export function hierarchyMemory(levels:GaussianLevel[]){return levels.reduce((s,l)=>s+l.ids.length*32,0)}

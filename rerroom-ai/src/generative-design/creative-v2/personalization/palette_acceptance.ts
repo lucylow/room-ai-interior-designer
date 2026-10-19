@@ -3,7 +3,7 @@ import type {DesignFeedback,UserPreferences,DesignConcept} from '../../core/type
 import type {CreativeSignal} from '../types';
 import {clamp} from '../../core/utils';
 
-export function analyzepalette_acceptance(feedback:DesignFeedback[],concepts:DesignConcept[]):CreativeSignal{
+export function analyzepalette_acceptance(feedback:DesignFeedback[],_concepts:DesignConcept[]):CreativeSignal{
   const relevant=feedback.filter(item=>(item.paletteOverride??'').length>0 && (item.action==='save'||item.action==='accept'));
   const accepted=relevant.filter(item=>item.action==='save'||item.action==='accept').length;
   const rejected=relevant.filter(item=>item.action==='reject').length;

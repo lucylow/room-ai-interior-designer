@@ -1,0 +1,108 @@
+"use strict";
+// RE:ROOM AI Gaussian Splatting V13 — generated technical reference module.
+// Original integration code; deterministic and dependency-free so it can run in demo mode.
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.JOB_TIMEOUT_VERSION = void 0;
+exports.job_timeout_mean = job_timeout_mean;
+exports.job_timeout_variance = job_timeout_variance;
+exports.job_timeout_trend = job_timeout_trend;
+exports.job_timeout_score = job_timeout_score;
+exports.job_timeout_actions = job_timeout_actions;
+exports.job_timeout_result = job_timeout_result;
+exports.job_timeout_window = job_timeout_window;
+exports.job_timeout_robust = job_timeout_robust;
+exports.job_timeout_seed = job_timeout_seed;
+exports.job_timeout_sampleScene = job_timeout_sampleScene;
+exports.job_timeout_distance = job_timeout_distance;
+exports.job_timeout_frames = job_timeout_frames;
+exports.job_timeout_gaussians = job_timeout_gaussians;
+exports.job_timeout_recommendation = job_timeout_recommendation;
+const types_1 = require("../core/types");
+const math_1 = require("../core/math");
+function job_timeout_mean(values = []) {
+    if (!values.length)
+        return 0;
+    return values.reduce((s, v) => s + v, 0) / values.length;
+}
+function job_timeout_variance(values = []) {
+    if (!values.length)
+        return 0;
+    const m = job_timeout_mean(values);
+    return values.reduce((s, v) => s + (v - m) * (v - m), 0) / values.length;
+}
+function job_timeout_trend(values = []) {
+    if (values.length < 2)
+        return 0;
+    let total = 0, weight = 0;
+    for (let i = 1; i < values.length; i++) {
+        const w = i;
+        total += (values[i] - values[i - 1]) * w;
+        weight += w;
+    }
+    return total / (weight || 1);
+}
+function job_timeout_score(values = [], threshold = .65, weight = 1) {
+    const mean = job_timeout_mean(values);
+    const variance = job_timeout_variance(values);
+    const trend = job_timeout_trend(values);
+    const stability = 1 - (0, types_1.clamp)(variance, 0, 1);
+    const trendFit = (0, types_1.clamp)(.5 + trend, 0, 1);
+    const thresholdFit = threshold <= 0 ? mean : (0, types_1.clamp)(mean / threshold, 0, 1);
+    return (0, types_1.clamp)((mean * .48 + stability * .22 + trendFit * .10 + thresholdFit * .20) * weight, 0, 1);
+}
+function job_timeout_actions(score, warnings = []) {
+    if (warnings.length)
+        return ['inspect', 'repair'];
+    if (score >= .9)
+        return ['accept', 'cache'];
+    if (score >= .75)
+        return ['accept', 'monitor'];
+    if (score >= .55)
+        return ['refine', 'rescore'];
+    return ['recollect', 'reprocess'];
+}
+function job_timeout_result(id, values = [], warnings = []) {
+    const score = job_timeout_score(values);
+    const confidence = (0, types_1.clamp)(score * (1 - warnings.length * .1), 0, 1);
+    return { id: `pipeline-job-timeout-${(0, types_1.stableHash)(id).toString(16)}`, score, confidence, actions: job_timeout_actions(score, warnings), metrics: { mean: job_timeout_mean(values), variance: job_timeout_variance(values), trend: job_timeout_trend(values), count: values.length }, warnings };
+}
+function job_timeout_window(values = [], window = 5) {
+    return values.map((_, i) => job_timeout_mean(values.slice(Math.max(0, i - window + 1), i + 1)));
+}
+function job_timeout_robust(values = []) {
+    if (!values.length)
+        return 0;
+    const sorted = [...values].sort((a, b) => a - b);
+    const lo = sorted[Math.floor(sorted.length * .1)] ?? sorted[0];
+    const hi = sorted[Math.floor(sorted.length * .9)] ?? sorted[sorted.length - 1];
+    const core = sorted.filter(v => v >= lo && v <= hi);
+    return job_timeout_mean(core.length ? core : sorted);
+}
+function job_timeout_seed(id, index) { return (0, math_1.seededUnit)((0, types_1.stableHash)(`pipeline-job-timeout:$${id}`), index); }
+function job_timeout_sampleScene(scene, camera) {
+    const selected = camera ? scene.gaussians.filter(g => (0, math_1.project)(g.mean, camera).visible) : scene.gaussians.slice();
+    if (!selected.length)
+        return [0];
+    return selected.slice(0, 24).map(g => (0, types_1.clamp)((g.opacity * .55 + (g.confidence ?? .5) * .45), 0, 1));
+}
+function job_timeout_distance(a, b) { return (0, math_1.dist)(a, b); }
+function job_timeout_frames(frames) {
+    if (!frames.length)
+        return [0];
+    return frames.map(f => (0, types_1.clamp)(f.sharpness * .3 + (1 - f.blur) * .25 + f.coverage * .25 + (1 - f.motion) * .2, 0, 1));
+}
+function job_timeout_gaussians(gaussians) {
+    if (!gaussians.length)
+        return [0];
+    return gaussians.slice(0, 64).map(g => (0, types_1.clamp)(g.opacity * .4 + g.confidence * .4 + (g.dynamic ? 0 : .2), 0, 1));
+}
+function job_timeout_recommendation(result) {
+    if (result.warnings.length)
+        return 'Repair the highest-impact warning before downstream rendering.';
+    if (result.score >= .85)
+        return 'Keep the current configuration and promote it to the next pipeline stage.';
+    if (result.score >= .6)
+        return 'Refine the weakest contributing signal and rescore.';
+    return 'Collect additional evidence or rebuild the affected stage.';
+}
+exports.JOB_TIMEOUT_VERSION = 'v13';

@@ -10,7 +10,7 @@ export interface LayoutAdvisorResult {
   opportunities:string[];
 }
 
-const scoreFor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):number=>clamp(room.circulationScore*.45+room.visualBalanceScore*.3+room.accessibilityScore*.25,0,1);
+const scoreFor=(room:RoomContext,_prefs:UserPreferences,_budget?:BudgetProfile):number=>clamp(room.circulationScore*.45+room.visualBalanceScore*.3+room.accessibilityScore*.25,0,1);
 
 export const adviseLayoutAdvisor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):LayoutAdvisorResult=>{
   const score=scoreFor(room,prefs,budget);

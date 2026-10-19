@@ -1,0 +1,20 @@
+// Stable, collision-free namespace exports for V13 reconstruction capabilities.
+export * as DepthInitialization from './depth-initialization';
+export * as GaussianConfidence from './gaussian-confidence';
+export * as GaussianDensity from './gaussian-density';
+export * as GaussianInit from './gaussian-init';
+export * as GaussianMerge from './gaussian-merge';
+export * as GaussianPrune from './gaussian-prune';
+export * as GaussianSplit from './gaussian-split';
+export * as MultiViewConsistency from './multi-view-consistency';
+export * as PhotometricConsistency from './photometric-consistency';
+export * as ReconstructionBudget from './reconstruction-budget';
+export * as ReconstructionCheckpoint from './reconstruction-checkpoint';
+export * as ReconstructionDiff from './reconstruction-diff';
+export * as ReconstructionHealth from './reconstruction-health';
+export * as ReconstructionResume from './reconstruction-resume';
+export * as SceneCleanup from './scene-cleanup';
+export * as SceneFusion from './scene-fusion';
+export * as SceneRepair from './scene-repair';
+export * as SurfaceConsistency from './surface-consistency';
+export * as VoxelSeeding from './voxel-seeding';

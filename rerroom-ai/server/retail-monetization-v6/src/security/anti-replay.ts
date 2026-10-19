@@ -1,0 +1,1 @@
+export class NonceGuard{private used=new Map<string,number>();constructor(private ttlMs=10*60_000){}claim(nonce:string,now=Date.now()){this.prune(now);if(this.used.has(nonce))return false;this.used.set(nonce,now);return true}private prune(now:number){for(const [k,t] of this.used)if(now-t>this.ttlMs)this.used.delete(k)}}

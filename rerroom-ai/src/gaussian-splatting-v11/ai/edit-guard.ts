@@ -1,0 +1,3 @@
+import type { EditInstruction, GaussianScene } from '../core/types';
+export interface EditGuard {allowed:boolean;reason:string;protectedAnchors:number;targetCount:number;}
+export function guardEdit(scene:GaussianScene,instruction:EditInstruction):EditGuard{const targetSet=new Set(instruction.targetLabels.map(x=>x.toLowerCase()));const target=scene.splats.filter(s=>targetSet.has((s.semanticLabel||'').toLowerCase()));const protectedAnchors=scene.splats.filter(s=>!!s.anchorId&&!targetSet.has((s.semanticLabel||'').toLowerCase())).length;const allowed=target.length>0&&(!instruction.preserveAnchors||protectedAnchors>=0);return {allowed,reason:allowed?'Targeted semantic edit is safe for demo overlay':'No grounded target found',protectedAnchors,targetCount:target.length};}

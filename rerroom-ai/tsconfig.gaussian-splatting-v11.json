@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": []
+  },
+  "include": [
+    "src/gaussian-splatting-v11/**/*.ts",
+    "services/gaussianSplattingV11.ts"
+  ]
+}

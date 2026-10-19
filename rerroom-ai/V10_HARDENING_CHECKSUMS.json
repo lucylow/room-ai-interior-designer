@@ -1,0 +1,50 @@
+{
+  "scope": "V10 refactor and error-handling pass",
+  "files": [
+    {
+      "path": "src/monetization-v10/purchases/idempotency.ts",
+      "bytes": 2741,
+      "sha256": "d53c710ee52262d551a4cb4e4d916bb7d72298bdae4951fe7c317657d88b422d"
+    },
+    {
+      "path": "src/monetization-v10/purchases/purchase-coordinator.ts",
+      "bytes": 2342,
+      "sha256": "460ae4df7b29df57278ecb4366a13947cda0367a24e62d3c9eb2d673cc721345"
+    },
+    {
+      "path": "src/monetization-v10/credits/ledger.ts",
+      "bytes": 6589,
+      "sha256": "9f18dbe45472cd9db8dcf46f94318510c5722c63a90dacc04d3e2c95f3de75db"
+    },
+    {
+      "path": "src/monetization-v10/entitlements/reconcile.ts",
+      "bytes": 3667,
+      "sha256": "e4b7b4598871b78dc0644795d4a57202de714a6126ff7e08cbf21bc71442206f"
+    },
+    {
+      "path": "src/monetization-v10/backend/notification-contract.ts",
+      "bytes": 1575,
+      "sha256": "a06200fb494806e9159bc86e7866257c3c4d20e168aa198996658e24b84ecbc0"
+    },
+    {
+      "path": "src/monetization-v10/types.ts",
+      "bytes": 2024,
+      "sha256": "8f35ba43e1532ee7f55f1630f2428882a165bc929c4c5520239b3d973c1a9223"
+    },
+    {
+      "path": "src/monetization-v10/entitlements/feature-gate.ts",
+      "bytes": 1925,
+      "sha256": "eff5d26eea2f98ea913505cb5b71ac256ca994e32cbd121976abfc3f5e0a115b"
+    },
+    {
+      "path": "run-apple-monetization-v10-tests.ts",
+      "bytes": 9496,
+      "sha256": "6df9bb099b620f0f2f50615a312971499ad2aaf2ed8d7914ece4ae2f8f4cbd3e"
+    },
+    {
+      "path": "APPLE_MONETIZATION_V10_INTEGRATION_STATUS.md",
+      "bytes": 1137,
+      "sha256": "b03786ba0eb2c9734320d520468f96559e4cc9dbeb87beeca9fa724db81e8f84"
+    }
+  ]
+}

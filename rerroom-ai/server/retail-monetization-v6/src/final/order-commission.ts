@@ -1,0 +1,4 @@
+export interface OrderCommissionInput{id:string;amount:number;currency:'CAD'|'USD';flags:string[];status:string}
+export interface OrderCommissionOutput{id:string;ok:boolean;score:number;action:string;flags:string[];summary:string}
+export function runOrderCommission(input:OrderCommissionInput):OrderCommissionOutput{const status=input.status.toLowerCase();const score=Math.max(0,Math.min(1,(input.amount>0?0.7:0.2)+(input.flags.length*0.03)-(status.includes('error')?0.5:0)));const ok=score>=0.45 && !status.includes('blocked');const action=!ok?'recover':score>0.8?'proceed':'review';const flags=[...new Set([...input.flags,'order-commission'])];return{id:input.id,ok,score,action,flags,summary:`order-commission: ${action} / score ${score.toFixed(4)}`}}
+export function demoOrderCommission(i=1){return runOrderCommission({id:'order-commission_demo_'+i,amount:119+i*27,currency:'CAD',flags:['demo','physical-goods'],status:i%5===0?'error':'ready'})}

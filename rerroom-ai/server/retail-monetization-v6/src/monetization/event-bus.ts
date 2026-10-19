@@ -1,0 +1,2 @@
+import { id } from '../core/id'; import type { MonetizationEvent } from '../types/commerce';
+export class MonetizationBus { private events:MonetizationEvent[]=[]; emit(input:Omit<MonetizationEvent,'id'|'at'>){const e={...input,id:id('evt'),at:new Date().toISOString()};this.events.push(e);return e} all(){return [...this.events]} where(type:MonetizationEvent['type']){return this.events.filter(e=>e.type===type)} }

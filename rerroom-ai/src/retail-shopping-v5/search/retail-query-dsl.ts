@@ -12,19 +12,6 @@ import type {
   ProductCategory,
   RoomType,
   StyleName,
-  ShoppingConstraints,
-  RetailerContext,
-  RetailerResult,
-  Candidate,
-  Recommendation,
-  FurnitureSlot,
-  RoomEnvelope,
-  DesignIntent,
-  Budget,
-  ScenePatch,
-  ShoppingCart,
-  CartLine,
-  Bundle,
 } from '../../retail-shopping-v4/domain/commerce-types';
 
 const V5_SNAPSHOT = '2026-10-02';

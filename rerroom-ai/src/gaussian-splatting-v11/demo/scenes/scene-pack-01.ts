@@ -1,0 +1,222 @@
+export interface DemoGaussianSceneCase {id:string;room:string;style:string;palette:string;cameraFov:number;splatCount:number;quality:number;goal:string;seed:number;prompt:string;}
+export const SCENE_PACK_01: DemoGaussianSceneCase[] = [
+  {
+    "id": "3dgs-demo-01-00",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 48,
+    "splatCount": 6311,
+    "quality": 0.78,
+    "goal": "photoreal",
+    "seed": 1137,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 0."
+  },
+  {
+    "id": "3dgs-demo-01-01",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 52,
+    "splatCount": 6408,
+    "quality": 0.805,
+    "goal": "material-edit",
+    "seed": 1138,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 1."
+  },
+  {
+    "id": "3dgs-demo-01-02",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 56,
+    "splatCount": 6505,
+    "quality": 0.83,
+    "goal": "layout-review",
+    "seed": 1139,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 2."
+  },
+  {
+    "id": "3dgs-demo-01-03",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 60,
+    "splatCount": 6602,
+    "quality": 0.855,
+    "goal": "client-tour",
+    "seed": 1140,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 3."
+  },
+  {
+    "id": "3dgs-demo-01-04",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 64,
+    "splatCount": 6699,
+    "quality": 0.88,
+    "goal": "photoreal",
+    "seed": 1141,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 4."
+  },
+  {
+    "id": "3dgs-demo-01-05",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 48,
+    "splatCount": 6796,
+    "quality": 0.905,
+    "goal": "material-edit",
+    "seed": 1142,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 5."
+  },
+  {
+    "id": "3dgs-demo-01-06",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 52,
+    "splatCount": 6893,
+    "quality": 0.93,
+    "goal": "layout-review",
+    "seed": 1143,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 6."
+  },
+  {
+    "id": "3dgs-demo-01-07",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 56,
+    "splatCount": 6990,
+    "quality": 0.78,
+    "goal": "client-tour",
+    "seed": 1144,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 7."
+  },
+  {
+    "id": "3dgs-demo-01-08",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 60,
+    "splatCount": 7087,
+    "quality": 0.805,
+    "goal": "photoreal",
+    "seed": 1145,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 8."
+  },
+  {
+    "id": "3dgs-demo-01-09",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 64,
+    "splatCount": 7184,
+    "quality": 0.83,
+    "goal": "material-edit",
+    "seed": 1146,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 9."
+  },
+  {
+    "id": "3dgs-demo-01-10",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 48,
+    "splatCount": 7281,
+    "quality": 0.855,
+    "goal": "layout-review",
+    "seed": 1147,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 10."
+  },
+  {
+    "id": "3dgs-demo-01-11",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 52,
+    "splatCount": 7378,
+    "quality": 0.88,
+    "goal": "client-tour",
+    "seed": 1148,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 11."
+  },
+  {
+    "id": "3dgs-demo-01-12",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 56,
+    "splatCount": 7475,
+    "quality": 0.905,
+    "goal": "photoreal",
+    "seed": 1149,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 12."
+  },
+  {
+    "id": "3dgs-demo-01-13",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 60,
+    "splatCount": 7572,
+    "quality": 0.93,
+    "goal": "material-edit",
+    "seed": 1150,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 13."
+  },
+  {
+    "id": "3dgs-demo-01-14",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 64,
+    "splatCount": 7669,
+    "quality": 0.78,
+    "goal": "layout-review",
+    "seed": 1151,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 14."
+  },
+  {
+    "id": "3dgs-demo-01-15",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 48,
+    "splatCount": 7766,
+    "quality": 0.805,
+    "goal": "client-tour",
+    "seed": 1152,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 15."
+  },
+  {
+    "id": "3dgs-demo-01-16",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 52,
+    "splatCount": 7863,
+    "quality": 0.83,
+    "goal": "photoreal",
+    "seed": 1153,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 16."
+  },
+  {
+    "id": "3dgs-demo-01-17",
+    "room": "bedroom",
+    "style": "minimalist",
+    "palette": "greige",
+    "cameraFov": 56,
+    "splatCount": 7960,
+    "quality": 0.855,
+    "goal": "material-edit",
+    "seed": 1154,
+    "prompt": "Preserve bedroom geometry, render minimalist styling, use greige, maintain wall and window anchors, revision 17."
+  }
+];
+export function getScenePack01(index:number) { return SCENE_PACK_01[index % SCENE_PACK_01.length]; }
+export function bestScenePack01() { return [...SCENE_PACK_01].sort((a,b)=>b.quality-a.quality)[0]; }
+export function scenePrompt01(index:number):string { return getScenePack01(index).prompt; }

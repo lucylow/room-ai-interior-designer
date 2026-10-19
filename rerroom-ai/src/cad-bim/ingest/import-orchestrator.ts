@@ -1,4 +1,4 @@
-import { CADFileType, AuthoritativeModel, SourceDocument } from '../core/types';
+import {  AuthoritativeModel, SourceDocument } from '../core/types';
 import { detectFileType, requiresServerConversion } from './file-sniffer';
 import { DxfImporter } from '../importers/dxf/dxf-importer';
 import { ObjImporter } from '../importers/obj/obj-importer';

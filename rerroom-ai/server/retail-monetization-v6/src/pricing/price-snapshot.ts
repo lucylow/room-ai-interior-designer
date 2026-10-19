@@ -1,0 +1,2 @@
+import type { Money } from '../types/commerce';export interface PriceSnapshot{sku:string;capturedAt:string;price:Money;source:string}
+export function compareSnapshots(a:PriceSnapshot,b:PriceSnapshot){if(a.sku!==b.sku)throw new Error('sku_mismatch');return {delta:b.price.amount-a.price.amount,percent:a.price.amount?Math.round((b.price.amount-a.price.amount)/a.price.amount*10000)/10000:0,currency:b.price.currency}}

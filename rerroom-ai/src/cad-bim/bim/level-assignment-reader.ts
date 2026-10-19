@@ -1,4 +1,4 @@
-import { BIMIndex, BIMEntity, BIMPropertySet } from '../core/types';
+import { BIMIndex, BIMEntity } from '../core/types';
 export interface LevelAssignmentReaderResult { count:number; values:Array<Record<string,unknown>>; warnings:string[]; }
 export class LevelAssignmentReader {
   /** maps objects to storey/level metadata. */

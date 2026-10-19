@@ -1,0 +1,4 @@
+export interface ProjectCartDiffInput{id:string;amount:number;currency:'CAD'|'USD';flags:string[];status:string}
+export interface ProjectCartDiffOutput{id:string;ok:boolean;score:number;action:string;flags:string[];summary:string}
+export function runProjectCartDiff(input:ProjectCartDiffInput):ProjectCartDiffOutput{const status=input.status.toLowerCase();const score=Math.max(0,Math.min(1,(input.amount>0?0.7:0.2)+(input.flags.length*0.03)-(status.includes('error')?0.5:0)));const ok=score>=0.45 && !status.includes('blocked');const action=!ok?'recover':score>0.8?'proceed':'review';const flags=[...new Set([...input.flags,'project-cart-diff'])];return{id:input.id,ok,score,action,flags,summary:`project-cart-diff: ${action} / score ${score.toFixed(4)}`}}
+export function demoProjectCartDiff(i=1){return runProjectCartDiff({id:'project-cart-diff_demo_'+i,amount:119+i*27,currency:'CAD',flags:['demo','physical-goods'],status:i%5===0?'error':'ready'})}

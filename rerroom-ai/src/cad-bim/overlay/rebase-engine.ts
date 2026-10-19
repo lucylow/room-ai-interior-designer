@@ -1,4 +1,4 @@
-import { DesignOverlay, AuthoritativeModel, AnchorReference } from '../core/types';
+import { DesignOverlay, AuthoritativeModel } from '../core/types';
 import { resolveAnchor } from '../core/anchors';
 export interface RebaseReport { overlay:DesignOverlay; migrated:number; orphaned:string[]; warnings:string[]; }
 export class RebaseEngine {

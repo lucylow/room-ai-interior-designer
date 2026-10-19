@@ -1,0 +1,35 @@
+{
+  "version": "v12",
+  "newTypeScriptFiles": 148,
+  "newTypeScriptLines": 11766,
+  "approxPages55Lines": 213.9,
+  "features": [
+    "unordered capture consistency",
+    "global matching preparation",
+    "relocalization",
+    "temporal motion",
+    "dynamic gaussian metadata",
+    "adaptive rendering",
+    "foveation",
+    "progressive streaming",
+    "intrinsic appearance edits",
+    "object transfer planning",
+    "AI hallucination guard",
+    "CAD/BIM anchor refinement",
+    "geometry locks",
+    "novel-view metrics",
+    "privacy controls",
+    "deterministic demos"
+  ],
+  "validation": {
+    "tsc": "PASS",
+    "demo": "PASS",
+    "frames": 240,
+    "keyframes": 40,
+    "overlapEdges": 3029,
+    "gaussians": 3200,
+    "outliers": 0,
+    "clusters": 400,
+    "qualityScore": 1.0
+  }
+}

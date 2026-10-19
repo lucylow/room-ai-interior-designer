@@ -11,7 +11,7 @@ import {StyleReasoning} from '../styles/style-reasoner';
 import {LayoutAdviceEngine} from '../layout/layout-advice-engine';
 import {IterativeRefinementEngine} from '../refinement/iterative-refinement-engine';
 import {clamp,stableSort} from '../core/utils';
-import type {LayoutAdvice,FurnitureIdea,DesignStyleId,ColorPalette} from '../core/types';
+import type {LayoutAdvice,FurnitureIdea,ColorPalette} from '../core/types';
 import {adviseLivingRoom} from '../layout/living_room-advisor';
 import {adviseBedroom} from '../layout/bedroom-advisor';
 import {adviseKitchen} from '../layout/kitchen-advisor';
@@ -53,7 +53,7 @@ export class GenerativeDesignEngine{
     }
   }
   trace.push(`raw concepts=${concepts.length}`);
-  let ranked=stableSort(concepts,c=>c.score).filter(c=>c.confidence>=.45);
+  const ranked=stableSort(concepts,c=>c.score).filter(c=>c.confidence>=.45);
   if(req.previousConcept&&req.feedback?.length){const latest=req.feedback[req.feedback.length-1]; if(latest){const refined=new IterativeRefinementEngine().refine(req.room,req.intent,req.previousConcept,latest);ranked.unshift(refined);trace.push('refined prior concept');}}
   const diverse=[] as DesignConcept[]; const seen=new Set<string>(); for(const c of ranked){const key=`${c.styleId}|${c.paletteId}`;if(!seen.has(key)||diverse.length<4){diverse.push(c);seen.add(key);}if(diverse.length>=(req.candidateCount??12))break;}
   const insights:DesignInsight[]=[

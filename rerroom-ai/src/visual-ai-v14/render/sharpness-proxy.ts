@@ -1,0 +1,2 @@
+import { RGBAFrame, clamp } from '../core/types';
+export function sharpnessProxy(f:RGBAFrame):number{ if(f.width<3||f.height<3)return 0; let e=0,n=0; for(let y=1;y<f.height-1;y+=2) for(let x=1;x<f.width-1;x+=2){ const i=(y*f.width+x)*4,l=(y*f.width+x-1)*4,r=(y*f.width+x+1)*4,u=((y-1)*f.width+x)*4,d=((y+1)*f.width+x)*4; const gx=Math.abs(f.data[r]-f.data[l]),gy=Math.abs(f.data[d]-f.data[u]); e+=(gx+gy)/510;n++; } return clamp(e/Math.max(1,n)*3); }

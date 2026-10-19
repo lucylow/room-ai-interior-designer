@@ -39,8 +39,22 @@ import {
   type GenerationLifecycleState,
 } from "@/services/generationLifecycle";
 import type { GenerationJob } from "@/services/api";
+import {
+  creativePalettes,
+  creativeStyleOptions,
+  generateCreativeRoom,
+  paletteLabel,
+  styleLabel,
+} from "@/services/generativeStudio";
+import type { CreativeConceptMock } from "@/src/generative-mock-v7";
+import { generateTechnicalCreative, refineTechnicalCreative } from "@/services/technicalStudio";
+import type { CreativeConcept } from "@/src/generative-technical-v8";
+import { getGenerativeDatasetReport } from "@/services/generativeDataset";
+import { getGenerativeDatasetV10Report } from "@/services/generativeDatasetV10";
+import { getGaussianSplattingV11Report } from "@/services/gaussianSplattingV11";
+import { getGaussianSplattingV12Report } from "@/services/gaussianSplattingV12";
 
-const styleOptions = ["Modern", "Japandi", "Cozy", "Minimal", "Scandinavian", "Luxury"];
+const styleOptions = creativeStyleOptions;
 const budgets = ["$500", "$1,200", "$2,500", "Flexible"];
 
 type Step = "capture" | "setup" | "progress" | "result";
@@ -67,6 +81,10 @@ export default function CreateScreen() {
   const [palette, setPalette] = useState(() => creativePalettes("living_room")[0]?.id ?? "neutral_01");
   const [mockConcept, setMockConcept] = useState<CreativeConceptMock | null>(null);
   const [technicalConcept, setTechnicalConcept] = useState<CreativeConcept | null>(null);
+  const [datasetReady, setDatasetReady] = useState(false);
+  const [datasetV10Ready, setDatasetV10Ready] = useState(false);
+  const [gaussianDemoReady, setGaussianDemoReady] = useState(false);
+  const [gaussianV12Ready, setGaussianV12Ready] = useState(false);
   const [budget, setBudget] = useState("$1,200");
   const [saved, setSaved] = useState(false);
   const [refinement, setRefinement] = useState<string | undefined>();
@@ -285,6 +303,10 @@ export default function CreateScreen() {
         seed: 80101,
       });
       setTechnicalConcept(technical.topConcept);
+      setDatasetReady(getGenerativeDatasetReport().readyForDemo);
+      setDatasetV10Ready(getGenerativeDatasetV10Report().readyForDemo);
+      setGaussianDemoReady(getGaussianSplattingV11Report().readyForDemo);
+      setGaussianV12Ready(getGaussianSplattingV12Report().readyForDemo);
       setGeneration(initialGenerationLifecycle);
     } catch (error) {
       setGeneration(recordGenerationPollingError(initialGenerationLifecycle, error));
@@ -441,7 +463,7 @@ export default function CreateScreen() {
             <Text style={[styles.decisionTitle, { color: colors.foreground }]}>AI design logic</Text>
             <Text style={[styles.technicalMeta, { color: colors.primary }]}>
               {technicalConcept
-                ? `Technical mock · seed ${technicalConcept.seed} · geometry preserved`
+                ? `Technical mock · seed ${technicalConcept.seed} · geometry preserved · V9 ${datasetReady ? "ready" : "review"} · V10 ${datasetV10Ready ? "ready" : "review"} · 3DGS ${gaussianDemoReady ? "ready" : "review"} · V12 ${gaussianV12Ready ? "ready" : "review"}`
                 : "Demo concept"}
             </Text>
             {buildDesignDecisions({

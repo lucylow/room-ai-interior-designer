@@ -1,0 +1,2 @@
+export interface RedirectPolicy{allowedOrigins:string[];allowExternalRetailers:boolean}
+export function validateCheckoutUrl(url:string,policy:RedirectPolicy){const u=new URL(url);if(u.protocol!=='https:'&&!u.hostname.includes('localhost'))throw new Error('checkout_url_must_be_https');const same=policy.allowedOrigins.some(o=>u.origin===o);if(!same&&!policy.allowExternalRetailers)throw new Error('external_retailer_not_allowed');return u.toString()}

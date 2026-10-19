@@ -10,7 +10,7 @@ export interface WorkflowAdvisorResult {
   opportunities:string[];
 }
 
-const scoreFor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):number=>clamp(room.workflowScore*.5+room.circulationScore*.25+room.storageScore*.25,0,1);
+const scoreFor=(room:RoomContext,_prefs:UserPreferences,_budget?:BudgetProfile):number=>clamp(room.workflowScore*.5+room.circulationScore*.25+room.storageScore*.25,0,1);
 
 export const adviseWorkflowAdvisor=(room:RoomContext,prefs:UserPreferences,budget?:BudgetProfile):WorkflowAdvisorResult=>{
   const score=scoreFor(room,prefs,budget);

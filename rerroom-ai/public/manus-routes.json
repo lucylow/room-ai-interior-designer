@@ -1,0 +1,9 @@
+{
+  "routes": [
+    { "path": "/", "title": "Home" },
+    { "path": "/explore", "title": "Explore" },
+    { "path": "/scan", "title": "Scan" },
+    { "path": "/shop", "title": "Shop" },
+    { "path": "/projects", "title": "Projects" }
+  ]
+}

@@ -380,6 +380,46 @@ h2 {
   background: #817369;
   box-shadow: var(--shadow);
 }
+.journey-card {
+  display: grid;
+  gap: 9px;
+  margin: 12px 1px 0;
+  padding: 11px 12px 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.58);
+}
+.journey-label {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.journey-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+.journey-steps span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 700;
+}
+.journey-steps b {
+  display: grid;
+  width: 19px;
+  height: 19px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--ink-soft);
+  background: var(--cream);
+  font-size: 8px;
+}
+.journey-steps .is-current { color: var(--clay-dark); }
+.journey-steps .is-current b { color: #fff; background: var(--clay); }
 .hero-card > img,
 .hero-card > .image-fallback {
   position: absolute;

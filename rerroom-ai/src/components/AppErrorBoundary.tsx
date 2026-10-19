@@ -20,6 +20,10 @@ export class AppErrorBoundary extends React.Component<React.PropsWithChildren, B
     console.error('[RE:ROOM] UI rendering failed.', { incidentId });
   }
 
+  private retry = (): void => {
+    this.setState({ hasError: false, incidentId: undefined });
+  };
+
   render(): React.ReactNode {
     if (!this.state.hasError) return this.props.children;
     return (
@@ -27,7 +31,10 @@ export class AppErrorBoundary extends React.Component<React.PropsWithChildren, B
         <h1>Something went wrong</h1>
         <p>The screen could not be displayed. Your saved work has not been intentionally cleared.</p>
         {this.state.incidentId ? <p>Reference: {this.state.incidentId}</p> : null}
-        <button type="button" onClick={() => window.location.reload()}>Reload RE:ROOM</button>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 18 }}>
+          <button type="button" onClick={this.retry}>Try again</button>
+          <button type="button" onClick={() => window.location.reload()}>Reload RE:ROOM</button>
+        </div>
       </main>
     );
   }

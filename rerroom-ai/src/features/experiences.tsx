@@ -130,8 +130,12 @@ export function HomeExperience({
   favorites,
   onFavorite,
 }: ExperienceProps) {
-  const room = mockRooms[0];
+  const [activeCategory, setActiveCategory] = useState("Living Room");
+  const categories = ["Living Room", "Bedroom", "Kitchen", "Office", "Dining"];
+  const filteredRooms = mockRooms.filter((item) => item.type === activeCategory);
+  const room = filteredRooms[0] ?? mockRooms[0];
   const recommendations = productsForRoom(mockProducts, room, 4);
+  const activeProjects = mockProjects.filter((project) => project.status !== "Complete").length;
   return (
     <div className="scroll-screen">
       <header className="home-header">
@@ -164,19 +168,29 @@ export function HomeExperience({
             space with AI
           </h2>
           <p>Scan, style, and shop your room in minutes.</p>
-          <Button className="button-light hero-cta" onClick={() => onSecondary("design")}>
+          <Button className="button-light hero-cta" onClick={() => onNavigate("ar")}>
             Start designing <Icon name="arrow" size={17} />
           </Button>
         </div>
       </section>
+      <section className="journey-card" aria-label="Design journey">
+        <span className="journey-label">YOUR DESIGN JOURNEY</span>
+        <div className="journey-steps">
+          {["Capture", "Studio", "Shop", "Plan"].map((step, index) => (
+            <span key={step} className={index === 0 ? "is-current" : ""}>
+              <b>{index + 1}</b>{step}
+            </span>
+          ))}
+        </div>
+      </section>
       <section className="stat-strip" aria-label="Account summary">
         <div>
-          <strong>12</strong>
+          <strong>{favorites.length}</strong>
           <span>saved items</span>
         </div>
         <i />
         <div>
-          <strong>4</strong>
+          <strong>{activeProjects}</strong>
           <span>active projects</span>
         </div>
         <StatusPill tone="clay">
@@ -184,15 +198,15 @@ export function HomeExperience({
         </StatusPill>
       </section>
       <div className="chip-row" aria-label="Room type filters">
-        {["Living room", "Bedroom", "Kitchen", "Office", "Dining"].map((category, index) => (
-          <Button key={category} className={`filter-chip ${index === 0 ? "is-selected" : ""}`}>
+        {categories.map((category) => (
+          <Button key={category} className={`filter-chip ${activeCategory === category ? "is-selected" : ""}`} onClick={() => setActiveCategory(category)} aria-pressed={activeCategory === category}>
             {category}
           </Button>
         ))}
       </div>
       <SectionHeading title="Your spaces" action="Explore" onAction={() => onNavigate("explore")} />
       <div className="room-rail">
-        {mockRooms.slice(0, 4).map((item) => (
+        {filteredRooms.slice(0, 4).map((item) => (
           <Button key={item.id} className="room-card" onClick={() => onSecondary("studio")}>
             <InteriorImage src={item.image.uri} alt={item.image.alt} />
             <span className="room-status">{item.completion}% complete</span>
@@ -370,7 +384,7 @@ export function ARScannerExperience({ onSecondary, notify }: ExperienceProps) {
           <i />
           <div>
             <strong>{captured ? "Room captured" : "Floor detected"}</strong>
-            <span>Confidence 96%</span>
+            <span>Demo estimate · verify after capture</span>
           </div>
         </div>
         <IconButton icon="sun" label="Lighting estimate" className="glass-button" />
@@ -538,7 +552,7 @@ export function DesignStudioExperience({ onNavigate, onSecondary, notify }: Expe
         </span>
         <h2>{selectedRoom.name}</h2>
         <p>
-          {roomArea(selectedRoom)} · {selectedRoom.areaSqFt} sq ft · scan confidence 96%
+          {roomArea(selectedRoom)} · {selectedRoom.areaSqFt} sq ft · planning estimate
         </p>
       </section>
       <SectionHeading title="1. Choose a room" />

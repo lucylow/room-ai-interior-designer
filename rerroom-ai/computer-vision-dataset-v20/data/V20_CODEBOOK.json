@@ -1,0 +1,52 @@
+{
+  "visionFamilies": [
+    "surface",
+    "geometry",
+    "object",
+    "semantic",
+    "depth",
+    "camera",
+    "lighting",
+    "relation",
+    "room",
+    "floorplan",
+    "measurement",
+    "placement",
+    "3dgs",
+    "panorama",
+    "hardcase",
+    "augmentation",
+    "reconstruction",
+    "capture",
+    "shopping",
+    "ar",
+    "privacy",
+    "provenance",
+    "sequence"
+  ],
+  "recordsPerDemoShard": 40,
+  "demoRecordCount": 160,
+  "generatorCapacity": 1200,
+  "hardCases": [
+    "mirror",
+    "glass",
+    "lowlight",
+    "backlight",
+    "occlusion",
+    "crowded",
+    "empty",
+    "repetition",
+    "truncation",
+    "motion"
+  ],
+  "designPrinciples": [
+    "deterministic",
+    "schema-first",
+    "confidence-carrying",
+    "multimodal",
+    "room-aware",
+    "sequence-aware",
+    "privacy-conscious",
+    "demo-safe"
+  ]
+}

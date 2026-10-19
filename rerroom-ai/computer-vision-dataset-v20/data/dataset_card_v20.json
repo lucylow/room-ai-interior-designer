@@ -1,0 +1,43 @@
+{
+  "name": "RE:ROOM AI Synthetic Interior Vision Corpus V20",
+  "version": "20.0.0",
+  "purpose": "demo and integration testing for indoor RGB/RGB-D/3D scene understanding",
+  "recordCount": 160,
+  "modalities": [
+    "rgb",
+    "depth",
+    "segmentation",
+    "instance",
+    "pointcloud",
+    "mesh",
+    "floorplan",
+    "panorama"
+  ],
+  "annotationFamilies": [
+    "2D detection",
+    "3D cuboids",
+    "planes",
+    "relations",
+    "depth statistics",
+    "materials",
+    "lighting",
+    "occlusion",
+    "camera pose",
+    "room topology",
+    "hard cases"
+  ],
+  "hardCases": [
+    "mirror_reflection",
+    "glass",
+    "low_light",
+    "repetitive_furniture",
+    "heavy_occlusion",
+    "backlighting"
+  ],
+  "source": "synthetic_demo",
+  "limitations": [
+    "not a substitute for a real-world training corpus",
+    "no raw camera images are bundled",
+    "labels are synthetic and should be treated as demo fixtures"
+  ]
+}

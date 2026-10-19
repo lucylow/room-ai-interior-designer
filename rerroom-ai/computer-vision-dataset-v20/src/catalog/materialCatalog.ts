@@ -1,0 +1,2 @@
+export const MATERIAL_PALETTE=["paint", "wood", "stone", "marble", "tile", "carpet", "glass", "metal", "fabric", "leather", "plastic", "concrete", "brick"] as const;
+export const MATERIAL_PROPERTIES=Object.fromEntries(MATERIAL_PALETTE.map((m,i)=>[m,{roughness:0.15+(i%8)*0.1,reflectivity:Math.max(0.05,0.9-(i%7)*0.1),typicalObjects:i%2?['cabinet','table','floor']:['wall','countertop','window']} ]));

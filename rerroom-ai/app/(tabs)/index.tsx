@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { router, useFocusEffect } from "expo-router";
+import { useCallback, useRef, useState } from "react";
 import {
   ActivityIndicator,
   Image,
@@ -12,7 +12,7 @@ import {
   View,
   useWindowDimensions,
 } from "react-native";
-import type { SavedDesign } from "@/services/savedDesigns";
+import type { SavedDesign, SavedDesignLoadIssue } from "@/services/savedDesigns";
 import { loadSavedDesignsWithStatus } from "@/services/savedDesigns";
 import { ScreenContainer } from "@/components/screen-container";
 import { useColors } from "@/hooks/use-colors";
@@ -35,30 +35,38 @@ export default function HomeScreen() {
   const [rooms, setRooms] = useState<SavedDesign[]>([]);
   const [loadState, setLoadState] = useState<RoomLoadState>("loading");
   const [isDemoData, setIsDemoData] = useState(false);
+  const [loadIssue, setLoadIssue] = useState<SavedDesignLoadIssue | "load-failed" | null>(null);
   const [heroFailed, setHeroFailed] = useState(false);
   const requestId = useRef(0);
 
   const refreshRooms = useCallback(async () => {
     const activeRequest = ++requestId.current;
     setLoadState("loading");
+    setLoadIssue(null);
     try {
       const result = await loadSavedDesignsWithStatus();
       if (activeRequest !== requestId.current) return;
       setRooms(result.designs);
       setIsDemoData(result.source === "demo");
+      setLoadIssue(result.issue ?? null);
       setLoadState(result.source === "unavailable" ? "error" : "ready");
     } catch {
       if (activeRequest !== requestId.current) return;
+      setRooms([]);
+      setIsDemoData(false);
+      setLoadIssue("load-failed");
       setLoadState("error");
     }
   }, []);
 
-  useEffect(() => {
-    void refreshRooms();
-    return () => {
-      requestId.current += 1;
-    };
-  }, [refreshRooms]);
+  useFocusEffect(
+    useCallback(() => {
+      void refreshRooms();
+      return () => {
+        requestId.current += 1;
+      };
+    }, [refreshRooms]),
+  );
 
   const totalConcepts = rooms.reduce((sum, room) => sum + Math.max(0, room.conceptCount), 0);
 
@@ -118,15 +126,25 @@ export default function HomeScreen() {
             </View>
             <Text style={styles.heroTitle}>See what your room could become.</Text>
             <Text style={styles.heroBody}>Start with a photo. Keep the pieces and details that matter.</Text>
-            <Pressable
-              accessibilityRole="button"
-              accessibilityLabel="Start designing with a room photo"
-              onPress={() => router.push("/(tabs)/create")}
-              style={({ pressed }) => [styles.heroButton, pressed && styles.pressed]}
-            >
-              <Text style={styles.heroButtonText}>Start a room</Text>
-              <Ionicons name="arrow-forward" size={17} color={mobileDesign.color.ink} />
-            </Pressable>
+            <View style={styles.heroActions}>
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Start designing with a room photo"
+                onPress={() => router.push("/(tabs)/create")}
+                style={({ pressed }) => [styles.heroButton, pressed && styles.pressed]}
+              >
+                <Text style={styles.heroButtonText}>Start a room</Text>
+                <Ionicons name="arrow-forward" size={17} color={mobileDesign.color.ink} />
+              </Pressable>
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Open Studio and saved spaces"
+                onPress={() => router.push("/(tabs)/rooms")}
+                style={({ pressed }) => [styles.heroSecondaryButton, pressed && styles.pressed]}
+              >
+                <Text style={styles.heroSecondaryButtonText}>Open Studio</Text>
+              </Pressable>
+            </View>
           </View>
         </View>
 
@@ -173,6 +191,22 @@ export default function HomeScreen() {
           </Pressable>
         </View>
 
+        {loadIssue && loadState === "ready" ? (
+          <View
+            accessibilityRole="alert"
+            style={[styles.warningCard, { backgroundColor: colors.surface, borderColor: colors.warning }]}
+          >
+            <Ionicons name="warning-outline" size={19} color={colors.warning} />
+            <Text style={[styles.warningText, { color: colors.foreground }]}>
+              {loadIssue === "storage-unavailable"
+                ? "Saved rooms are temporarily unavailable. Showing example rooms instead."
+                : loadIssue === "invalid-data"
+                  ? "Some saved room data is unreadable. Changes are paused to protect existing data."
+                  : "Saved rooms could not be loaded. Try again to see your latest spaces."}
+            </Text>
+          </View>
+        ) : null}
+
         {loadState === "loading" ? (
           <View
             accessibilityRole="progressbar"
@@ -190,7 +224,11 @@ export default function HomeScreen() {
             <Ionicons name="cloud-offline-outline" size={24} color={colors.error} />
             <Text style={[styles.stateTitle, { color: colors.foreground }]}>Your spaces didn’t load</Text>
             <Text style={[styles.stateText, { color: colors.muted }]}>
-              Your work is safe. Try again, or start a new room.
+              {loadIssue === "invalid-data"
+                ? "Some saved room data is unreadable. Changes are paused to protect existing data."
+                : loadIssue === "storage-unavailable"
+                  ? "Saved rooms are temporarily unavailable. Try again in a moment."
+                  : "Your saved rooms could not be loaded. Try again, or start a new room."}
             </Text>
             <Pressable
               accessibilityRole="button"
@@ -447,7 +485,6 @@ const styles = StyleSheet.create({
   heroBody: { color: "#F8F5EF", fontSize: 13, lineHeight: 19, maxWidth: 290 },
   heroButton: {
     minHeight: 48,
-    alignSelf: "flex-start",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
@@ -455,9 +492,20 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: mobileDesign.color.card,
     paddingHorizontal: 16,
-    marginTop: 7,
   },
   heroButtonText: { color: mobileDesign.color.ink, fontSize: 14, fontWeight: "800" },
+  heroActions: { flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 7 },
+  heroSecondaryButton: {
+    minHeight: 48,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: "rgba(255, 254, 250, 0.72)",
+    paddingHorizontal: 14,
+  },
+  heroSecondaryButtonText: { color: mobileDesign.color.white, fontSize: 14, fontWeight: "800" },
   summary: {
     minHeight: 66,
     flexDirection: "row",
@@ -499,6 +547,16 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     padding: 18,
   },
+  warningCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 13,
+    marginBottom: 12,
+  },
+  warningText: { flex: 1, fontSize: 12, lineHeight: 18 },
   emptyCard: { paddingVertical: 22 },
   stateTitle: { fontSize: 16, lineHeight: 22, textAlign: "center", fontWeight: "800" },
   stateText: { fontSize: 12, lineHeight: 18, textAlign: "center", maxWidth: 285 },

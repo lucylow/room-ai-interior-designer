@@ -26,9 +26,20 @@ export interface SavedDesign {
 }
 
 export type SavedDesignLoadSource = "saved" | "demo" | "empty" | "unavailable";
+export type SavedDesignLoadIssue = "storage-unavailable" | "invalid-data";
 export interface SavedDesignLoadResult {
   designs: SavedDesign[];
   source: SavedDesignLoadSource;
+  issue?: SavedDesignLoadIssue;
+}
+
+export class SavedDesignStoreError extends Error {
+  constructor(readonly code: SavedDesignLoadIssue) {
+    super(
+      code === "storage-unavailable" ? "Saved room storage is unavailable." : "Saved room data is invalid.",
+    );
+    this.name = "SavedDesignStoreError";
+  }
 }
 
 export const SAVED_DESIGNS_KEY = "rerroom.saved-designs.v1";
@@ -113,30 +124,52 @@ function normalizeDesign(item: unknown): SavedDesign | null {
   };
 }
 
-export function parseSavedDesigns(raw: string | null): SavedDesign[] {
-  if (!raw) return [];
+function parseSavedDesignsWithStatus(raw: string | null): { designs: SavedDesign[]; issue?: "invalid-data" } {
+  if (raw === null) return { designs: [] };
   try {
     const value: unknown = JSON.parse(raw);
-    return Array.isArray(value)
-      ? value.map(normalizeDesign).filter((item): item is SavedDesign => item !== null)
-      : [];
+    if (!Array.isArray(value)) return { designs: [], issue: "invalid-data" };
+    const designs = value.map(normalizeDesign).filter((item): item is SavedDesign => item !== null);
+    return designs.length === value.length ? { designs } : { designs, issue: "invalid-data" };
   } catch {
-    return [];
+    return { designs: [], issue: "invalid-data" };
   }
 }
 
+export function parseSavedDesigns(raw: string | null): SavedDesign[] {
+  return parseSavedDesignsWithStatus(raw).designs;
+}
+
 export async function loadSavedDesignsWithStatus(): Promise<SavedDesignLoadResult> {
+  let raw: string | null;
   try {
-    const designs = parseSavedDesigns(await AsyncStorage.getItem(SAVED_DESIGNS_KEY));
-    if (designs.length > 0) return { designs, source: "saved" };
-    return runtimePolicy.allowDemoData
-      ? { designs: demoSavedDesigns.map((design) => ({ ...design })), source: "demo" }
-      : { designs: [], source: "empty" };
+    raw = await AsyncStorage.getItem(SAVED_DESIGNS_KEY);
   } catch {
     return runtimePolicy.allowDemoData
-      ? { designs: demoSavedDesigns.map((design) => ({ ...design })), source: "demo" }
-      : { designs: [], source: "unavailable" };
+      ? {
+          designs: demoSavedDesigns.map((design) => ({ ...design })),
+          source: "demo",
+          issue: "storage-unavailable",
+        }
+      : { designs: [], source: "unavailable", issue: "storage-unavailable" };
   }
+
+  const parsed = parseSavedDesignsWithStatus(raw);
+  if (parsed.designs.length > 0) {
+    return { ...parsed, source: "saved" };
+  }
+  if (parsed.issue) {
+    return runtimePolicy.allowDemoData
+      ? {
+          designs: demoSavedDesigns.map((design) => ({ ...design })),
+          source: "demo",
+          issue: parsed.issue,
+        }
+      : { ...parsed, source: "unavailable" };
+  }
+  return runtimePolicy.allowDemoData
+    ? { designs: demoSavedDesigns.map((design) => ({ ...design })), source: "demo" }
+    : { designs: [], source: "empty" };
 }
 
 /** Backward-compatible list API for existing callers. */
@@ -148,15 +181,33 @@ export async function saveSavedDesigns(designs: SavedDesign[]) {
   await AsyncStorage.setItem(SAVED_DESIGNS_KEY, JSON.stringify(designs.slice(0, 50)));
 }
 
+async function loadStoredDesignsForUpdate(): Promise<SavedDesign[]> {
+  let raw: string | null;
+  try {
+    raw = await AsyncStorage.getItem(SAVED_DESIGNS_KEY);
+  } catch {
+    throw new SavedDesignStoreError("storage-unavailable");
+  }
+
+  if (raw === null) {
+    return runtimePolicy.allowDemoData ? demoSavedDesigns.map((design) => ({ ...design })) : [];
+  }
+
+  const result = parseSavedDesignsWithStatus(raw);
+  if (result.issue) throw new SavedDesignStoreError(result.issue);
+  return result.designs;
+}
+
 export async function upsertSavedDesign(design: SavedDesign) {
-  const current = await loadSavedDesigns();
+  const current = await loadStoredDesignsForUpdate();
   const next = [design, ...current.filter((item) => item.id !== design.id)];
   await saveSavedDesigns(next);
   return next;
 }
 
 export async function appendRefinement(id: string, refinement: RefinementRecord, version?: RenderedVersion) {
-  const current = await loadSavedDesigns();
+  const current = await loadStoredDesignsForUpdate();
+  if (!current.some((design) => design.id === id)) return null;
   const next = current.map((design) =>
     design.id === id
       ? {
@@ -175,15 +226,20 @@ export async function appendRefinement(id: string, refinement: RefinementRecord,
 }
 
 export async function removeSavedDesign(id: string) {
-  const next = (await loadSavedDesigns()).filter((design) => design.id !== id);
+  const current = await loadStoredDesignsForUpdate();
+  if (!current.some((design) => design.id === id)) return current;
+  const next = current.filter((design) => design.id !== id);
   await saveSavedDesigns(next);
   return next;
 }
 
 export async function updateSavedDesignBudget(id: string, budget: number) {
-  const next = (await loadSavedDesigns()).map((design) =>
-    design.id === id ? { ...design, budget } : design,
-  );
+  if (!Number.isFinite(budget) || budget <= 0) {
+    throw new RangeError("Saved room budgets must be finite positive amounts.");
+  }
+  const current = await loadStoredDesignsForUpdate();
+  if (!current.some((design) => design.id === id)) return null;
+  const next = current.map((design) => (design.id === id ? { ...design, budget } : design));
   await saveSavedDesigns(next);
   return next.find((design) => design.id === id) ?? null;
 }

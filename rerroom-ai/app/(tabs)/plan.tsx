@@ -1,11 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { router, useFocusEffect } from "expo-router";
+import { useCallback, useRef, useState } from "react";
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
 import { mobileDesign } from "@/constants/mobile-design";
 import { useColors } from "@/hooks/use-colors";
-import { loadSavedDesignsWithStatus, type SavedDesign } from "@/services/savedDesigns";
+import {
+  loadSavedDesignsWithStatus,
+  type SavedDesign,
+  type SavedDesignLoadIssue,
+} from "@/services/savedDesigns";
 import { formatCad } from "@/services/retailStudio";
 
 type LoadState = "loading" | "ready" | "error";
@@ -15,29 +19,39 @@ export default function PlanScreen() {
   const [rooms, setRooms] = useState<SavedDesign[]>([]);
   const [loadState, setLoadState] = useState<LoadState>("loading");
   const [isDemoData, setIsDemoData] = useState(false);
+  const [loadIssue, setLoadIssue] = useState<SavedDesignLoadIssue | "load-failed" | null>(null);
   const requestId = useRef(0);
+  const budgetedRooms = rooms.filter((room) => room.budget !== undefined);
+  const totalSavedBudget = budgetedRooms.reduce((total, room) => total + (room.budget ?? 0), 0);
 
   const refresh = useCallback(async () => {
     const currentRequest = ++requestId.current;
     setLoadState("loading");
+    setLoadIssue(null);
     try {
       const result = await loadSavedDesignsWithStatus();
       if (currentRequest !== requestId.current) return;
       setRooms(result.designs);
       setIsDemoData(result.source === "demo");
+      setLoadIssue(result.issue ?? null);
       setLoadState(result.source === "unavailable" ? "error" : "ready");
     } catch {
       if (currentRequest !== requestId.current) return;
+      setRooms([]);
+      setIsDemoData(false);
+      setLoadIssue("load-failed");
       setLoadState("error");
     }
   }, []);
 
-  useEffect(() => {
-    void refresh();
-    return () => {
-      requestId.current += 1;
-    };
-  }, [refresh]);
+  useFocusEffect(
+    useCallback(() => {
+      void refresh();
+      return () => {
+        requestId.current += 1;
+      };
+    }, [refresh]),
+  );
 
   return (
     <ScreenContainer>
@@ -62,6 +76,37 @@ export default function PlanScreen() {
           </View>
         </View>
 
+        {loadState === "ready" && rooms.length > 0 ? (
+          <View
+            style={[styles.budgetSnapshot, { backgroundColor: colors.surface, borderColor: colors.border }]}
+          >
+            <View style={styles.budgetSnapshotHeader}>
+              <View style={[styles.budgetSnapshotIcon, { backgroundColor: mobileDesign.color.cream }]}>
+                <Ionicons name="wallet-outline" size={20} color={colors.primary} />
+              </View>
+              <View style={styles.budgetSnapshotCopy}>
+                <Text style={[styles.budgetSnapshotEyebrow, { color: colors.primary }]}>
+                  ROOM BUDGET SNAPSHOT
+                </Text>
+                <Text style={[styles.budgetSnapshotTitle, { color: colors.foreground }]}>
+                  {budgetedRooms.length > 0 ? formatCad(totalSavedBudget) : "No budgets saved yet"}
+                </Text>
+              </View>
+            </View>
+            <Text style={[styles.budgetSnapshotNote, { color: colors.muted }]}>
+              {budgetedRooms.length > 0
+                ? `${budgetedRooms.length} of ${rooms.length} ${
+                    budgetedRooms.length === 1 ? "room has" : "rooms have"
+                  } a saved budget. ${
+                    isDemoData
+                      ? "Example amounts are illustrative only."
+                      : "Combined saved amounts are not estimates or contractor quotes."
+                  }`
+                : "Add a budget to a saved room to see your combined total here."}
+            </Text>
+          </View>
+        ) : null}
+
         <View style={styles.sectionHeader}>
           <View>
             <Text accessibilityRole="header" style={[styles.sectionTitle, { color: colors.foreground }]}>
@@ -77,6 +122,22 @@ export default function PlanScreen() {
             </View>
           ) : null}
         </View>
+
+        {loadIssue && loadState === "ready" ? (
+          <View
+            accessibilityRole="alert"
+            style={[styles.warningCard, { backgroundColor: colors.surface, borderColor: colors.warning }]}
+          >
+            <Ionicons name="warning-outline" size={19} color={colors.warning} />
+            <Text style={[styles.warningText, { color: colors.foreground }]}>
+              {loadIssue === "storage-unavailable"
+                ? "Saved rooms are temporarily unavailable. Example data is shown instead."
+                : loadIssue === "invalid-data"
+                  ? "Some saved room data is unreadable. Changes are paused to protect existing data."
+                  : "Saved rooms could not be loaded. Try again to see your latest spaces."}
+            </Text>
+          </View>
+        ) : null}
 
         {loadState === "loading" ? (
           <View
@@ -97,7 +158,11 @@ export default function PlanScreen() {
               Plans aren’t available right now
             </Text>
             <Text style={[styles.stateBody, { color: colors.muted }]}>
-              Your saved work has not been changed. Try loading it again.
+              {loadIssue === "invalid-data"
+                ? "Some saved room data is unreadable. Changes are paused to protect existing data."
+                : loadIssue === "storage-unavailable"
+                  ? "Saved rooms are temporarily unavailable. Try again in a moment."
+                  : "Your saved rooms could not be loaded. Try again in a moment."}
             </Text>
             <Pressable
               accessibilityRole="button"
@@ -248,6 +313,19 @@ const styles = StyleSheet.create({
   promiseCopy: { flex: 1 },
   promiseTitle: { color: mobileDesign.color.white, fontSize: 15, fontWeight: "800" },
   promiseBody: { color: "#E2DDD4", fontSize: 12, lineHeight: 18, marginTop: 4 },
+  budgetSnapshot: { borderWidth: 1, borderRadius: 20, padding: 16, marginTop: 18 },
+  budgetSnapshotHeader: { flexDirection: "row", alignItems: "center", gap: 12 },
+  budgetSnapshotIcon: {
+    width: 42,
+    height: 42,
+    borderRadius: 14,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  budgetSnapshotCopy: { flex: 1 },
+  budgetSnapshotEyebrow: { fontSize: 9, fontWeight: "900", letterSpacing: 1 },
+  budgetSnapshotTitle: { fontSize: 23, fontWeight: "800", marginTop: 3 },
+  budgetSnapshotNote: { fontSize: 12, lineHeight: 18, marginTop: 11 },
   sectionHeader: {
     flexDirection: "row",
     alignItems: "center",
@@ -268,6 +346,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 10,
   },
+  warningCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 13,
+    marginBottom: 12,
+  },
+  warningText: { flex: 1, fontSize: 12, lineHeight: 18 },
   emptyCard: { minHeight: 250 },
   stateTitle: { fontSize: 17, lineHeight: 22, fontWeight: "800", textAlign: "center" },
   stateBody: { fontSize: 13, lineHeight: 19, textAlign: "center", maxWidth: 300 },
